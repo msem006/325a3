@@ -1,4 +1,4 @@
-package com.se325a3.smdb;
+package com.se325a3.smdb.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -18,6 +18,8 @@ public class SearchQueryController {
 		
 		System.out.println("Query:" + query.getQuery() + 
 					" Type:" + query.getType());
+		
+		
 		
 		return "redirect:search.html";
 	}

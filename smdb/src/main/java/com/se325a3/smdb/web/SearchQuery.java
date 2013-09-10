@@ -1,4 +1,4 @@
-package com.se325a3.smdb;
+package com.se325a3.smdb.web;
 
 public class SearchQuery {
 	private String query;
