@@ -214,3 +214,4 @@ pip-log.txt
 .mr.developer.cfg
 
 smdb/target/*
+smdb/log.txt

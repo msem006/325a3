@@ -3,7 +3,14 @@ package com.se325a3.smdb.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "MOVIE")
 public class Movie {
+	
 	private String _title;
 	private String _country;
 	private String _majorGenre;

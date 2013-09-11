@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xmlns:jdbc="http://www.springframework.org/schema/jdbc"
- xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
-
-  <jdbc:embedded-database id="dataSource" type="H2">
-     <jdbc:script location="classpath:create_all.sql"/>
-     <jdbc:script location="classpath:person_table.sql"/>
-	 <jdbc:script location="classpath:movie_table.sql"/>
-	 <jdbc:script location="classpath:staff_tables.sql"/>
-  </jdbc:embedded-database>
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+	<jdbc:embedded-database id="dataSource" type="H2">
+		<jdbc:script location="classpath:db/create_all.sql"/>
+		<jdbc:script location="classpath:db/person_table.sql"/>
+		<jdbc:script location="classpath:db/movie_table.sql"/>
+		<jdbc:script location="classpath:db/staff_tables.sql"/>
+	</jdbc:embedded-database>
+		
+	<beans profile="jdbctemplate">
+		<bean class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" id="namedParameterJdbcTemplate">
+			<constructor-arg ref="dataSource"/>
+		</bean>
+		
+		<context:component-scan base-package="com.se325a3.smdb.dao.jdbctemplate"/>
+	</beans>
+	
+	<beans profile="hibernate">
+		<bean id="mySessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+			<property name="dataSource" ref="myDataSource"/>
+			<property name="mappingResources">
+			  <list>
+				<value>product.hbm.xml</value>
+			  </list>
+			</property>
+			<property name="hibernateProperties">
+			  <value>
+				hibernate.dialect=org.hibernate.dialect.HSQLDialect
+			  </value>
+			</property>
+		</bean>
+	</beans>
+	
 </beans>
