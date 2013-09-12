@@ -34,7 +34,7 @@ public class SmdbServiceImpl implements SmdbServce {
 
 	@Override
 	public Collection<Person> getActorsByMovieTitle(String title) {
-		List<Person> actors = _smdbDao.getActorsByName(title);
+		List<Person> actors = _smdbDao.getActorsByMovieTitle(title);
 		return actors;
 	}
 
