@@ -21,6 +21,12 @@ public class SmdbServiceImpl implements SmdbServce {
 	}
 	
 	@Override
+	public Collection<Person> getActorsById(String id) {
+		List<Person> actors = _smdbDao.getActorsById(id);
+		return actors;
+	}
+
+	@Override
 	public Collection<Person> getActorsByName(String name) {
 		List<Person> actors = _smdbDao.getActorsByName(name);
 		return actors;
@@ -43,5 +49,12 @@ public class SmdbServiceImpl implements SmdbServce {
 		List<Movie> movies = _smdbDao.getMoviesByActorName(name);
 		return movies;
 	}
+
+	@Override
+	public Collection<Movie> getMoviesByTitleAndYear(String title, String year) {
+		List<Movie> movies = _smdbDao.getMoviesByTitleAndYear(title, year);
+		return movies;
+	}
+
 
 }

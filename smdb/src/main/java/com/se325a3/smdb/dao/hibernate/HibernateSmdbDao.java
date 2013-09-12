@@ -19,7 +19,13 @@ public class HibernateSmdbDao implements SmdbDao {
 	public HibernateSmdbDao(SessionFactory sessionFactory) {
 		_sessionFactory = sessionFactory;
 	}
-	
+
+	@Override
+	public List<Person> getActorsById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	@Override
 	public List<Person> getActorsByName(String name) {
 		// TODO Auto-generated method stub
@@ -40,6 +46,12 @@ public class HibernateSmdbDao implements SmdbDao {
 
 	@Override
 	public List<Movie> getMoviesByActorName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Movie> getMoviesByTitleAndYear(String title, String year) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -20,6 +20,9 @@ import com.se325a3.smdb.model.Person;
 @Repository
 public class JdbcTemplateSmdbDao implements SmdbDao {
 
+	private static final String SQL_SELECT_ACTORS_BY_ID = "SELECT id, first_name, last_name, year_born "
+			+ "FROM person " + "WHERE id LIKE :id";
+
 	private static final String SQL_SELECT_ACTORS_BY_NAME = "SELECT id, first_name, last_name, year_born "
 			+ "FROM person " + "WHERE first_name LIKE :first_name";
 
@@ -34,12 +37,42 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 			+ "WHERE m.title = r.title AND r.id = p.id "
 			+ "AND p.first_name LIKE :first_name";
 
+	private static final String SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR = "SELECT title, production_year, country, run_time, major_genre "
+			+ "FROM movie " 
+			+ "WHERE title = :title "
+			+ "AND production_year = :year";
+
+
 	private NamedParameterJdbcTemplate _namedParameterJdbcTemplatedbcTemplate;
 
 	@Autowired
 	public JdbcTemplateSmdbDao(DataSource dataSource) {
 		_namedParameterJdbcTemplatedbcTemplate = new NamedParameterJdbcTemplate(
 				dataSource);
+	}
+
+	@Override
+	public List<Person> getActorsById(String id) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("id", id);
+		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
+				SQL_SELECT_ACTORS_BY_ID, params, new RowMapper<Person>() {
+
+					@Override
+					public Person mapRow(ResultSet resultSet, int rowNum)
+							throws SQLException {
+						Person person = new Person();
+
+						person.setId(resultSet.getString(1));
+						person.setFirstName(resultSet.getString(2));
+						person.setLastName(resultSet.getString(3));
+						person.setYearBorn(resultSet.getInt(4));
+
+						return person;
+					}
+
+				});
+		return persons;
 	}
 
 	@Override
@@ -69,7 +102,7 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 	@Override
 	public List<Person> getActorsByMovieTitle(String title) {
 		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("title", title + "%");
+		params.put("title", "%" + title + "%");
 		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
 				SQL_SELECT_ACTORS_BY_MOVIE_TITLE, params, new RowMapper<Person>() {
 
@@ -121,6 +154,34 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		params.put("first_name", name + "%");
 		List<Movie> movies = _namedParameterJdbcTemplatedbcTemplate.query(
 				SQL_SELECT_MOVIES_BY_ACTOR_NAME, params, new RowMapper<Movie>() {
+
+					@Override
+					public Movie mapRow(ResultSet resultSet, int rowNum)
+							throws SQLException {
+						Movie movie = new Movie();
+
+						movie.setTitle(resultSet.getString(1));
+						movie.setProductionYear(resultSet.getInt(2));
+						movie.setCountry(resultSet.getString(3));
+						movie.setRunTime(resultSet.getInt(4));
+						movie.setMajorGenre(resultSet.getString(5));
+
+						return movie;
+					}
+
+				});
+		return movies;
+	}
+
+
+
+	@Override
+	public List<Movie> getMoviesByTitleAndYear(String title, String year) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("title", title);
+		params.put("year", year);
+		List<Movie> movies = _namedParameterJdbcTemplatedbcTemplate.query(
+				SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR, params, new RowMapper<Movie>() {
 
 					@Override
 					public Movie mapRow(ResultSet resultSet, int rowNum)
