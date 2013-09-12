@@ -13,17 +13,17 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
-import com.se325a3.smdb.service.SmdbServce;
+import com.se325a3.smdb.service.SmdbService;
 
 
 @Controller
 @SessionAttributes
 public class DataController {
 
-	private SmdbServce _smdbServce;
+	private SmdbService _smdbServce;
 	
 	@Autowired
-	public DataController(SmdbServce smdbService) {
+	public DataController(SmdbService smdbService) {
 		_smdbServce = smdbService;
 	}
 	

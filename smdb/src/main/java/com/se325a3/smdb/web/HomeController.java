@@ -6,7 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.se325a3.smdb.service.SmdbServce;
+import com.se325a3.smdb.service.SmdbService;
 
 /**
  * Simple Controller class to process incoming HTTP GET requests of the form:
@@ -18,10 +18,10 @@ import com.se325a3.smdb.service.SmdbServce;
 @Controller
 public class HomeController {
 
-private SmdbServce _smdbServce;
+private SmdbService _smdbServce;
 	
 	@Autowired
-	public HomeController(SmdbServce smdbService) {
+	public HomeController(SmdbService smdbService) {
 		_smdbServce = smdbService;
 	}
 	

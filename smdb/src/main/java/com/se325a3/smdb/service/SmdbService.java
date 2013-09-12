@@ -6,7 +6,7 @@ import java.util.List;
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
 
-public interface SmdbServce {
+public interface SmdbService {
 
 	public Person getActorById(String id);
 	public Collection<Person> getActorsByName(String name);

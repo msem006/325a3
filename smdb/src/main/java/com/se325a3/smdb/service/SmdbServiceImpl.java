@@ -11,7 +11,7 @@ import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
 
 @Service
-public class SmdbServiceImpl implements SmdbServce {
+public class SmdbServiceImpl implements SmdbService {
 
 	private SmdbDao _smdbDao;
 	
