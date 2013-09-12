@@ -25,7 +25,7 @@ public class SearchQueryController {
 		_smdbServce = smdbService;
 	}
 	
-	@RequestMapping(value={"/index", "/search"})  
+	@RequestMapping(value={"", "/index", "/search"})  
 	public ModelAndView index(@ModelAttribute SearchQuery query) {
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("index");
