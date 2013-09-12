@@ -25,10 +25,10 @@ private SmdbServce _smdbServce;
 		_smdbServce = smdbService;
 	}
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	/*@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String printHome(ModelMap model) {
 		return "index";
-	}
+	}*/
 	
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {

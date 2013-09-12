@@ -1,3 +1,4 @@
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
@@ -5,6 +6,13 @@
 	<title>smdb - We have all 50 shades</title>
 </head>
 <body>
+
+	<div>
+	<form:form method="post" action="searchResults">
+	<form:input path="query" /></td> 
+	<input type="submit" value="Go"/>
+	</form:form>
+	</div>
 <h2>Search Results</h2>
 
 

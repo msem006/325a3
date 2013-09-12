@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.service.SmdbServce;
-
 
 
 @Controller
@@ -28,7 +28,7 @@ public class DataController {
 	}
 	
 	@RequestMapping(value="/movie", method = RequestMethod.GET)  
-	public ModelAndView movie(@RequestParam String title, @RequestParam String year) {  
+	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam String title, @RequestParam String year) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("movie");
 
@@ -49,14 +49,15 @@ public class DataController {
 		    
 	    	modelAndView.addObject("movie", movie);
 	    	modelAndView.addObject("personList", personList);
-		    
+		    modelAndView.addObject("command", new SearchQuery());
+
 	    }
          
 	    return modelAndView;  
 	}
 	
 	@RequestMapping(value="/actor", method = RequestMethod.GET)  
-	public ModelAndView movie(@RequestParam String id) {  
+	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam String id) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("actor");
 
@@ -74,7 +75,8 @@ public class DataController {
 		    
 	    	modelAndView.addObject("actor", actor);
 	    	modelAndView.addObject("movieList", movieList);
-		    
+		    modelAndView.addObject("command", new SearchQuery());
+
 	    }
          
 	    return modelAndView;  

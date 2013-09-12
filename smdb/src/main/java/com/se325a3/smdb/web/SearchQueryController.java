@@ -25,10 +25,15 @@ public class SearchQueryController {
 		_smdbServce = smdbService;
 	}
 	
-	@RequestMapping(value="/search")  
-	public ModelAndView search() {  
-	    return new ModelAndView("search", "command", new SearchQuery());  
-	}  
+	@RequestMapping(value={"/index", "/search"})  
+	public ModelAndView index(@ModelAttribute SearchQuery query) {
+	    ModelAndView modelAndView = new ModelAndView();  
+	    modelAndView.setViewName("index");
+	    
+	    modelAndView.addObject("command", new SearchQuery());
+	    return modelAndView;
+	}
+ 
 	  
 	@RequestMapping(value="/searchResults")  
 	public ModelAndView searchResults(@ModelAttribute SearchQuery query) {  
@@ -51,7 +56,8 @@ public class SearchQueryController {
 
 
 	    modelAndView.addObject("movieList", movieList);  
-	    modelAndView.addObject("personList", personList);	      
+	    modelAndView.addObject("personList", personList);
+	    modelAndView.addObject("command", new SearchQuery());
 	    return modelAndView;  
 	}
 }
