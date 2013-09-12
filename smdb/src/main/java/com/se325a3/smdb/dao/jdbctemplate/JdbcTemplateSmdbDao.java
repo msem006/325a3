@@ -137,7 +137,7 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		params.put("title", "%" + title + "%");
 		params.put("year", year);
 		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
-				SQL_SELECT_ACTORS_BY_MOVIE_TITLE, params, new RowMapper<Person>() {
+				SQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR, params, new RowMapper<Person>() {
 
 					@Override
 					public Person mapRow(ResultSet resultSet, int rowNum)
