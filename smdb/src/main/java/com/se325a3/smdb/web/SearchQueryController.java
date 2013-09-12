@@ -18,11 +18,11 @@ import com.se325a3.smdb.service.SmdbService;
 @SessionAttributes
 public class SearchQueryController {
 
-	private SmdbService _smdbServce;
+	private SmdbService _smdbService;
 	
 	@Autowired
 	public SearchQueryController(SmdbService smdbService) {
-		_smdbServce = smdbService;
+		_smdbService = smdbService;
 	}
 	
 	@RequestMapping(value={"", "/index", "/search"})  
@@ -43,12 +43,12 @@ public class SearchQueryController {
 	    System.out.println("Query:" + query.getQuery());
 	    
 	    Collection<Movie> movieList = 
-	    		_smdbServce.getMoviesByTitle(query.getQuery());
+	    		_smdbService.getMoviesByTitle(query.getQuery());
 	    for (Movie movie : movieList) {
 	    	System.out.println(movie.getTitle() + " " + movie.getProductionYear());
 	    }
 	    Collection<Person> personList = 
-	    		_smdbServce.getActorsByName(query.getQuery());
+	    		_smdbService.getActorsByName(query.getQuery());
 	    for (Person person : personList) {
 	    	System.out.println(person.getFirstName() + " " + person.getLastName());
 	    }

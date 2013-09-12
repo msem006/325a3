@@ -6,6 +6,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.service.SmdbService;
 
 /**
@@ -18,11 +19,11 @@ import com.se325a3.smdb.service.SmdbService;
 @Controller
 public class HomeController {
 
-private SmdbService _smdbServce;
+private SmdbService _smdbService;
 	
 	@Autowired
 	public HomeController(SmdbService smdbService) {
-		_smdbServce = smdbService;
+		_smdbService = smdbService;
 	}
 	
 	/*@RequestMapping(value = "/index", method = RequestMethod.GET)
@@ -32,8 +33,9 @@ private SmdbService _smdbServce;
 	
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String printWelcome(ModelMap model) {
+		Person actor = _smdbService.getActorById("00001001");
 		model.addAttribute("message",
-				"Hello! This is smdb MVC Web Controller.");
+				"Actor's first name: " + actor.getFirstName());
 		return "output";
 	}
 }

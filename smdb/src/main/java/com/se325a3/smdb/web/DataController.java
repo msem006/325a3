@@ -20,11 +20,11 @@ import com.se325a3.smdb.service.SmdbService;
 @SessionAttributes
 public class DataController {
 
-	private SmdbService _smdbServce;
+	private SmdbService _smdbService;
 	
 	@Autowired
 	public DataController(SmdbService smdbService) {
-		_smdbServce = smdbService;
+		_smdbService = smdbService;
 	}
 	
 	@RequestMapping(value="/movie", method = RequestMethod.GET)  
@@ -34,13 +34,13 @@ public class DataController {
 
 	    // Get Movie Info
 	    Movie movie = 
-	    		_smdbServce.getMovieByTitleAndYear(title, year);
+	    		_smdbService.getMovieByTitleAndYear(title, year);
 
 	    if (movie != null) {
 	    	
 		    // Get actors from movie
 		    Collection<Person> personList = 
-		    		_smdbServce.getActorsByMovieTitleAndYear(title, year);
+		    		_smdbService.getActorsByMovieTitleAndYear(title, year);
 		    
 		    for (Person person : personList) {
 		    	System.out.println(person.getFirstName() + " " + person.getLastName());
@@ -62,13 +62,13 @@ public class DataController {
 
 	    // Get Movie Info
 	    Person actor = 
-	    		_smdbServce.getActorById(id);
+	    		_smdbService.getActorById(id);
 
 	    if (actor != null) {
 	    	
 		    // Get actors from movie
 		    Collection<Movie> movieList = 
-		    		_smdbServce.getMoviesByActorID(actor.getId());
+		    		_smdbService.getMoviesByActorID(actor.getId());
 		    
 		    
 	    	modelAndView.addObject("actor", actor);
