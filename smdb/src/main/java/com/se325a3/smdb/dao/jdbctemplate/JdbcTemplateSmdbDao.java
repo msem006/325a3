@@ -20,11 +20,11 @@ import com.se325a3.smdb.model.Person;
 @Repository
 public class JdbcTemplateSmdbDao implements SmdbDao {
 
-	private static final String SQL_SELECT_ACTORS_BY_ID = "SELECT id, first_name, last_name, year_born "
-			+ "FROM person " + "WHERE id LIKE :id";
+	private static final String SQL_SELECT_ACTORS_BY_ID = "SELECT p.id, p.first_name, p.last_name, p.year_born "
+			+ "FROM person " + "WHERE p.id = r.id AND p.id LIKE :id";
 
-	private static final String SQL_SELECT_ACTORS_BY_NAME = "SELECT id, first_name, last_name, year_born "
-			+ "FROM person " + "WHERE first_name LIKE :first_name";
+	private static final String SQL_SELECT_ACTORS_BY_NAME = "SELECT p.id, p.first_name, p.last_name, p.year_born "
+			+ "FROM person, role r " + "WHERE p.id = r.id AND p.first_name LIKE :first_name";
 
 	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE = "SELECT p.id, p.first_name, p.last_name, year_born "
 			+ "FROM person p, role r " + "WHERE p.id = r.id AND r.title LIKE :title";
