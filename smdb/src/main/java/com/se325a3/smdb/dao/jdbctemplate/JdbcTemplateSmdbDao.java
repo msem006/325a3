@@ -60,10 +60,10 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	public List<Person> getActorsById(String id) {
+	public Person getActorById(String id) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("id", id);
-		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
+		Person person = _namedParameterJdbcTemplatedbcTemplate.queryForObject(
 				SQL_SELECT_ACTORS_BY_ID, params, new RowMapper<Person>() {
 
 					@Override
@@ -80,7 +80,7 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 					}
 
 				});
-		return persons;
+		return person;
 	}
 
 	@Override
@@ -209,11 +209,11 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 
 
 	@Override
-	public List<Movie> getMoviesByTitleAndYear(String title, String year) {
+	public Movie getMovieByTitleAndYear(String title, String year) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", title);
 		params.put("year", year);
-		List<Movie> movies = _namedParameterJdbcTemplatedbcTemplate.query(
+		Movie movie = _namedParameterJdbcTemplatedbcTemplate.queryForObject(
 				SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR, params, new RowMapper<Movie>() {
 
 					@Override
@@ -231,7 +231,7 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 					}
 
 				});
-		return movies;
+		return movie;
 	}
 
 	@Override

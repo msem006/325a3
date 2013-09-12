@@ -33,11 +33,10 @@ public class DataController {
 	    modelAndView.setViewName("movie");
 
 	    // Get Movie Info
-	    Collection<Movie> movieList = 
-	    		_smdbServce.getMoviesByTitleAndYear(title, year);
+	    Movie movie = 
+	    		_smdbServce.getMovieByTitleAndYear(title, year);
 
-	    if (!movieList.isEmpty()) {
-	    	Movie movie = movieList.iterator().next();
+	    if (movie != null) {
 	    	
 		    // Get actors from movie
 		    Collection<Person> personList = 
@@ -62,11 +61,10 @@ public class DataController {
 	    modelAndView.setViewName("actor");
 
 	    // Get Movie Info
-	    Collection<Person> actorList = 
-	    		_smdbServce.getActorsById(id);
+	    Person actor = 
+	    		_smdbServce.getActorById(id);
 
-	    if (!actorList.isEmpty()) {
-	    	Person actor = actorList.iterator().next();
+	    if (actor != null) {
 	    	
 		    // Get actors from movie
 		    Collection<Movie> movieList = 

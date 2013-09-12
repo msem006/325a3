@@ -8,12 +8,12 @@ import com.se325a3.smdb.model.Person;
 
 public interface SmdbServce {
 
-	public Collection<Person> getActorsById(String id);
+	public Person getActorById(String id);
 	public Collection<Person> getActorsByName(String name);
 	public Collection<Person> getActorsByMovieTitle(String title); 
 	public Collection<Person> getActorsByMovieTitleAndYear(String title, String year);
 	public Collection<Movie> getMoviesByTitle(String title);
 	public Collection<Movie> getMoviesByActorName(String name);
-	public Collection<Movie> getMoviesByTitleAndYear(String title, String year);
+	public Movie getMovieByTitleAndYear(String title, String year);
 	public Collection<Movie> getMoviesByActorID(String id);
 }
