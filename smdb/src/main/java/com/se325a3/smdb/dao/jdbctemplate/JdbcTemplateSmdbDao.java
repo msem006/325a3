@@ -20,32 +20,32 @@ import com.se325a3.smdb.model.Person;
 @Repository
 public class JdbcTemplateSmdbDao implements SmdbDao {
 
-	private static final String SQL_SELECT_ACTORS_BY_ID = "SELECT p.id, p.first_name, p.last_name, p.year_born "
-			+ "FROM person " + "WHERE p.id = r.id AND p.id LIKE :id";
+	private static final String SQL_SELECT_ACTORS_BY_ID = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
+			+ "FROM person p, role r " + "WHERE p.id = r.id AND p.id LIKE :id";
 
-	private static final String SQL_SELECT_ACTORS_BY_NAME = "SELECT p.id, p.first_name, p.last_name, p.year_born "
-			+ "FROM person, role r " + "WHERE p.id = r.id AND p.first_name LIKE :first_name";
+	private static final String SQL_SELECT_ACTORS_BY_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
+			+ "FROM person p, role r " + "WHERE p.id = r.id AND p.first_name LIKE :first_name";
 
-	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE = "SELECT p.id, p.first_name, p.last_name, year_born "
+	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE = "SELECT DISTINCT p.id, p.first_name, p.last_name, year_born "
 			+ "FROM person p, role r " + "WHERE p.id = r.id AND r.title LIKE :title";
 	
-	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR = "SELECT p.id, p.first_name, p.last_name, year_born "
+	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR = "SELECT DISTINCT p.id, p.first_name, p.last_name, year_born "
 			+ "FROM person p, role r " + "WHERE p.id = r.id AND r.title LIKE :title AND r.production_year = :year";
 
-	private static final String SQL_SELECT_MOVIES_BY_TITLE = "SELECT title, production_year, country, run_time, major_genre "
+	private static final String SQL_SELECT_MOVIES_BY_TITLE = "SELECT DISTINCT title, production_year, country, run_time, major_genre "
 			+ "FROM movie " + "WHERE title LIKE :title";
 
-	private static final String SQL_SELECT_MOVIES_BY_ACTOR_NAME = "SELECT m.title, m.production_year, m.country, m.run_time, m.major_genre "
+	private static final String SQL_SELECT_MOVIES_BY_ACTOR_NAME = "SELECT DISTINCT m.title, m.production_year, m.country, m.run_time, m.major_genre "
 			+ "FROM movie m, role r, person p "
 			+ "WHERE m.title = r.title AND r.id = p.id "
 			+ "AND p.first_name LIKE :first_name";
 
-	private static final String SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR = "SELECT title, production_year, country, run_time, major_genre "
+	private static final String SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR = "SELECT DISTINCT title, production_year, country, run_time, major_genre "
 			+ "FROM movie " 
 			+ "WHERE title = :title "
 			+ "AND production_year = :year";
 	
-	private static final String SQL_SELECT_MOVIES_BY_ACTOR_ID = "SELECT m.title, m.production_year, m.country, m.run_time, m.major_genre "
+	private static final String SQL_SELECT_MOVIES_BY_ACTOR_ID = "SELECT DISTINCT m.title, m.production_year, m.country, m.run_time, m.major_genre "
 			+ "FROM movie m, role r, person p "
 			+ "WHERE m.title = r.title AND r.id = p.id "
 			+ "AND p.id LIKE :id";
