@@ -56,4 +56,16 @@ public class HibernateSmdbDao implements SmdbDao {
 		return null;
 	}
 
+	@Override
+	public List<Movie> getMoviesByActorID(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Person> getActorsByMovieTitleAndYear(String title, String year) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -41,7 +41,7 @@ public class DataController {
 	    	
 		    // Get actors from movie
 		    Collection<Person> personList = 
-		    		_smdbServce.getActorsByMovieTitle(title);
+		    		_smdbServce.getActorsByMovieTitleAndYear(title, year);
 		    
 		    for (Person person : personList) {
 		    	System.out.println(person.getFirstName() + " " + person.getLastName());
@@ -70,7 +70,7 @@ public class DataController {
 	    	
 		    // Get actors from movie
 		    Collection<Movie> movieList = 
-		    		_smdbServce.getMoviesByActorName(actor.getFirstName());
+		    		_smdbServce.getMoviesByActorID(actor.getId());
 		    
 		    
 	    	modelAndView.addObject("actor", actor);
