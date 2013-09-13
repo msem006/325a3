@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<title>325 a1</title>
 	<link rel="icon" href="favicon.ico"> 
-	<link rel="stylesheet" type="text/css" href="cssimg/index.css" />
+	<link rel="stylesheet" type="text/css" href='<c:url value="/resources/styles.css" />' />
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>    
     <script src="http://www.red-team-design.com/wp-content/uploads/2011/02/modernizr-1.6.min_.js"></script>
