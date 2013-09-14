@@ -1,29 +1,16 @@
 html {
-	background-image:url('tri2.png');
+	background-image:url('bg.png');
 	background-repeat:repeat;
-	/*-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	transition: background 0.5s linear; */
 }
 
 body {
 	text-align: center;
-}
-
-#mainText
-{
-	font-family: Calibri, Trebuchet MS, Arial, sans-serif;
-	font-size: 6em;
-	color: #FFFFFF;
+	font-family: 'Average Sans', Calibri, sans-serif;
 }
 
 h1 {
-	background-image:url('triblur.png');
-	/*background-color: #35D1F2; */
-	font-family: 'Average Sans', Calibri, sans-serif;
-	color: #FFF;
+	
+	color: #6cbb6b;
 	font-size: 6em;
 }
 
@@ -31,7 +18,7 @@ h1 {
 {
 	/*background: #eaf8fc;
 	background-image: -moz-linear-gradient(#fff, #d4e8ec);
-	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #aaaaaa),color-stop(1, #fff));*/
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #aaaaaa),color-stop(1, #fff));*/*/
 
 	-moz-border-radius: 35px;
 	border-radius: 35px;
@@ -42,7 +29,7 @@ h1 {
 	width: 800px;
 	height: 65px;
 	padding: 10px;
-	margin: 300px auto 50px;
+	margin: 100px auto 50px;
 	overflow: hidden;
 }
 
@@ -57,7 +44,7 @@ h1 {
 	height: 53px;
 	width: 600px;
 	border: 1px solid #a4c3ca;
-	font: normal 26px 'trebuchet MS', arial, helvetica;
+	font: normal 26px 'Average Sans', Calibri, sans-serif;
 	font-style: italic;	
 	background: #f1f1f1;
 
@@ -143,21 +130,27 @@ h1 {
 	border-color: #8badb4;
 	background: #EAEAEA;
 	outline: none;
-	-webkit-animation: 0.4s 40ms caret infinite;
-	animation: 0.4s 40ms caret infinite;
-}	
-
-
-@keyframes caret {
-	50% {
-		opacity: 0.1;
-		transform: scaleY(0.8);
-	}
-
 }
-@-webkit-keyframes caret {
-	50% {
-		opacity: 0.1;
-		-webkit-transform: scaleY(0.8);
-	}
+
+h2{	
+	font-size: 3em;
+	color: #95d788;
 }
+
+h3{	
+	font-size: 2em;
+	color: #95d788;
+}
+
+#name, #country, #genre, #runtime, #year, #sResult{
+	font-size: 2em;
+}
+
+#dob{
+	font-size: 1.7em;
+}
+
+#movie, #actor{
+	font-size: 1.4em;	
+}
+
