@@ -9,16 +9,16 @@
 	<display-name>smdb Web Application</display-name>
 
 	<!-- Use JDBC for database access-->
-	<context-param>
-        <param-name>spring.profiles.active</param-name>
-		<param-value>jdbctemplate</param-value>
-    </context-param>
-	
-	<!-- Use Hibernate for database access-->
 	<!--<context-param>
         <param-name>spring.profiles.active</param-name>
-		<param-value>hibernate</param-value>
+		<param-value>jdbctemplate</param-value>
     </context-param>-->
+	
+	<!-- Use Hibernate for database access-->
+	<context-param>
+        <param-name>spring.profiles.active</param-name>
+		<param-value>hibernate</param-value>
+    </context-param>
 	
 	<!-- Main servlet class. -->
 	<servlet>
