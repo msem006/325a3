@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href='<c:url value="/resources/styles.css" />' />
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>    
-    <script src="http://www.red-team-design.com/wp-content/uploads/2011/02/modernizr-1.6.min_.js"></script>
+	<script src="http://www.red-team-design.com/wp-content/uploads/2011/02/modernizr-1.6.min_.js"></script>
 	<script>    
 	$(document).ready(function() {           
 		if (!Modernizr.input.placeholder)
@@ -43,11 +43,11 @@
 </head>
 <body>
 	<h1> SMDB </h1>
-<div>
-<form:form method="post" action="searchResults" id="searchbox">
-<form:input path="query" id="search" type="text" placeholder="Type here" /></td> 
-<input type="submit" id="submit" value="Search"/>
-</form:form>
+	<div>
+		<form:form method="post" action="searchResults" id="searchbox">
+		<form:input path="query" id="search" type="text" placeholder="Type here" /></td> 
+		<input type="submit" id="submit" value="Search"/>
+	</form:form>
 </div>
 
 </body>
