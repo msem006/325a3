@@ -6,16 +6,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.persistence.Parameter;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.servlet.mvc.condition.ParamsRequestCondition;
 
 import com.se325a3.smdb.dao.SmdbDao;
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
+import com.se325a3.smdb.model.Role;
 
 @Repository
 public class JdbcTemplateSmdbDao implements SmdbDao {
@@ -24,13 +27,16 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 			+ "FROM person p, role r " + "WHERE p.id = r.id AND p.id LIKE :id";
 
 	private static final String SQL_SELECT_ACTORS_BY_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
-			+ "FROM person p, role r " + "WHERE p.id = r.id AND p.first_name LIKE :first_name";
+			+ "FROM person p, role r "
+			+ "WHERE p.id = r.id AND p.first_name LIKE :first_name";
 
 	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE = "SELECT DISTINCT p.id, p.first_name, p.last_name, year_born "
-			+ "FROM person p, role r " + "WHERE p.id = r.id AND r.title LIKE :title";
-	
+			+ "FROM person p, role r "
+			+ "WHERE p.id = r.id AND r.title LIKE :title";
+
 	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR = "SELECT DISTINCT p.id, p.first_name, p.last_name, year_born "
-			+ "FROM person p, role r " + "WHERE p.id = r.id AND r.title LIKE :title AND r.production_year = :year";
+			+ "FROM person p, role r "
+			+ "WHERE p.id = r.id AND r.title LIKE :title AND r.production_year = :year";
 
 	private static final String SQL_SELECT_MOVIES_BY_TITLE = "SELECT DISTINCT title, production_year, country, run_time, major_genre "
 			+ "FROM movie " + "WHERE title LIKE :title";
@@ -41,15 +47,19 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 			+ "AND p.first_name LIKE :first_name";
 
 	private static final String SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR = "SELECT DISTINCT title, production_year, country, run_time, major_genre "
-			+ "FROM movie " 
+			+ "FROM movie "
 			+ "WHERE title = :title "
 			+ "AND production_year = :year";
-	
+
 	private static final String SQL_SELECT_MOVIES_BY_ACTOR_ID = "SELECT DISTINCT m.title, m.production_year, m.country, m.run_time, m.major_genre "
 			+ "FROM movie m, role r, person p "
-			+ "WHERE m.title = r.title AND r.id = p.id "
-			+ "AND p.id LIKE :id";
+			+ "WHERE m.title = r.title AND r.id = p.id " + "AND p.id LIKE :id";
 
+	private static final String SQL_INSERT_ACTOR = "INSERT INTO PERSON VALUES (:id, :first_name, :last_name, :year_born)";
+
+	private static final String SQL_INSERT_MOVIE = "INSERT INTO MOVIE VALUES (:title, :year, :country, :run_time, :major_genre)";
+	
+	private static final String SQL_INSERT_ROLE = "INSERT INTO ROLE VALUES (:id, :title, :year, :description, :credits)";
 
 	private NamedParameterJdbcTemplate _namedParameterJdbcTemplatedbcTemplate;
 
@@ -112,7 +122,8 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", "%" + title + "%");
 		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
-				SQL_SELECT_ACTORS_BY_MOVIE_TITLE, params, new RowMapper<Person>() {
+				SQL_SELECT_ACTORS_BY_MOVIE_TITLE, params,
+				new RowMapper<Person>() {
 
 					@Override
 					public Person mapRow(ResultSet resultSet, int rowNum)
@@ -130,14 +141,15 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 				});
 		return persons;
 	}
-	
+
 	@Override
 	public List<Person> getActorsByMovieTitleAndYear(String title, String year) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", "%" + title + "%");
 		params.put("year", year);
 		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
-				SQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR, params, new RowMapper<Person>() {
+				SQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR, params,
+				new RowMapper<Person>() {
 
 					@Override
 					public Person mapRow(ResultSet resultSet, int rowNum)
@@ -186,7 +198,8 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("first_name", name + "%");
 		List<Movie> movies = _namedParameterJdbcTemplatedbcTemplate.query(
-				SQL_SELECT_MOVIES_BY_ACTOR_NAME, params, new RowMapper<Movie>() {
+				SQL_SELECT_MOVIES_BY_ACTOR_NAME, params,
+				new RowMapper<Movie>() {
 
 					@Override
 					public Movie mapRow(ResultSet resultSet, int rowNum)
@@ -206,15 +219,14 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		return movies;
 	}
 
-
-
 	@Override
 	public Movie getMovieByTitleAndYear(String title, String year) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", title);
 		params.put("year", year);
 		Movie movie = _namedParameterJdbcTemplatedbcTemplate.queryForObject(
-				SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR, params, new RowMapper<Movie>() {
+				SQL_SELECT_MOVIES_BY_TITLE_AND_YEAR, params,
+				new RowMapper<Movie>() {
 
 					@Override
 					public Movie mapRow(ResultSet resultSet, int rowNum)
@@ -257,6 +269,38 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 
 				});
 		return movies;
+	}
+
+	@Override
+	public int insertPerson(Person person) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("id", person.getId());
+		params.put("first_name", person.getFirstName());
+		params.put("last_name", person.getLastName());
+		params.put("year_born", person.getYearBorn());
+		return _namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_ACTOR, params);
+	}
+
+	@Override
+	public int insertMovie(Movie movie) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("title", movie.getTitle());
+		params.put("year", movie.getProductionYear());
+		params.put("country", movie.getCountry());
+		params.put("run_time", movie.getRunTime());
+		params.put("major_genre", movie.getMajorGenre());
+		return _namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_MOVIE, params);
+	}
+
+	@Override
+	public int insertRole(Role role) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("id", role.getId());
+		params.put("title", role.getTitle());
+		params.put("year", role.getProductionYear());
+		params.put("description", role.getDescription());
+		params.put("credits", role.getCredits());
+		return _namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_ROLE, params);
 	}
 
 }
