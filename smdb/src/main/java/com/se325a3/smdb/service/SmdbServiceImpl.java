@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.se325a3.smdb.dao.SmdbDao;
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
+import com.se325a3.smdb.model.Role;
 
 @Service
 public class SmdbServiceImpl implements SmdbService {
@@ -67,6 +68,22 @@ public class SmdbServiceImpl implements SmdbService {
 	public Collection<Movie> getMoviesByActorID(String id) {
 		List<Movie> movies = _smdbDao.getMoviesByActorID(id);
 		return movies;
+	}
+
+	@Override
+	public int insertPerson(Person person) {
+		return _smdbDao.insertPerson(person);
+	}
+
+	@Override
+	public int insertMovie(Movie movie) {
+		return _smdbDao.insertMovie(movie);
+	}
+
+	@Override
+	public int insertRole(Role role) {
+		// TODO Auto-generated method stub
+		return _smdbDao.insertRole(role);
 	}
 
 }

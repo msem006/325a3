@@ -1,10 +1,10 @@
 package com.se325a3.smdb.service;
 
 import java.util.Collection;
-import java.util.List;
 
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
+import com.se325a3.smdb.model.Role;
 
 public interface SmdbService {
 
@@ -16,4 +16,7 @@ public interface SmdbService {
 	public Collection<Movie> getMoviesByActorName(String name);
 	public Movie getMovieByTitleAndYear(String title, String year);
 	public Collection<Movie> getMoviesByActorID(String id);
+	int insertPerson(Person person);
+	int insertMovie(Movie movie);
+	int insertRole(Role role);
 }

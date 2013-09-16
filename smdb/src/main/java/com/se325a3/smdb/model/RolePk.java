@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 @Embeddable
 public class RolePk implements Serializable {
@@ -14,6 +15,11 @@ public class RolePk implements Serializable {
 	private Person person;
 
 	private Movie movie;
+	
+	public RolePk() {
+		this.person = new Person();
+		this.movie = new Movie();
+	}
 	
 	@ManyToOne
 	public Person getPerson() {

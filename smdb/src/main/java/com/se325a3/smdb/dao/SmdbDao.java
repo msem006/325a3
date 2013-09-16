@@ -13,4 +13,7 @@ public interface SmdbDao {
 	List<Movie> getMoviesByActorName(String name);
 	Movie getMovieByTitleAndYear(String title, String year);
 	List<Movie> getMoviesByActorID(String id);
+	int insertPerson(Person person);
+	int insertMovie(Movie movie);
+	int insertRole(Role role);
 }

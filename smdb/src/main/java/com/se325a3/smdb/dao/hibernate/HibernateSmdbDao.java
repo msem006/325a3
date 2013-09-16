@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.se325a3.smdb.dao.SmdbDao;
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
+import com.se325a3.smdb.model.Role;
 
 @Repository
 public class HibernateSmdbDao implements SmdbDao {
@@ -117,6 +118,40 @@ public class HibernateSmdbDao implements SmdbDao {
 		return (List<Movie>) query.list();
 	}
 
+	@Override
+	@Transactional
+	public int insertPerson(Person person) {
+		getCurrentSession().save(person);
+		getCurrentSession().flush();
+		return 1;
+	}
+
+	@Override
+	@Transactional
+	public int insertMovie(Movie movie) {
+		getCurrentSession().save(movie);
+		getCurrentSession().flush();
+		return 1;
+	}
+
+	@Override
+	@Transactional
+	public int insertRole(Role role) {
+		Person person = (Person) getCurrentSession().get(Person.class, role.getId());
+		
+		Query mQuery = getCurrentSession().createQuery(
+				HQL_SELECT_MOVIES_BY_TITLE_AND_YEAR);
+		mQuery.setParameter("title", role.getTitle());
+		mQuery.setParameter("production_year", role.getProductionYear());
+		Movie movie = (Movie) mQuery.uniqueResult();
+		
+		role.setPerson(person);
+		role.setMovie(movie);
+		getCurrentSession().save(role);
+		getCurrentSession().flush();
+		return 1;
+	}
+	
 	protected final Session getCurrentSession() {
 		return _sessionFactory.getCurrentSession();
 	}
