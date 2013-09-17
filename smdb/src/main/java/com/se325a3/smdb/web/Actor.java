@@ -1,16 +1,16 @@
 package com.se325a3.smdb.web;
 
 public class Actor {
-	private String id;
+	private Integer id;
 	private String first_name;
 	private String last_name;
 	private int year_born;
 	private String title;
 	private int production_year;
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getFirst_name() {

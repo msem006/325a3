@@ -20,7 +20,7 @@ public class Role {
 
 	private RolePk rolePk;
 
-	private String id;
+	private Integer id;
 
 	private String credits;
 
@@ -83,7 +83,7 @@ public class Role {
 	}
 
 	@Column(name = "id", insertable = false, updatable = false)
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -92,7 +92,7 @@ public class Role {
 		return credits;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

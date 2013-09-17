@@ -1,6 +1,8 @@
 package com.se325a3.smdb.dao.hibernate;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -16,8 +18,8 @@ import com.se325a3.smdb.model.Role;
 
 @Repository
 public class HibernateSmdbDao implements SmdbDao {
-
-	private static final String HQL_SELECT_ACTORS_BY_ID = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND p.id = :id";
+	
+	private static final String HQL_SELECT_ACTOR_BY_ID = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND p.id = :id";
 
 	private static final String HQL_SELECT_ACTORS_BY_NAME = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND str(p.first_name) LIKE :name";
 
@@ -31,7 +33,7 @@ public class HibernateSmdbDao implements SmdbDao {
 	private static final String HQL_SELECT_MOVIES_BY_ACTOR_NAME = "SELECT DISTINCT m FROM Person p, Role r, Movie m WHERE p.id = r.id "
 			+ "AND r.rolePk.movie.moviePk.productionYear = m.moviePk.productionYear AND r.title = m.moviePk.title AND str(p.first_name) LIKE :name";
 
-	private static final String HQL_SELECT_MOVIES_BY_TITLE_AND_YEAR = "SELECT DISTINCT m FROM Movie m WHERE m.moviePk.title = :title AND m.moviePk.productionYear = :production_year";
+	private static final String HQL_SELECT_MOVIE_BY_TITLE_AND_YEAR = "SELECT DISTINCT m FROM Movie m WHERE m.moviePk.title = :title AND m.moviePk.productionYear = :production_year";
 
 	private static final String HQL_SELECT_MOVIES_BY_ACTOR_ID = "SELECT DISTINCT m FROM Person p, Role r, Movie m "
 			+ "WHERE p.id = r.id AND r.title = m.moviePk.title AND r.rolePk.movie.moviePk.productionYear = m.moviePk.productionYear "
@@ -46,9 +48,15 @@ public class HibernateSmdbDao implements SmdbDao {
 
 	@Override
 	@Transactional
-	public Person getActorById(String id) {
+	public Person getPersonById(int id) {
+		return (Person) getCurrentSession().get(Person.class, id);
+	}
+	
+	@Override
+	@Transactional
+	public Person getActorById(int id) {
 		Query query = getCurrentSession().createQuery(
-				HQL_SELECT_ACTORS_BY_ID);
+				HQL_SELECT_ACTOR_BY_ID);
 		query.setParameter("id", id);
 		return (Person) query.uniqueResult();
 	}
@@ -103,7 +111,7 @@ public class HibernateSmdbDao implements SmdbDao {
 	@Transactional
 	public Movie getMovieByTitleAndYear(String title, String year) {
 		Query query = getCurrentSession().createQuery(
-				HQL_SELECT_MOVIES_BY_TITLE_AND_YEAR);
+				HQL_SELECT_MOVIE_BY_TITLE_AND_YEAR);
 		query.setParameter("title", title);
 		query.setParameter("production_year", Integer.parseInt(year));
 		return (Movie) query.uniqueResult();
@@ -111,7 +119,7 @@ public class HibernateSmdbDao implements SmdbDao {
 
 	@Override
 	@Transactional
-	public List<Movie> getMoviesByActorID(String id) {
+	public List<Movie> getMoviesByActorID(int id) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_MOVIES_BY_ACTOR_ID);
 		query.setParameter("id", id);
@@ -121,35 +129,41 @@ public class HibernateSmdbDao implements SmdbDao {
 	@Override
 	@Transactional
 	public int insertPerson(Person person) {
-		getCurrentSession().save(person);
-		getCurrentSession().flush();
-		return 1;
+		Person updatedPerson = (Person) getCurrentSession().merge(person);
+		return updatedPerson.getId();
 	}
 
 	@Override
 	@Transactional
-	public int insertMovie(Movie movie) {
-		getCurrentSession().save(movie);
-		getCurrentSession().flush();
-		return 1;
+	public Map<String, Object> insertMovie(Movie movie) {
+		Movie updatedMovie = (Movie) getCurrentSession().merge(movie);
+		Map<String, Object> key = new HashMap<String, Object>();
+		key.put("title", updatedMovie.getTitle());
+		key.put("production_year", updatedMovie.getProduction_year());
+		return key;
 	}
 
 	@Override
 	@Transactional
-	public int insertRole(Role role) {
+	public Map<String, Object> insertRole(Role role) {
 		Person person = (Person) getCurrentSession().get(Person.class, role.getId());
 		
 		Query mQuery = getCurrentSession().createQuery(
-				HQL_SELECT_MOVIES_BY_TITLE_AND_YEAR);
+				HQL_SELECT_MOVIE_BY_TITLE_AND_YEAR);
 		mQuery.setParameter("title", role.getTitle());
 		mQuery.setParameter("production_year", role.getProduction_year());
 		Movie movie = (Movie) mQuery.uniqueResult();
 		
 		role.setPerson(person);
 		role.setMovie(movie);
-		getCurrentSession().save(role);
-		getCurrentSession().flush();
-		return 1;
+		Role updatedRole = (Role) getCurrentSession().merge(role);
+		
+		Map<String, Object> key = new HashMap<String, Object>();
+		key.put("title", updatedRole.getTitle());
+		key.put("production_year", updatedRole.getProduction_year());
+		key.put("description", updatedRole.getDescription());
+		
+		return key;
 	}
 	
 	protected final Session getCurrentSession() {
