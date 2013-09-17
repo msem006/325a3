@@ -37,15 +37,6 @@ public class Movie {
 	public void setMoviePk(MoviePk moviePk) {
 		this.moviePk = moviePk;
 	}
-	
-	/*@Column(name = "production_year", insertable = false, updatable = false)
-	public int getProductionYear() {
-		return moviePk.getProductionYear();
-	}
-
-	public void setProductionYear(int productionYear) {
-		moviePk.setProductionYear(productionYear);
-	}*/
 
 	@Column(name = "title", insertable = false, updatable = false)
 	public String getTitle() {
@@ -64,24 +55,6 @@ public class Movie {
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
-	/*@Column(name = "major_genre")
-	public String getMajorGenre() {
-		return major_genre;
-	}
-
-	public void setMajorGenre(String majorGenre) {
-		this.major_genre = majorGenre;
-	}
-
-	@Column(name = "run_time")
-	public int getRunTime() {
-		return run_time;
-	}
-
-	public void setRunTime(int runTime) {
-		this.run_time = runTime;
-	}*/
 
 	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy = "rolePk.movie")
 	public Set<Role> getActors() {
@@ -116,7 +89,6 @@ public class Movie {
 			return false;
 		return true;
 	}
-	
 	
 	// Getters and setters for form and controller
 	@Column(name = "production_year", insertable = false, updatable = false)

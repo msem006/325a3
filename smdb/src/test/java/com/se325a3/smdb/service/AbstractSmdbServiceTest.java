@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -146,5 +147,17 @@ public abstract class AbstractSmdbServiceTest {
 		assertEquals(1970, actor.getYear_born());
 	}
 	
+	@Test 
+	public void testActorRoles() {
+		Person actor = _smdbService.getActorById(544);
+		Set<Role> roles = actor.getRoles();
+		assertEquals(4, roles.size());
+	}
 	
+	@Test
+	public void testMovieRoles() {
+		Movie movie = _smdbService.getMovieByTitleAndYear("Scream 3", "2000");
+		Set<Role> actors = movie.getActors();
+		assertEquals(6, actors.size());
+	}
 }
