@@ -22,16 +22,16 @@ public abstract class AbstractSmdbServiceTest {
 	@Test 
 	public void testGetActorByID() {
 		Person actor = _smdbService.getActorById("00001001");
-		assertTrue(actor.getFirstName().startsWith("James"));
+		assertTrue(actor.getFirst_name().startsWith("James"));
 	}
 	
 	@Test
 	public void testGetActorsByName() {
 		Collection<Person> persons = _smdbService.getActorsByName("James");
 		for (Person person : persons) {
-			System.out.println(person.getFirstName() + " "
-					+ person.getLastName() + " " + person.getId() + " "
-					+ person.getYearBorn());
+			System.out.println(person.getFirst_name() + " "
+					+ person.getLast_name() + " " + person.getId() + " "
+					+ person.getYear_born());
 		}
 		assertEquals(2, persons.size());
 	}
@@ -64,7 +64,7 @@ public abstract class AbstractSmdbServiceTest {
 	public void testGetMovieByTitleAndYear() {
 		Movie movie = _smdbService.getMovieByTitleAndYear("Titanic", "1997");
 		assertTrue(movie.getTitle().startsWith("Titanic"));
-		assertEquals(1997, movie.getProductionYear());
+		assertEquals(1997, movie.getProduction_year());
 	}
 	
 	@Test
@@ -77,9 +77,9 @@ public abstract class AbstractSmdbServiceTest {
 	public void testInsertPerson() {
 		Person person = new Person();
 		person.setId("10000001");
-		person.setFirstName("Matt");
-		person.setLastName("Damon");
-		person.setYearBorn(1970);
+		person.setFirst_name("Matt");
+		person.setLast_name("Damon");
+		person.setYear_born(1970);
 		int rowsAffected = _smdbService.insertPerson(person);
 		assertEquals(1, rowsAffected);
 	}
@@ -88,10 +88,10 @@ public abstract class AbstractSmdbServiceTest {
 	public void testInsertMovie() {
 		Movie movie = new Movie();
 		movie.setTitle("The Bourne Identity");
-		movie.setProductionYear(2002);
+		movie.setProduction_year(2002);
 		movie.setCountry("USA");
-		movie.setRunTime(119);
-		movie.setMajorGenre("Action");
+		movie.setRun_time(119);
+		movie.setMajor_genre("Action");
 		int rowsAffected = _smdbService.insertMovie(movie);
 		assertEquals(1, rowsAffected);
 	}
@@ -101,34 +101,34 @@ public abstract class AbstractSmdbServiceTest {
 		
 		Person person = new Person();
 		person.setId("10000001");
-		person.setFirstName("Matt");
-		person.setLastName("Damon");
-		person.setYearBorn(1970);
+		person.setFirst_name("Matt");
+		person.setLast_name("Damon");
+		person.setYear_born(1970);
 		int pRowsAffected = _smdbService.insertPerson(person);
 		assertEquals(1, pRowsAffected);
 		
 		Movie movie = new Movie();
 		movie.setTitle("The Bourne Identity");
-		movie.setProductionYear(2002);
+		movie.setProduction_year(2002);
 		movie.setCountry("USA");
-		movie.setRunTime(119);
-		movie.setMajorGenre("Action");
+		movie.setRun_time(119);
+		movie.setMajor_genre("Action");
 		int mRowsAffected = _smdbService.insertMovie(movie);
 		assertEquals(1, mRowsAffected);
 		
 		Role role = new Role();
 		role.setId("10000001");
 		role.setTitle("The Bourne Identity");
-		role.setProductionYear(2002);
+		role.setProduction_year(2002);
 		role.setDescription("Jason Bourne");
 		role.setCredits("");
 		int rRowsAffected = _smdbService.insertRole(role);
 		assertEquals(1, rRowsAffected);
 		
 		Person actor = _smdbService.getActorById("10000001");
-		assertTrue(actor.getFirstName().startsWith("Matt"));
-		assertTrue(actor.getLastName().startsWith("Damon"));
-		assertEquals(1970, actor.getYearBorn());
+		assertTrue(actor.getFirst_name().startsWith("Matt"));
+		assertTrue(actor.getLast_name().startsWith("Damon"));
+		assertEquals(1970, actor.getYear_born());
 	}
 	
 	
