@@ -64,7 +64,7 @@ public class SearchQueryController {
 	    }
 	    System.out.println(movieList.size() + personList.size());
 
-
+	    modelAndView.addObject("query", query.getQuery());
 	    modelAndView.addObject("movieList", movieList);  
 	    modelAndView.addObject("personList", personList);
 	    modelAndView.addObject("searchQuery", new SearchQuery());

@@ -64,7 +64,7 @@
 		</form:form>
 	</div>
 	<c:if test="${not empty movie.getTitle()}" >
-		<div>
+		<div class="result success">
 			The movie has been added successfully. View it <a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'>here</a>
 		</div>
 	</c:if>

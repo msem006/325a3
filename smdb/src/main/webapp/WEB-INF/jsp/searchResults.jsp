@@ -63,7 +63,7 @@
 		<input type="submit" id="submit" value="Search"/>
 		</form:form>
 </div>
-<h2>Search Results</h2>
+<h2>Search Results for "<c:out value="${query}" />"</h2>
 <h3>Movies</h3>
 <div id"sResult">
 	<c:forEach items="${movieList}" var="movie">

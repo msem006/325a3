@@ -63,8 +63,13 @@
 			<input type="submit" id="submit" value="Search"/>
 		</form:form>
 	</div>
+	<c:if test="${not empty error}" >
+		<div class="result error">
+			<c:out value="${error}"/>
+		</div>
+	</c:if>
 	<c:if test="${not empty person.getId()}" >
-		<div>
+		<div class="result success">
 			Actor successfully added. View the actor <a href='actor?id=<c:out value="${person.getId()}"/>'>here</a>
 		</div>
 	</c:if>

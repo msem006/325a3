@@ -119,24 +119,31 @@ public class AdminController {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addActor");
 	    	if (actor.getFirst_name() != null) {
-	    		// Add actor to database
-
-	    		Person person = new Person();
-	    		person.setId(actor.getId());
-	    		person.setFirst_name(actor.getFirst_name());
-	    		person.setLast_name(actor.getLast_name());
-	    		person.setYear_born(actor.getYear_born());
-	    		_smdbService.insertPerson(person);
 	    		
-	    		Role role = new Role();
-	    		role.setId(actor.getId());
-	    		role.setTitle(actor.getTitle());
-	    		role.setProduction_year(actor.getProduction_year());
-	    		role.setDescription("");
-	    		role.setCredits("");
-	    		
-	    		_smdbService.insertRole(role);
-	    		modelAndView.addObject("person", actor);
+	    		Movie movie = _smdbService.getMovieByTitleAndYear(actor.getTitle(), String.valueOf(actor.getProduction_year()));
+	    		if (movie != null) {
+		    		// Add actor to database
+		    		
+	
+		    		Person person = new Person();
+		    		person.setId(actor.getId());
+		    		person.setFirst_name(actor.getFirst_name());
+		    		person.setLast_name(actor.getLast_name());
+		    		person.setYear_born(actor.getYear_born());
+		    		_smdbService.insertPerson(person);
+		    		
+		    		Role role = new Role();
+		    		role.setId(actor.getId());
+		    		role.setTitle(actor.getTitle());
+		    		role.setProduction_year(actor.getProduction_year());
+		    		role.setDescription("");
+		    		role.setCredits("");
+		    		
+		    		_smdbService.insertRole(role);
+		    		modelAndView.addObject("person", actor);
+	    		} else {
+	    			modelAndView.addObject("error", "Movie does not exist");
+	    		}
 	    	}
 	    	
 		    modelAndView.addObject("addActor", new Actor());

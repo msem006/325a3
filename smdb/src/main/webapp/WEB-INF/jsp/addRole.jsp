@@ -64,7 +64,7 @@
 		</form:form>
 	</div>
 	<c:if test="${not empty role.getTitle()}" >
-		<div>
+		<div class="result success">
 			The <a href='actor?id=<c:out value="${role.getId()}"/>'>actor</a> has been successfully added to the <a href='movie?title=<c:out value="${role.getTitle()}"/>&year=<c:out value="${role.getProduction_year()}"/>'>movie</a>
 		</div>
 	</c:if>
