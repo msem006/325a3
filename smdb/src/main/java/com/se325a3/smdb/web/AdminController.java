@@ -112,49 +112,34 @@ public class AdminController {
 	    	return new ModelAndView("redirect:/login");	
 	    }
 	}
-
-
-	@RequestMapping(value="/addData")  
-	public ModelAndView newMovie(@CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
-	    ModelAndView modelAndView = new ModelAndView();  
-	    //modelAndView.setViewName("newMovie");
-	    if ((cookie != null) && (cookie.equals(cookiedata))) {
-
-	    	//insertMovie
-	    	//insertPerson
-	    	//insertRole
-		    //modelAndView.addObject("searchQuery", new SearchQuery());
-	    	
-		    // Check cookies for login
-		    if ((cookie != null) && (cookie.equals(cookiedata))) {
-		    	modelAndView.addObject("user", adminUser);
-		    }
-		    return modelAndView;  
-	    
-	    } else {
-	    	return new ModelAndView("redirect:/login");
-	    }
-	}
-	
-	
 	
 	@RequestMapping(value={"/addActor"})  
-	public ModelAndView addActor(@ModelAttribute Person actor, @CookieValue(value="SMDB-COOKIE", required = false) String cookie, HttpServletResponse response) {
+	public ModelAndView addActor(@ModelAttribute Actor actor, @CookieValue(value="SMDB-COOKIE", required = false) String cookie, HttpServletResponse response) {
 	    if ((cookie != null) && (cookie.equals(cookiedata))) {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addActor");
 	    	if (actor.getFirst_name() != null) {
 	    		// Add actor to database
-	    		System.out.println(actor.getId());
-	    		System.out.println(actor.getFirst_name());
-	    		System.out.println(actor.getLast_name());
-	    		System.out.println(actor.getYear_born());
-	    		// TODO
-	    		_smdbService.insertPerson(actor); // THIS IS BREAKING
+
+	    		Person person = new Person();
+	    		person.setId(actor.getId());
+	    		person.setFirst_name(actor.getFirst_name());
+	    		person.setLast_name(actor.getLast_name());
+	    		person.setYear_born(actor.getYear_born());
+	    		_smdbService.insertPerson(person);
+	    		
+	    		Role role = new Role();
+	    		role.setId(actor.getId());
+	    		role.setTitle(actor.getTitle());
+	    		role.setProduction_year(actor.getProduction_year());
+	    		role.setDescription("");
+	    		role.setCredits("");
+	    		
+	    		_smdbService.insertRole(role);
 	    		modelAndView.addObject("person", actor);
 	    	}
 	    	
-		    modelAndView.addObject("addActor", new Person());
+		    modelAndView.addObject("addActor", new Actor());
 		    
 		    // Check cookies for login
 		    if ((cookie != null) && (cookie.equals(cookiedata))) {

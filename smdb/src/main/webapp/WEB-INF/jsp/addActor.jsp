@@ -82,6 +82,13 @@
 
 		<form:label path="year_born">Year Born</form:label>
 		<form:input path="year_born" type="text" />
+
+		<form:label path="title">Movie Title</form:label>
+		<form:input path="title" type="text" />
+
+		<form:label path="production_year">Production Year</form:label>
+		<form:input path="production_year" type="text" />
+
 		<input type="submit" value="Add"/>
 		</form:form>
 	</div>
