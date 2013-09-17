@@ -29,11 +29,6 @@ public abstract class AbstractSmdbServiceTest {
 	@Test
 	public void testGetActorsByName() {
 		Collection<Person> persons = _smdbService.getActorsByName("James");
-		for (Person person : persons) {
-			System.out.println(person.getFirstName() + " "
-					+ person.getLastName() + " " + person.getId() + " "
-					+ person.getYearBorn());
-		}
 		assertEquals(2, persons.size());
 	}
 	
@@ -84,6 +79,27 @@ public abstract class AbstractSmdbServiceTest {
 		Person person1 = _smdbService.getPersonById(genId);
 		assertEquals("Matt", person1.getFirstName());
 		assertEquals("Damon", person1.getLastName());
+	}
+	
+	@Test
+	public void testInsertTwoPersonSetId() {
+		Person person1 = new Person();
+		person1.setFirstName("Matt");
+		person1.setLastName("Damon");
+		person1.setYearBorn(1970);
+		int genId1 = _smdbService.insertPerson(person1);
+		Person rPerson1 = _smdbService.getPersonById(genId1);
+		assertEquals("Matt", rPerson1.getFirstName());
+		assertEquals("Damon", rPerson1.getLastName());
+		
+		Person person2 = new Person();
+		person2.setFirstName("Vin");
+		person2.setLastName("Diesel");
+		person2.setYearBorn(1967);
+		int genId2 = _smdbService.insertPerson(person2);
+		Person rPerson2 = _smdbService.getPersonById(genId2);
+		assertEquals("Vin", rPerson2.getFirstName());
+		assertEquals("Diesel", rPerson2.getLastName());
 	}
 	
 	@Test
