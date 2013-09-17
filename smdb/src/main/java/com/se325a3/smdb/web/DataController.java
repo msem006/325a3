@@ -47,7 +47,7 @@ public class DataController {
 	}
 	
 	@RequestMapping(value={"", "/index", "/search"})  
-	public ModelAndView index(@ModelAttribute SearchQuery query, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {
+	public ModelAndView index(@CookieValue(value="SMDB-COOKIE", required = false) String cookie) {
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("index");
 	    
@@ -62,7 +62,7 @@ public class DataController {
 	}
 	
 	@RequestMapping(value="/movie", method = RequestMethod.GET)  
-	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam String title, @RequestParam String year, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
+	public ModelAndView movie(@RequestParam String title, @RequestParam String year, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("movie");
 
@@ -77,7 +77,7 @@ public class DataController {
 		    		_smdbService.getActorsByMovieTitleAndYear(title, year);
 		    
 		    for (Person person : personList) {
-		    	System.out.println(person.getFirstName() + " " + person.getLastName());
+		    	System.out.println(person.getFirst_name() + " " + person.getFirst_name());
 		    }
 		    
 	    	modelAndView.addObject("movie", movie);
@@ -94,7 +94,7 @@ public class DataController {
 	}
 	
 	@RequestMapping(value="/actor", method = RequestMethod.GET)  
-	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam String id, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
+	public ModelAndView movie(@RequestParam String id, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("actor");
 

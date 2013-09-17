@@ -65,12 +65,12 @@ public class Role {
 	}
 
 	@Column(name = "production_year", insertable = false, updatable = false)
-	public int getProductionYear() {
-		return rolePk.getMovie().getProductionYear();
+	public int getProduction_year() {
+		return rolePk.getMovie().getProduction_year();
 	}
 
-	public void setProductionYear(int productionYear) {
-		rolePk.getMovie().setProductionYear(productionYear);
+	public void setProduction_year(int productionYear) {
+		rolePk.getMovie().setProduction_year(productionYear);
 	}
 
 	@Column(name = "description", insertable = false, updatable = false)

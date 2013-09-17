@@ -82,9 +82,9 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Person person = new Person();
 
 						person.setId(resultSet.getString(1));
-						person.setFirstName(resultSet.getString(2));
-						person.setLastName(resultSet.getString(3));
-						person.setYearBorn(resultSet.getInt(4));
+						person.setFirst_name(resultSet.getString(2));
+						person.setLast_name(resultSet.getString(3));
+						person.setYear_born(resultSet.getInt(4));
 
 						return person;
 					}
@@ -106,9 +106,9 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Person person = new Person();
 
 						person.setId(resultSet.getString(1));
-						person.setFirstName(resultSet.getString(2));
-						person.setLastName(resultSet.getString(3));
-						person.setYearBorn(resultSet.getInt(4));
+						person.setFirst_name(resultSet.getString(2));
+						person.setLast_name(resultSet.getString(3));
+						person.setYear_born(resultSet.getInt(4));
 
 						return person;
 					}
@@ -131,9 +131,9 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Person person = new Person();
 
 						person.setId(resultSet.getString(1));
-						person.setFirstName(resultSet.getString(2));
-						person.setLastName(resultSet.getString(3));
-						person.setYearBorn(resultSet.getInt(4));
+						person.setFirst_name(resultSet.getString(2));
+						person.setLast_name(resultSet.getString(3));
+						person.setYear_born(resultSet.getInt(4));
 
 						return person;
 					}
@@ -157,9 +157,9 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Person person = new Person();
 
 						person.setId(resultSet.getString(1));
-						person.setFirstName(resultSet.getString(2));
-						person.setLastName(resultSet.getString(3));
-						person.setYearBorn(resultSet.getInt(4));
+						person.setFirst_name(resultSet.getString(2));
+						person.setLast_name(resultSet.getString(3));
+						person.setYear_born(resultSet.getInt(4));
 
 						return person;
 					}
@@ -181,10 +181,10 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Movie movie = new Movie();
 
 						movie.setTitle(resultSet.getString(1));
-						movie.setProductionYear(resultSet.getInt(2));
+						movie.setProduction_year(resultSet.getInt(2));
 						movie.setCountry(resultSet.getString(3));
-						movie.setRunTime(resultSet.getInt(4));
-						movie.setMajorGenre(resultSet.getString(5));
+						movie.setRun_time(resultSet.getInt(4));
+						movie.setMajor_genre(resultSet.getString(5));
 
 						return movie;
 					}
@@ -207,10 +207,10 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Movie movie = new Movie();
 
 						movie.setTitle(resultSet.getString(1));
-						movie.setProductionYear(resultSet.getInt(2));
+						movie.setProduction_year(resultSet.getInt(2));
 						movie.setCountry(resultSet.getString(3));
-						movie.setRunTime(resultSet.getInt(4));
-						movie.setMajorGenre(resultSet.getString(5));
+						movie.setRun_time(resultSet.getInt(4));
+						movie.setMajor_genre(resultSet.getString(5));
 
 						return movie;
 					}
@@ -234,10 +234,10 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Movie movie = new Movie();
 
 						movie.setTitle(resultSet.getString(1));
-						movie.setProductionYear(resultSet.getInt(2));
+						movie.setProduction_year(resultSet.getInt(2));
 						movie.setCountry(resultSet.getString(3));
-						movie.setRunTime(resultSet.getInt(4));
-						movie.setMajorGenre(resultSet.getString(5));
+						movie.setRun_time(resultSet.getInt(4));
+						movie.setMajor_genre(resultSet.getString(5));
 
 						return movie;
 					}
@@ -259,10 +259,10 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 						Movie movie = new Movie();
 
 						movie.setTitle(resultSet.getString(1));
-						movie.setProductionYear(resultSet.getInt(2));
+						movie.setProduction_year(resultSet.getInt(2));
 						movie.setCountry(resultSet.getString(3));
-						movie.setRunTime(resultSet.getInt(4));
-						movie.setMajorGenre(resultSet.getString(5));
+						movie.setRun_time(resultSet.getInt(4));
+						movie.setMajor_genre(resultSet.getString(5));
 
 						return movie;
 					}
@@ -275,9 +275,9 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 	public int insertPerson(Person person) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("id", person.getId());
-		params.put("first_name", person.getFirstName());
-		params.put("last_name", person.getLastName());
-		params.put("year_born", person.getYearBorn());
+		params.put("first_name", person.getFirst_name());
+		params.put("last_name", person.getLast_name());
+		params.put("year_born", person.getYear_born());
 		return _namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_ACTOR, params);
 	}
 
@@ -285,10 +285,10 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 	public int insertMovie(Movie movie) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", movie.getTitle());
-		params.put("year", movie.getProductionYear());
+		params.put("year", movie.getProduction_year());
 		params.put("country", movie.getCountry());
-		params.put("run_time", movie.getRunTime());
-		params.put("major_genre", movie.getMajorGenre());
+		params.put("run_time", movie.getRun_time());
+		params.put("major_genre", movie.getMajor_genre());
 		return _namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_MOVIE, params);
 	}
 
@@ -297,7 +297,7 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("id", role.getId());
 		params.put("title", role.getTitle());
-		params.put("year", role.getProductionYear());
+		params.put("year", role.getProduction_year());
 		params.put("description", role.getDescription());
 		params.put("credits", role.getCredits());
 		return _namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_ROLE, params);

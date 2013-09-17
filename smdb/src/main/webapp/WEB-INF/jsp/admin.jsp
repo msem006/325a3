@@ -46,7 +46,7 @@
 	<!-- Top user login/info area -->
 	<c:if test="${not empty user}" >
 		<div>
-			Welcome <c:out value="${user}"/>. | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
+			Welcome <c:out value="${user}"/> | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
 		</div>
 	</c:if>
 	<c:if test="${empty user}" >
@@ -65,13 +65,18 @@
 		</form:form>
 	</div>
 
-	<div>
+	<!--<div>
 		<form:form method="post" action="addData" commandname="addData" modelAttribute="addData">
 			<form:input path="" type="text" />
 
 			<input type="submit" value="Add" />
 		</form:form>
-	</div>
+	</div>-->
+
+	<a href="addActor">Add Actor</a><br />
+	<a href="addMovie">Add Movie</a><br />
+	<a href="addRole">Add Role</a><br />
+
 
 </body>
 </html>

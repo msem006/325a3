@@ -3,6 +3,7 @@
 
 <html>
 <head>
+
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -40,7 +41,6 @@
 		}                
 	});         
 	</script>
-	<title>smdb - We have all 50 shades</title>
 </head>
 <body>
 	<!-- Top user login/info area -->
@@ -56,26 +56,37 @@
 	</c:if>
 
 	<!-- Site Content -->
-	<h1> SMDB </h1>
+	<h1>SMDB</h1>
 	<div>
-		<form:form method="post" action="searchResults" id="searchbox"commandname="searchQuery" modelAttribute="searchQuery">
-		<form:input path="query" id="search" type="text" placeholder="Type here" /> 
-		<input type="submit" id="submit" value="Search"/>
+		<form:form method="post" action="searchResults" id="searchbox" commandname="searchQuery" modelAttribute="searchQuery">
+			<form:input path="query" id="search" type="text" placeholder="Type here" />
+			<input type="submit" id="submit" value="Search"/>
 		</form:form>
-</div>
-<h2>Search Results</h2>
-<h3>Movies</h3>
-<div id"sResult">
-	<c:forEach items="${movieList}" var="movie">
-	<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a><br />
-</c:forEach></div>
-<h3>Actors</h3>
-<div id"sResult">
-	<c:forEach items="${personList}" var="person">
-	<a href='actor?id=<c:out value="${person.getId()}"/>'><c:out value="${person.getFirst_name()}"/> <c:out value="${person.getLast_name()}"/></a><br />
-</c:forEach>
-</div>
+	</div>
+	<c:if test="${not empty movie.getTitle()}" >
+		<div>
+			The movie has been added successfully. View it <a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'>here</a>
+		</div>
+	</c:if>
+	<div>
+		<form:form method="post" action="addMovie" commandname="addMovie" modelAttribute="addMovie">
+		<form:label path="title">Title</form:label>
+		<form:input path="title" type="text" />
 
+		<form:label path="production_year">Production Year</form:label>
+		<form:input path="production_year" type="text" />
 
+		<form:label path="country">Country</form:label>
+		<form:input path="country" type="text" />
+
+		<form:label path="major_genre">Major Genre</form:label>
+		<form:input path="major_genre" type="text" />
+
+		<form:label path="run_time">Run Time</form:label>
+		<form:input path="run_time" type="text" />
+
+		<input type="submit" value="Add"/>
+		</form:form>
+	</div>
 </body>
 </html>

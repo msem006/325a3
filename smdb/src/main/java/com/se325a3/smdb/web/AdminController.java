@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
+import com.se325a3.smdb.model.Role;
 import com.se325a3.smdb.service.SmdbService;
 
 @Controller
@@ -96,7 +97,7 @@ public class AdminController {
 	
 	
 	@RequestMapping(value={"/admin"})  
-	public ModelAndView admin(@ModelAttribute SearchQuery query, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {
+	public ModelAndView admin(@CookieValue(value="SMDB-COOKIE", required = false) String cookie) {
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("admin");
 	    if ((cookie != null) && (cookie.equals(cookiedata))) {
@@ -123,6 +124,7 @@ public class AdminController {
 	    	//insertPerson
 	    	//insertRole
 		    //modelAndView.addObject("searchQuery", new SearchQuery());
+	    	
 		    // Check cookies for login
 		    if ((cookie != null) && (cookie.equals(cookiedata))) {
 		    	modelAndView.addObject("user", adminUser);
@@ -131,6 +133,98 @@ public class AdminController {
 	    
 	    } else {
 	    	return new ModelAndView("redirect:/login");
+	    }
+	}
+	
+	
+	
+	@RequestMapping(value={"/addActor"})  
+	public ModelAndView addActor(@ModelAttribute Person actor, @CookieValue(value="SMDB-COOKIE", required = false) String cookie, HttpServletResponse response) {
+	    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    ModelAndView modelAndView = new ModelAndView();  
+		    modelAndView.setViewName("addActor");
+	    	if (actor.getFirst_name() != null) {
+	    		// Add actor to database
+	    		System.out.println(actor.getId());
+	    		System.out.println(actor.getFirst_name());
+	    		System.out.println(actor.getLast_name());
+	    		System.out.println(actor.getYear_born());
+	    		// TODO
+	    		_smdbService.insertPerson(actor); // THIS IS BREAKING
+	    		modelAndView.addObject("person", actor);
+	    	}
+	    	
+		    modelAndView.addObject("addActor", new Person());
+		    
+		    // Check cookies for login
+		    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    	modelAndView.addObject("user", adminUser);
+		    }
+		    modelAndView.addObject("searchQuery", new SearchQuery());
+		    // Check cookies for login
+		    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    	modelAndView.addObject("user", adminUser);
+		    }
+	    	return modelAndView;
+	    } else {
+	    	return new ModelAndView("redirect:/login");	
+	    }
+	}
+	
+	@RequestMapping(value={"/addMovie"})  
+	public ModelAndView addMovie(@ModelAttribute Movie movie, @CookieValue(value="SMDB-COOKIE", required = false) String cookie, HttpServletResponse response) {
+	    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    ModelAndView modelAndView = new ModelAndView();  
+		    modelAndView.setViewName("addMovie");
+		    if (movie.getTitle()!=null) {
+		    	// Add movie to database
+		    	_smdbService.insertMovie(movie);
+		    	//modelAndView.addObject("result", "The movie was successfully added.");
+		    	modelAndView.addObject("movie", movie);
+		    }
+		    modelAndView.addObject("addMovie", new Movie());
+		    
+		    // Check cookies for login
+		    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    	modelAndView.addObject("user", adminUser);
+		    }
+		    modelAndView.addObject("searchQuery", new SearchQuery());
+		    // Check cookies for login
+		    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    	modelAndView.addObject("user", adminUser);
+		    }
+	    	return modelAndView;
+	    } else {
+	    	return new ModelAndView("redirect:/login");	
+	    }
+	}
+	
+	
+	@RequestMapping(value={"/addRole"})  
+	public ModelAndView addRole(@ModelAttribute Role role, @CookieValue(value="SMDB-COOKIE", required = false) String cookie, HttpServletResponse response) {
+	    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    ModelAndView modelAndView = new ModelAndView();  
+		    modelAndView.setViewName("addRole");
+		    if (role.getTitle()!=null) {
+		    	// Add movie to database
+		    	_smdbService.insertRole(role);
+		    	//modelAndView.addObject("result", "The movie was successfully added.");
+		    	modelAndView.addObject("role", role);
+		    }
+		    modelAndView.addObject("addRole", new Role());
+		    
+		    // Check cookies for login
+		    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    	modelAndView.addObject("user", adminUser);
+		    }
+		    modelAndView.addObject("searchQuery", new SearchQuery());
+		    // Check cookies for login
+		    if ((cookie != null) && (cookie.equals(cookiedata))) {
+		    	modelAndView.addObject("user", adminUser);
+		    }
+	    	return modelAndView;
+	    } else {
+	    	return new ModelAndView("redirect:/login");	
 	    }
 	}
 	

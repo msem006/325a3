@@ -142,7 +142,7 @@ public class HibernateSmdbDao implements SmdbDao {
 		Query mQuery = getCurrentSession().createQuery(
 				HQL_SELECT_MOVIES_BY_TITLE_AND_YEAR);
 		mQuery.setParameter("title", role.getTitle());
-		mQuery.setParameter("production_year", role.getProductionYear());
+		mQuery.setParameter("production_year", role.getProduction_year());
 		Movie movie = (Movie) mQuery.uniqueResult();
 		
 		role.setPerson(person);

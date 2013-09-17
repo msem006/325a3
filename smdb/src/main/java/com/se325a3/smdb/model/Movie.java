@@ -38,14 +38,14 @@ public class Movie {
 		this.moviePk = moviePk;
 	}
 	
-	@Column(name = "production_year", insertable = false, updatable = false)
+	/*@Column(name = "production_year", insertable = false, updatable = false)
 	public int getProductionYear() {
 		return moviePk.getProductionYear();
 	}
 
 	public void setProductionYear(int productionYear) {
 		moviePk.setProductionYear(productionYear);
-	}
+	}*/
 
 	@Column(name = "title", insertable = false, updatable = false)
 	public String getTitle() {
@@ -65,7 +65,7 @@ public class Movie {
 		this.country = country;
 	}
 
-	@Column(name = "major_genre")
+	/*@Column(name = "major_genre")
 	public String getMajorGenre() {
 		return major_genre;
 	}
@@ -81,7 +81,7 @@ public class Movie {
 
 	public void setRunTime(int runTime) {
 		this.run_time = runTime;
-	}
+	}*/
 
 	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy = "rolePk.movie")
 	public Set<Role> getActors() {
@@ -116,4 +116,35 @@ public class Movie {
 			return false;
 		return true;
 	}
+	
+	
+	// Getters and setters for form and controller
+	@Column(name = "production_year", insertable = false, updatable = false)
+	public int getProduction_year() {
+		return moviePk.getProductionYear();
+	}
+
+	public void setProduction_year(int productionYear) {
+		moviePk.setProductionYear(productionYear);
+	}
+	
+	@Column(name = "major_genre")
+	public String getMajor_genre() {
+		return major_genre;
+	}
+
+	public void setMajor_genre(String majorGenre) {
+		this.major_genre = majorGenre;
+	}
+	
+	@Column(name = "run_time")
+	public int getRun_time() {
+		return run_time;
+	}
+
+	public void setRun_time(int runTime) {
+		this.run_time = runTime;
+	}
+
+
 }

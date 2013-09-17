@@ -3,6 +3,7 @@
 
 <html>
 <head>
+
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -40,7 +41,6 @@
 		}                
 	});         
 	</script>
-	<title>smdb - We have all 50 shades</title>
 </head>
 <body>
 	<!-- Top user login/info area -->
@@ -56,26 +56,34 @@
 	</c:if>
 
 	<!-- Site Content -->
-	<h1> SMDB </h1>
+	<h1>SMDB</h1>
 	<div>
-		<form:form method="post" action="searchResults" id="searchbox"commandname="searchQuery" modelAttribute="searchQuery">
-		<form:input path="query" id="search" type="text" placeholder="Type here" /> 
-		<input type="submit" id="submit" value="Search"/>
+		<form:form method="post" action="searchResults" id="searchbox" commandname="searchQuery" modelAttribute="searchQuery">
+			<form:input path="query" id="search" type="text" placeholder="Type here" />
+			<input type="submit" id="submit" value="Search"/>
 		</form:form>
-</div>
-<h2>Search Results</h2>
-<h3>Movies</h3>
-<div id"sResult">
-	<c:forEach items="${movieList}" var="movie">
-	<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a><br />
-</c:forEach></div>
-<h3>Actors</h3>
-<div id"sResult">
-	<c:forEach items="${personList}" var="person">
-	<a href='actor?id=<c:out value="${person.getId()}"/>'><c:out value="${person.getFirst_name()}"/> <c:out value="${person.getLast_name()}"/></a><br />
-</c:forEach>
-</div>
+	</div>
+	<c:if test="${not empty person.getId()}" >
+		<div>
+			Actor successfully added. View the actor <a href='actor?id=<c:out value="${person.getId()}"/>'>here</a>
+		</div>
+	</c:if>
+	<div>
+		<form:form method="post" action="addActor" commandname="addActor" modelAttribute="addActor">
 
+		<form:label path="id">Id</form:label>
+		<form:input path="id" type="text" />
 
+		<form:label path="first_name">First Name</form:label>
+		<form:input path="first_name" type="text" />
+
+		<form:label path="last_name">Last Name</form:label>
+		<form:input path="last_name" type="text" />
+
+		<form:label path="year_born">Year Born</form:label>
+		<form:input path="year_born" type="text" />
+		<input type="submit" value="Add"/>
+		</form:form>
+	</div>
 </body>
 </html>

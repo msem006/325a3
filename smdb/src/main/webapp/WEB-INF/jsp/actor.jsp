@@ -46,7 +46,7 @@
 	<!-- Top user login/info area -->
 	<c:if test="${not empty user}" >
 		<div>
-			Welcome <c:out value="${user}"/>. | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
+			Welcome <c:out value="${user}"/> | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
 		</div>
 	</c:if>
 	<c:if test="${empty user}" >
@@ -65,14 +65,14 @@
 </div>
 <h2> Actor Info </h2>
 
-<div id="name"> <c:out value="${actor.getFirstName()}"/> <c:out value="${actor.getLastName()}"/> </div>
-<div id="dob"> <c:out value="${actor.getYearBorn()}"/> </div>
+<div id="name"> <c:out value="${actor.getFirst_name()}"/> <c:out value="${actor.getLast_name()}"/> </div>
+<div id="dob"> <c:out value="${actor.getYear_born()}"/> </div>
 
 <h3>Filmography</h3>
 
 <div id="movie">
 	<c:forEach items="${movieList}" var="movie">
-	<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProductionYear()}"/>'><c:out value="${movie.getTitle()}"/></a><br />
+	<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a><br />
 </c:forEach>
 </div>
 

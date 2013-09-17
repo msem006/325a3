@@ -46,7 +46,7 @@
 	<!-- Top user login/info area -->
 	<c:if test="${not empty user}" >
 		<div>
-			Welcome <c:out value="${user}"/>. | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
+			Welcome <c:out value="${user}"/> | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
 		</div>
 	</c:if>
 	<c:if test="${empty user}" >
@@ -67,15 +67,15 @@
 <div id="country">
 	Title: <c:out value="${movie.getTitle()}"/><br />
 	Country: <c:out value="${movie.getCountry()}"/><br />
-	Genre: <c:out value="${movie.getMajorGenre()}"/><br />
-	Runtime: <c:out value="${movie.getRunTime()}"/><br />
-	Year: <c:out value="${movie.getProductionYear()}"/><br />
+	Genre: <c:out value="${movie.getMajor_genre()}"/><br />
+	Runtime: <c:out value="${movie.getRun_time()}"/><br />
+	Year: <c:out value="${movie.getProduction_year()}"/><br />
 </div>
 <h3>Actors</h3>
 <div id="actor">
 	<c:forEach items="${personList}" var="person">
 
-	<a href='actor?id=<c:out value="${person.getId()}"/>'><c:out value="${person.getFirstName()}"/> <c:out value="${person.getLastName()}"/></a><br />
+	<a href='actor?id=<c:out value="${person.getId()}"/>'><c:out value="${person.getFirst_name()}"/> <c:out value="${person.getLast_name()}"/></a><br />
 
 </c:forEach>
 </div>

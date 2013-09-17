@@ -55,12 +55,12 @@ public class SearchQueryController {
 	    Collection<Movie> movieList = 
 	    		_smdbService.getMoviesByTitle(query.getQuery());
 	    for (Movie movie : movieList) {
-	    	System.out.println(movie.getTitle() + " " + movie.getProductionYear());
+	    	System.out.println(movie.getTitle() + " " + movie.getProduction_year());
 	    }
 	    Collection<Person> personList = 
 	    		_smdbService.getActorsByName(query.getQuery());
 	    for (Person person : personList) {
-	    	System.out.println(person.getFirstName() + " " + person.getLastName());
+	    	System.out.println(person.getFirst_name() + " " + person.getLast_name());
 	    }
 	    System.out.println(movieList.size() + personList.size());
 
