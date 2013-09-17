@@ -3,6 +3,7 @@
 
 <html>
 <head>
+
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
@@ -40,7 +41,6 @@
 		}                
 	});         
 	</script>
-	<title>smdb - We have all 50 shades</title>
 </head>
 <body>
 	<!-- Top user login/info area -->
@@ -56,29 +56,24 @@
 	</c:if>
 
 	<!-- Site Content -->
-	<h1> SMDB </h1>
+	<h1>SMDB</h1>
 	<div>
-		<form:form method="post" action="searchResults" id="searchbox"commandname="searchQuery" modelAttribute="searchQuery">
-		<form:input path="query" id="search" type="text" placeholder="Type here" /> 
-		<input type="submit" id="submit" value="Search"/>
-	</form:form>
-</div>
-<h2> Movie Info </h2>
-<div id="country">
-	Title: <c:out value="${movie.getTitle()}"/><br />
-	Country: <c:out value="${movie.getCountry()}"/><br />
-	Genre: <c:out value="${movie.getMajorGenre()}"/><br />
-	Runtime: <c:out value="${movie.getRunTime()}"/><br />
-	Year: <c:out value="${movie.getProductionYear()}"/><br />
-</div>
-<h3>Actors</h3>
-<div id="actor">
-	<c:forEach items="${personList}" var="person">
-
-	<a href='actor?id=<c:out value="${person.getId()}"/>'><c:out value="${person.getFirstName()}"/> <c:out value="${person.getLastName()}"/></a><br />
-
-</c:forEach>
-</div>
-
+		<form:form method="post" action="searchResults" id="searchbox" commandname="searchQuery" modelAttribute="searchQuery">
+			<form:input path="query" id="search" type="text" placeholder="Type here" />
+			<input type="submit" id="submit" value="Search"/>
+		</form:form>
+	</div>
+	<c:if test="${not empty error}" >
+		<div>
+			<c:out value="${error}"/>
+		</div>
+	</c:if>
+	<div>
+		<form:form method="post" action="login" commandname="login" modelAttribute="login">
+		<form:input path="username" type="text" />
+		<form:input path="password" type="text" />
+		<input type="submit" value="Login"/>
+		</form:form>
+	</div>
 </body>
 </html>

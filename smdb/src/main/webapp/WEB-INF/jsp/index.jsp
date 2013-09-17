@@ -42,13 +42,27 @@
 	</script>
 </head>
 <body>
-	<h1> SMDB </h1>
+	<!-- Top user login/info area -->
+	<c:if test="${not empty user}" >
+		<div>
+			Welcome <c:out value="${user}"/>. | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
+		</div>
+	</c:if>
+	<c:if test="${empty user}" >
+		<div>
+			<a href='/login'>Login</a>
+		</div>
+	</c:if>
+
+	<!-- Site Content -->
+
+	<h1>SMDB</h1>
 	<div>
-		<form:form method="post" action="searchResults" id="searchbox">
-		<form:input path="query" id="search" type="text" placeholder="Type here" /></td> 
-		<input type="submit" id="submit" value="Search"/>
-	</form:form>
-</div>
+		<form:form method="post" action="searchResults" id="searchbox" commandname="searchQuery" modelAttribute="searchQuery">
+			<form:input path="query" id="search" type="text" placeholder="Type here" />
+			<input type="submit" id="submit" value="Search"/>
+		</form:form>
+	</div>
 
 </body>
 </html>

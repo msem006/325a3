@@ -40,9 +40,9 @@
 		}                
 	});         
 	</script>
-	<title>smdb - We have all 50 shades</title>
 </head>
 <body>
+
 	<!-- Top user login/info area -->
 	<c:if test="${not empty user}" >
 		<div>
@@ -56,29 +56,22 @@
 	</c:if>
 
 	<!-- Site Content -->
-	<h1> SMDB </h1>
+	<h1>SMDB</h1>
+
 	<div>
-		<form:form method="post" action="searchResults" id="searchbox"commandname="searchQuery" modelAttribute="searchQuery">
-		<form:input path="query" id="search" type="text" placeholder="Type here" /> 
-		<input type="submit" id="submit" value="Search"/>
-	</form:form>
-</div>
-<h2> Movie Info </h2>
-<div id="country">
-	Title: <c:out value="${movie.getTitle()}"/><br />
-	Country: <c:out value="${movie.getCountry()}"/><br />
-	Genre: <c:out value="${movie.getMajorGenre()}"/><br />
-	Runtime: <c:out value="${movie.getRunTime()}"/><br />
-	Year: <c:out value="${movie.getProductionYear()}"/><br />
-</div>
-<h3>Actors</h3>
-<div id="actor">
-	<c:forEach items="${personList}" var="person">
+		<form:form method="post" action="searchResults" id="searchbox" commandname="searchQuery" modelAttribute="searchQuery">
+			<form:input path="query" id="search" type="text" placeholder="Type here" />
+			<input type="submit" id="submit" value="Search"/>
+		</form:form>
+	</div>
 
-	<a href='actor?id=<c:out value="${person.getId()}"/>'><c:out value="${person.getFirstName()}"/> <c:out value="${person.getLastName()}"/></a><br />
+	<div>
+		<form:form method="post" action="addData" commandname="addData" modelAttribute="addData">
+			<form:input path="" type="text" />
 
-</c:forEach>
-</div>
+			<input type="submit" value="Add" />
+		</form:form>
+	</div>
 
 </body>
 </html>
