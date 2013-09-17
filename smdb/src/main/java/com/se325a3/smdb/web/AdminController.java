@@ -126,11 +126,12 @@ public class AdminController {
 		    		
 	
 		    		Person person = new Person();
-		    		person.setId(actor.getId());
+		    		//person.setId(actor.getId());
 		    		person.setFirst_name(actor.getFirst_name());
 		    		person.setLast_name(actor.getLast_name());
 		    		person.setYear_born(actor.getYear_born());
-		    		_smdbService.insertPerson(person);
+		    		int genId = _smdbService.insertPerson(person);
+		    		actor.setId(genId);
 		    		
 		    		Role role = new Role();
 		    		role.setId(actor.getId());
