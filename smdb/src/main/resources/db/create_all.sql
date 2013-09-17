@@ -19,16 +19,17 @@ CREATE TABLE MOVIE
 
 CREATE TABLE PERSON
 (
-	id varchar(8) NOT NULL,
+	id integer NOT NULL,
 	first_name varchar(15) NOT NULL,
 	last_name varchar(30) NOT NULL,
 	year_born integer,
 	CONSTRAINT pk_person PRIMARY KEY(id)
 );
+ALTER TABLE PERSON ALTER COLUMN id integer NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE ROLE
 (
-	id varchar(8) NOT NULL,
+	id integer NOT NULL,
 	title varchar(40) NOT NULL,
 	production_year	integer NOT NULL,
 	description varchar(100) NOT NULL,
@@ -40,7 +41,7 @@ CREATE TABLE ROLE
 
 CREATE TABLE DIRECTOR
 (
-	id varchar(8) NOT NULL,
+	id varchar NOT NULL,
 	title varchar(40) NOT NULL,
 	production_year	integer	NOT NULL,
 	CONSTRAINT pk_director PRIMARY KEY(title,production_year),
@@ -50,7 +51,7 @@ CREATE TABLE DIRECTOR
 
 CREATE TABLE WRITER
 (
-	id varchar(8) NOT NULL,
+	id integer NOT NULL,
 	title varchar(40) NOT NULL,
 	production_year	integer NOT NULL,
 	credits	varchar(40) ,
@@ -61,7 +62,7 @@ CREATE TABLE WRITER
 
 CREATE TABLE CREW
 (
-	id varchar(8) NOT NULL,
+	id integer NOT NULL,
 	title varchar(40) NOT NULL,
 	production_year	integer NOT NULL,
 	contribution varchar(30),

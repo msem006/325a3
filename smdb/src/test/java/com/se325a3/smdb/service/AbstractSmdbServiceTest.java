@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public abstract class AbstractSmdbServiceTest {
 	
 	@Test 
 	public void testGetActorByID() {
-		Person actor = _smdbService.getActorById("00001001");
+		Person actor = _smdbService.getActorById(1001);
 		assertTrue(actor.getFirstName().startsWith("James"));
 	}
 	
@@ -69,21 +70,22 @@ public abstract class AbstractSmdbServiceTest {
 	
 	@Test
 	public void testGetMoviesByActorID() {
-		Collection<Movie> movies = _smdbService.getMoviesByActorID("00000544");
+		Collection<Movie> movies = _smdbService.getMoviesByActorID(544);
 		assertEquals(4, movies.size());
 	}
 	
 	@Test
-	public void testInsertPerson() {
+	public void testInsertPersonSetId() {
 		Person person = new Person();
-		person.setId("10000001");
 		person.setFirstName("Matt");
 		person.setLastName("Damon");
 		person.setYearBorn(1970);
-		int rowsAffected = _smdbService.insertPerson(person);
-		assertEquals(1, rowsAffected);
+		int genId = _smdbService.insertPerson(person);
+		Person person1 = _smdbService.getPersonById(genId);
+		assertEquals("Matt", person1.getFirstName());
+		assertEquals("Damon", person1.getLastName());
 	}
-
+	
 	@Test
 	public void testInsertMovie() {
 		Movie movie = new Movie();
@@ -92,20 +94,19 @@ public abstract class AbstractSmdbServiceTest {
 		movie.setCountry("USA");
 		movie.setRunTime(119);
 		movie.setMajorGenre("Action");
-		int rowsAffected = _smdbService.insertMovie(movie);
-		assertEquals(1, rowsAffected);
+		Map<String, Object> returnedKey = _smdbService.insertMovie(movie);
+		assertEquals(returnedKey.get("title"), "The Bourne Identity");
+		assertEquals(returnedKey.get("production_year"), 2002);
 	}
 
 	@Test
 	public void testInsertRole() {
 		
 		Person person = new Person();
-		person.setId("10000001");
 		person.setFirstName("Matt");
 		person.setLastName("Damon");
 		person.setYearBorn(1970);
-		int pRowsAffected = _smdbService.insertPerson(person);
-		assertEquals(1, pRowsAffected);
+		int personId = _smdbService.insertPerson(person);
 		
 		Movie movie = new Movie();
 		movie.setTitle("The Bourne Identity");
@@ -113,19 +114,17 @@ public abstract class AbstractSmdbServiceTest {
 		movie.setCountry("USA");
 		movie.setRunTime(119);
 		movie.setMajorGenre("Action");
-		int mRowsAffected = _smdbService.insertMovie(movie);
-		assertEquals(1, mRowsAffected);
+		_smdbService.insertMovie(movie);
 		
 		Role role = new Role();
-		role.setId("10000001");
-		role.setTitle("The Bourne Identity");
-		role.setProductionYear(2002);
+		role.setId(personId);
+		role.setPerson(person);
+		role.setMovie(movie);
 		role.setDescription("Jason Bourne");
 		role.setCredits("");
-		int rRowsAffected = _smdbService.insertRole(role);
-		assertEquals(1, rRowsAffected);
+		_smdbService.insertRole(role);
 		
-		Person actor = _smdbService.getActorById("10000001");
+		Person actor = _smdbService.getActorById(personId);
 		assertTrue(actor.getFirstName().startsWith("Matt"));
 		assertTrue(actor.getLastName().startsWith("Damon"));
 		assertEquals(1970, actor.getYearBorn());

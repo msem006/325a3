@@ -56,7 +56,7 @@ public class DataController {
 	}
 	
 	@RequestMapping(value="/actor", method = RequestMethod.GET)  
-	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam String id) {  
+	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam int id) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("actor");
 

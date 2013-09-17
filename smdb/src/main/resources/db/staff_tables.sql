@@ -1,1467 +1,1467 @@
 -- Table DIRECTOR
 
 insert into director values  
-            ('00000001','Titanic',1997);
+            (1,'Titanic',1997);
 insert into director values  
-            ('00000021','Shakespeare in Love',1998);
+            (21,'Shakespeare in Love',1998);
 insert into director values  
-            ('00000041','The Cider House Rules',1999); 
+            (41,'The Cider House Rules',1999); 
 insert into director values  
-            ('00001051','Gandhi',1982); 
+            (1051,'Gandhi',1982); 
 insert into director values  
-            ('00000081','American Beauty',1999);
+            (81,'American Beauty',1999);
 insert into director values  
-            ('00000101','Affliction',1997); 
+            (101,'Affliction',1997); 
 insert into director values  
-            ('00000121','Life is Beautiful',1997); 
+            (121,'Life is Beautiful',1997); 
 insert into director values  
-            ('00000141','Boys Dont Cry',1999); 
+            (141,'Boys Dont Cry',1999); 
 insert into director values  
-            ('00001291','Saving Private Ryan',1998); 
+            (1291,'Saving Private Ryan',1998); 
 insert into director values  
-            ('00000181','The Birds',1963);
+            (181,'The Birds',1963);
 insert into director values
-            ('00000181','Rear Window',1954);
+            (181,'Rear Window',1954);
 insert into director values  
-            ('00000201','The Matrix',1999);
+            (201,'The Matrix',1999);
 -- insert into director values  
---            ('00000202','The Matrix',1963);
+--            (202,'The Matrix',1963);
 insert into director values  
-            ('00000241','The Price of Milk',2000);
+            (241,'The Price of Milk',2000);
 insert into director values  
-            ('00000261','The Footstep Man',1992);
+            (261,'The Footstep Man',1992);
 insert into director values  
-            ('00000241','Topless Women Talk About Their Lives',1997);
+            (241,'Topless Women Talk About Their Lives',1997);
 insert into director values  
-            ('00000301','The Piano',1993);
+            (301,'The Piano',1993);
 insert into director values  
-            ('00000321','Mad Max',1979);
+            (321,'Mad Max',1979);
 insert into director values  
-            ('00000341','Strictly Ballroom',1992);
+            (341,'Strictly Ballroom',1992);
 insert into director values  
-            ('00000361','My Mother Frank',2000);
+            (361,'My Mother Frank',2000);
 insert into director values  
-            ('00000381','American Psycho',2000);
+            (381,'American Psycho',2000);
 insert into director values  
-            ('00000401','Scream 2',1997);
+            (401,'Scream 2',1997);
 insert into director values  
-            ('00000401','Scream 3',2000);
+            (401,'Scream 3',2000);
 insert into director values  
-            ('00000441','Traffic',2000);
+            (441,'Traffic',2000);
 insert into director values  
-            ('00000181','Psycho',1960);
+            (181,'Psycho',1960);
 insert into director values  
-            ('00000481','I Know What You Did Last Summer',1997);
+            (481,'I Know What You Did Last Summer',1997);
 insert into director values  
-            ('00000501','Cruel Intentions',1999);
+            (501,'Cruel Intentions',1999);
 insert into director values  
-            ('00000521','Wild Things',1998);
+            (521,'Wild Things',1998);
 insert into director values  
-            ('00000541','Alien',1979);
+            (541,'Alien',1979);
 insert into director values  
-            ('00000001','Aliens',1986);
+            (1,'Aliens',1986);
 insert into director values  
-            ('00001038','Alien 3',1992);
+            (1038,'Alien 3',1992);
 insert into director values  
-            ('00000601','Alien: Resurrection',1997);
+            (601,'Alien: Resurrection',1997);
 insert into director values  
-            ('00000541','Gladiator',2000);
+            (541,'Gladiator',2000);
 insert into director values  
-            ('00000641','The World Is Not Enough',1999);
+            (641,'The World Is Not Enough',1999);
 insert into director values  
-            ('00000661','Heat',1995);
+            (661,'Heat',1995);
 insert into director values  
-            ('00000681','American History X',1998);
+            (681,'American History X',1998);
 insert into director values  
-            ('00000401','Fight Club',1999);
+            (401,'Fight Club',1999);
 insert into director values  
-            ('00000441','Out of Sight',1998);
+            (441,'Out of Sight',1998);
 insert into director values  
-            ('00000741','Entrapment',1999);
+            (741,'Entrapment',1999);
 insert into director values  
-            ('00000661','The Insider',1999);
+            (661,'The Insider',1999);
 insert into director values  
-            ('00000781','The Blair Witch Project',1999);
+            (781,'The Blair Witch Project',1999);
 insert into director values  
-            ('00000801','Lethal Weapon 4',1998);
+            (801,'Lethal Weapon 4',1998);
 insert into director values  
-            ('00000821','The Fifth Element',1997);
+            (821,'The Fifth Element',1997);
 insert into director values  
-            ('00000841','The Sixth Sense',1999);
+            (841,'The Sixth Sense',1999);
 insert into director values  
-            ('00000841','Unbreakable',2000);
+            (841,'Unbreakable',2000);
 insert into director values  
-            ('00000881','Armageddon',1998);
+            (881,'Armageddon',1998);
 insert into director values  
-            ('00001331','The Kid',2000);
+            (1331,'The Kid',2000);
 insert into director values  
-            ('00000921','Twelve Monkeys',1995);
+            (921,'Twelve Monkeys',1995);
 insert into director values  
-            ('00000222','You have Got Mail',1998);
+            (222,'You have Got Mail',1998);
 insert into director values  
-            ('00000941','Toy Story',1995);
+            (941,'Toy Story',1995);
 insert into director values  
-            ('00000961','Proof of Life',2000);
+            (961,'Proof of Life',2000);
 insert into director values  
-            ('00001131','Hanging Up',2000);
+            (1131,'Hanging Up',2000);
 insert into director values  
-            ('00001005','Bullets Over Broadway',1994);
+            (1005,'Bullets Over Broadway',1994);
 insert into director values  
-            ('00001014','Tombstone',1993);
+            (1014,'Tombstone',1993);
 insert into director values  
-            ('00001005','Alice',1990);
+            (1005,'Alice',1990);
 insert into director values  
-            ('00001027','Mermaids',1990);
+            (1027,'Mermaids',1990);
 insert into director values  
-            ('00001037','Exotica',1994);
+            (1037,'Exotica',1994);
 insert into director values  
-            ('00001044','Red Rock West',1992);
+            (1044,'Red Rock West',1992);
 insert into director values  
-            ('00001051','Chaplin',1992);
+            (1051,'Chaplin',1992);
 insert into director values  
-            ('00001060','Fearless',1993);
+            (1060,'Fearless',1993);
 insert into director values  
-            ('00001070','Threesome',1994);
+            (1070,'Threesome',1994);
 insert into director values  
-            ('00001079','Jungle Fever',1991);
+            (1079,'Jungle Fever',1991);
 insert into director values  
-            ('00001086','Internal Affairs',1990);
+            (1086,'Internal Affairs',1990);
 insert into director values  
-            ('00001096','Single White Female',1992);
+            (1096,'Single White Female',1992);
 insert into director values  
-            ('00001104','Trust',1990);
+            (1104,'Trust',1990);
 insert into director values  
-            ('00001110','Ju Dou',1990);
+            (1110,'Ju Dou',1990);
 insert into director values  
-            ('00001110','Dahong Denglong Gaogao Gua',1991);
+            (1110,'Dahong Denglong Gaogao Gua',1991);
 insert into director values  
-            ('00001124','Cyrano de Bergerac',1990);
+            (1124,'Cyrano de Bergerac',1990);
 insert into director values  
-            ('00001005','Manhattan Murder Mystery',1993);
+            (1005,'Manhattan Murder Mystery',1993);
 insert into director values  
-            ('00001132','El Mariachi',1992);
+            (1132,'El Mariachi',1992);
 insert into director values  
-            ('00001135','Once Were Warriors',1994);
+            (1135,'Once Were Warriors',1994);
 insert into director values  
-            ('00001143','Priest',1994);
+            (1143,'Priest',1994);
 insert into director values  
-            ('00001151','Pump Up the Volum',1990);
+            (1151,'Pump Up the Volum',1990);
 insert into director values  
-            ('00001158','Benny and Joon',1993);
+            (1158,'Benny and Joon',1993);
 insert into director values  
-            ('00001165','Six Degrees of Separation',1993);
+            (1165,'Six Degrees of Separation',1993);
 insert into director values  
-            ('00001173','Bawang Bie Ji',1993);
+            (1173,'Bawang Bie Ji',1993);
 insert into director values  
-            ('00001179','In the Line of Fire',1993);
+            (1179,'In the Line of Fire',1993);
 insert into director values  
-            ('00001186','Heavenly Creatures',1994);
+            (1186,'Heavenly Creatures',1994);
 insert into director values  
-            ('00001191','Hoop Dreams',1994);
+            (1191,'Hoop Dreams',1994);
 insert into director values  
-            ('00001195','Seven',1995);
+            (1195,'Seven',1995);
 insert into director values  
-            ('00001202','Shallow Grave',1994);
+            (1202,'Shallow Grave',1994);
 insert into director values  
-            ('00001210','French Kiss',1995);
+            (1210,'French Kiss',1995);
 insert into director values  
-            ('00001186','Braindead',1992);
+            (1186,'Braindead',1992);
 insert into director values  
-            ('00001221','Clerks',1994);
+            (1221,'Clerks',1994);
 insert into director values  
-            ('00001225','Apollo 13',1995);
+            (1225,'Apollo 13',1995);
 insert into director values  
-            ('00001232','Reservoir Dogs',1992);
+            (1232,'Reservoir Dogs',1992);
 insert into director values  
-            ('00001232','Pulp Fiction',1994);
+            (1232,'Pulp Fiction',1994);
 insert into director values  
-            ('00001241','Yinshi Nan Nu',1994);
+            (1241,'Yinshi Nan Nu',1994);
 insert into director values  
-            ('00001248','Short Cuts',1993);
+            (1248,'Short Cuts',1993);
 insert into director values  
-            ('00001254','Legends of the Fall',1994);
+            (1254,'Legends of the Fall',1994);
 insert into director values  
-            ('00001261','Natural Born Killers',1994);
+            (1261,'Natural Born Killers',1994);
 insert into director values  
-            ('00001267','In the Mouth of Madness',1995);
+            (1267,'In the Mouth of Madness',1995);
 insert into director values  
-            ('00001274','Forrest Gump',1994);
+            (1274,'Forrest Gump',1994);
 insert into director values  
-            ('00001079','Malcolm X',1992);
+            (1079,'Malcolm X',1992);
 insert into director values  
-            ('00001284','Dead Again',1991);
+            (1284,'Dead Again',1991);
 insert into director values  
-            ('00001291','Jurassic Park',1993);
+            (1291,'Jurassic Park',1993);
 insert into director values  
-            ('00001297','Clueless',1995);
+            (1297,'Clueless',1995);
 insert into director values  
-            ('00001305','Shadowlands',1993);
+            (1305,'Shadowlands',1993);
 insert into director values  
-            ('00001104','Amateur',1994);
+            (1104,'Amateur',1994);
 insert into director values  
-            ('00001317','GoodFellas',1990);
+            (1317,'GoodFellas',1990);
 insert into director values  
-            ('00001324','Little Women',1994);
+            (1324,'Little Women',1994);
 insert into director values  
-            ('00001331','While You Were Sleeping',1995);
+            (1331,'While You Were Sleeping',1995);
 
 -- Table WRITER
 
 
 insert into writer values  
-            ('00000001','Titanic',1997,'');
+            (1,'Titanic',1997,'');
 insert into writer values  
-            ('00000022','Shakespeare in Love',1998,'');
+            (22,'Shakespeare in Love',1998,'');
 insert into writer values  
-            ('00000042','The Cider House Rules',1999,''); 
+            (42,'The Cider House Rules',1999,''); 
 insert into writer values  
-            ('00000062','Gandhi',1982,''); 
+            (62,'Gandhi',1982,''); 
 insert into writer values  
-            ('00000082','American Beauty',1999,'');
+            (82,'American Beauty',1999,'');
 insert into writer values  
-            ('00000102','Affliction',1997,''); 
+            (102,'Affliction',1997,''); 
 insert into writer values  
-            ('00000121','Life is Beautiful',1997,'');
+            (121,'Life is Beautiful',1997,'');
 insert into writer values  
-            ('00000122','Life is Beautiful',1997,'');  
+            (122,'Life is Beautiful',1997,'');  
 insert into writer values  
-            ('00000141','Boys Dont Cry',1999,''); 
+            (141,'Boys Dont Cry',1999,''); 
 insert into writer values  
-            ('00000142','Boys Dont Cry',1999,''); 
+            (142,'Boys Dont Cry',1999,''); 
 insert into writer values  
-            ('00000162','Saving Private Ryan',1998,''); 
+            (162,'Saving Private Ryan',1998,''); 
 insert into writer values  
-            ('00000182','The Birds',1963,'');
+            (182,'The Birds',1963,'');
 insert into writer values  
-            ('00000183','The Birds',1963,'');
+            (183,'The Birds',1963,'');
 insert into writer values
-            ('00001004','Rear Window',1954,'');
+            (1004,'Rear Window',1954,'');
 insert into writer values  
-            ('00000201','The Matrix',1999,'');
+            (201,'The Matrix',1999,'');
 insert into writer values  
-            ('00000202','The Matrix',1999,'');
+            (202,'The Matrix',1999,'');
 insert into writer values  
-            ('00000241','The Price of Milk',2000,'Topless Women Talk About Their Lives');
+            (241,'The Price of Milk',2000,'Topless Women Talk About Their Lives');
 insert into writer values  
-            ('00000261','The Footstep Man',1992,'');
+            (261,'The Footstep Man',1992,'');
 insert into writer values  
-            ('00000241','Topless Women Talk About Their Lives',1997,'The Price of Milk');
+            (241,'Topless Women Talk About Their Lives',1997,'The Price of Milk');
 insert into writer values  
-            ('00000301','The Piano',1993,'');
+            (301,'The Piano',1993,'');
 insert into writer values  
-            ('00000321','Mad Max',1979,'');
+            (321,'Mad Max',1979,'');
 insert into writer values  
-            ('00000322','Mad Max',1979,'');
+            (322,'Mad Max',1979,'');
 insert into writer values  
-            ('00000341','Strictly Ballroom',1992,'');
+            (341,'Strictly Ballroom',1992,'');
 insert into writer values  
-            ('00000342','Strictly Ballroom',1992,'');
+            (342,'Strictly Ballroom',1992,'');
 insert into writer values  
-            ('00000361','My Mother Frank',2000,'');
+            (361,'My Mother Frank',2000,'');
 insert into writer values  
-            ('00000381','American Psycho',2000,'');
+            (381,'American Psycho',2000,'');
 insert into writer values  
-            ('00000382','American Psycho',2000,'');
+            (382,'American Psycho',2000,'');
 insert into writer values  
-            ('00000402','Scream 2',1997,'Scream 3');
+            (402,'Scream 2',1997,'Scream 3');
 insert into writer values  
-            ('00000402','Scream 3',2000,'Scream 2');
+            (402,'Scream 3',2000,'Scream 2');
 insert into writer values  
-            ('00000442','Traffic',2000,'');
+            (442,'Traffic',2000,'');
 insert into writer values  
-            ('00000461','Psycho',1960,'');
+            (461,'Psycho',1960,'');
 insert into writer values  
-            ('00000482','I Know What You Did Last Summer',1997,'');
+            (482,'I Know What You Did Last Summer',1997,'');
 insert into writer values  
-            ('00000502','Cruel Intentions',1999,'');
+            (502,'Cruel Intentions',1999,'');
 insert into writer values  
-            ('00000522','Wild Things',1998,'');
+            (522,'Wild Things',1998,'');
 insert into writer values  
-            ('00000542','Alien',1979,'');
+            (542,'Alien',1979,'');
 insert into writer values  
-            ('00000001','Aliens',1986,'');
+            (1,'Aliens',1986,'');
 insert into writer values  
-            ('00000582','Alien 3',1992,'');
+            (582,'Alien 3',1992,'');
 insert into writer values  
-            ('00000602','Alien: Resurrection',1997,'');
+            (602,'Alien: Resurrection',1997,'');
 insert into writer values  
-            ('00000621','Gladiator',2000,'');
+            (621,'Gladiator',2000,'');
 insert into writer values  
-            ('00000642','The World Is Not Enough',1999,'');
+            (642,'The World Is Not Enough',1999,'');
 insert into writer values  
-            ('00000661','Heat',1995,'');
+            (661,'Heat',1995,'');
 insert into writer values  
-            ('00000682','American History X',1998,'');
+            (682,'American History X',1998,'');
 insert into writer values  
-            ('00000701','Fight Club',1999,'');
+            (701,'Fight Club',1999,'');
 insert into writer values  
-            ('00000721','Out of Sight',1998,'');
+            (721,'Out of Sight',1998,'');
 insert into writer values  
-            ('00000742','Entrapment',1999,'');
+            (742,'Entrapment',1999,'');
 insert into writer values  
-            ('00000761','The Insider',1999,'');
+            (761,'The Insider',1999,'');
 insert into writer values  
-            ('00000781','The Blair Witch Project',1999,'');
+            (781,'The Blair Witch Project',1999,'');
 insert into writer values  
-            ('00000802','Lethal Weapon 4',1998,'');
+            (802,'Lethal Weapon 4',1998,'');
 insert into writer values  
-            ('00000821','The Fifth Element',1997,'');
+            (821,'The Fifth Element',1997,'');
 insert into writer values  
-            ('00000841','The Sixth Sense',1999,'');
+            (841,'The Sixth Sense',1999,'');
 insert into writer values  
-            ('00000841','Unbreakable',2000,'The Sixth Sense');
+            (841,'Unbreakable',2000,'The Sixth Sense');
 insert into writer values  
-            ('00000882','Armageddon',1998,'');
+            (882,'Armageddon',1998,'');
 insert into writer values  
-            ('00000902','The Kid',2000,'');
+            (902,'The Kid',2000,'');
 insert into writer values  
-            ('00000922','Twelve Monkeys',1995,'');
+            (922,'Twelve Monkeys',1995,'');
 insert into writer values  
-            ('00000222','You have Got Mail',1998,'');
+            (222,'You have Got Mail',1998,'');
 insert into writer values  
-            ('00000941','Toy Story',1995,'');
+            (941,'Toy Story',1995,'');
 insert into writer values  
-            ('00000962','Proof of Life',2000,'');
+            (962,'Proof of Life',2000,'');
 insert into writer values  
-            ('00000962','Hanging Up',2000,'');
+            (962,'Hanging Up',2000,'');
 insert into writer values  
-            ('00001005','Bullets Over Broadway',1994,'Alice');
+            (1005,'Bullets Over Broadway',1994,'Alice');
 insert into writer values  
-            ('00001015','Tombstone',1993,'');
+            (1015,'Tombstone',1993,'');
 insert into writer values  
-            ('00001005','Alice',1990,'Bullets Over Broadway');
+            (1005,'Alice',1990,'Bullets Over Broadway');
 insert into writer values  
-            ('00001028','Mermaids',1990,'');
+            (1028,'Mermaids',1990,'');
 insert into writer values  
-            ('00001037','Exotica',1994,'');
+            (1037,'Exotica',1994,'');
 insert into writer values  
-            ('00001044','Red Rock West',1992,'');
+            (1044,'Red Rock West',1992,'');
 insert into writer values  
-            ('00001052','Chaplin',1992,'');
+            (1052,'Chaplin',1992,'');
 insert into writer values  
-            ('00001061','Fearless',1993,'');
+            (1061,'Fearless',1993,'');
 insert into writer values  
-            ('00001070','Threesome',1994,'');
+            (1070,'Threesome',1994,'');
 insert into writer values  
-            ('00001079','Jungle Fever',1991,'Malcolm X');
+            (1079,'Jungle Fever',1991,'Malcolm X');
 insert into writer values  
-            ('00001087','Internal Affairs',1990,'');
+            (1087,'Internal Affairs',1990,'');
 insert into writer values  
-            ('00001097','Single White Female',1992,'');
+            (1097,'Single White Female',1992,'');
 insert into writer values  
-            ('00001104','Trust',1990,'Amateur');
+            (1104,'Trust',1990,'Amateur');
 insert into writer values  
-            ('00001111','Ju Dou',1990, '');
+            (1111,'Ju Dou',1990, '');
 insert into writer values  
-            ('00001118','Dahong Denglong Gaogao Gua',1991,'');
+            (1118,'Dahong Denglong Gaogao Gua',1991,'');
 insert into writer values  
-            ('00001124','Cyrano de Bergerac',1990,'');
+            (1124,'Cyrano de Bergerac',1990,'');
 insert into writer values  
-            ('00001005','Manhattan Murder Mystery',1993,'');
+            (1005,'Manhattan Murder Mystery',1993,'');
 insert into writer values  
-            ('00001132','El Mariachi',1992,'');
+            (1132,'El Mariachi',1992,'');
 insert into writer values  
-            ('00001136','Once Were Warriors',1994,'');
+            (1136,'Once Were Warriors',1994,'');
 insert into writer values  
-            ('00001144','Priest',1994,'');
+            (1144,'Priest',1994,'');
 insert into writer values  
-            ('00001151','Pump Up the Volum',1990,'');
+            (1151,'Pump Up the Volum',1990,'');
 insert into writer values  
-            ('00001159','Benny and Joon',1993,'');
+            (1159,'Benny and Joon',1993,'');
 insert into writer values  
-            ('00001166','Six Degrees of Separation',1993,'');
+            (1166,'Six Degrees of Separation',1993,'');
 insert into writer values  
-            ('00001174','Bawang Bie Ji',1993,'');
+            (1174,'Bawang Bie Ji',1993,'');
 insert into writer values  
-            ('00001180','In the Line of Fire',1993,'');
+            (1180,'In the Line of Fire',1993,'');
 insert into writer values  
-            ('00001186','Heavenly Creatures',1994,'Braindead');
+            (1186,'Heavenly Creatures',1994,'Braindead');
 insert into writer values  
-            ('00001191','Hoop Dreams',1994,'');
+            (1191,'Hoop Dreams',1994,'');
 insert into writer values  
-            ('00001196','Seven',1995,'');
+            (1196,'Seven',1995,'');
 insert into writer values  
-            ('00001203','Shallow Grave',1994,'');
+            (1203,'Shallow Grave',1994,'');
 insert into writer values  
-            ('00001211','French Kiss',1995,'');
+            (1211,'French Kiss',1995,'');
 insert into writer values  
-            ('00001186','Braindead',1992,'Heavenly Creatures');
+            (1186,'Braindead',1992,'Heavenly Creatures');
 insert into writer values  
-            ('00001221','Clerks',1994,'');
+            (1221,'Clerks',1994,'');
 insert into writer values  
-            ('00001226','Apollo 13',1995,'');
+            (1226,'Apollo 13',1995,'');
 insert into writer values  
-            ('00001232','Reservoir Dogs',1992,'Pulp Fiction');
+            (1232,'Reservoir Dogs',1992,'Pulp Fiction');
 insert into writer values  
-            ('00001232','Pulp Fiction',1994,'Reservoir Dogs');
+            (1232,'Pulp Fiction',1994,'Reservoir Dogs');
 insert into writer values  
-            ('00001241','Yinshi Nan Nu',1994,'');
+            (1241,'Yinshi Nan Nu',1994,'');
 insert into writer values  
-            ('00001248','Short Cuts',1993,'');
+            (1248,'Short Cuts',1993,'');
 insert into writer values  
-            ('00001255','Legends of the Fall',1994,'');
+            (1255,'Legends of the Fall',1994,'');
 insert into writer values  
-            ('00001261','Natural Born Killers',1994,'');
+            (1261,'Natural Born Killers',1994,'');
 insert into writer values  
-            ('00001268','In the Mouth of Madness',1995,'');
+            (1268,'In the Mouth of Madness',1995,'');
 insert into writer values  
-            ('00001275','Forrest Gump',1994,'');
+            (1275,'Forrest Gump',1994,'');
 insert into writer values  
-            ('00001279','Malcolm X',1992,'Jungle Fever');
+            (1279,'Malcolm X',1992,'Jungle Fever');
 insert into writer values  
-            ('00001285','Dead Again',1991,'');
+            (1285,'Dead Again',1991,'');
 insert into writer values  
-            ('00001292','Jurassic Park',1993,'');
+            (1292,'Jurassic Park',1993,'');
 insert into writer values  
-            ('00001297','Clueless',1995,'');
+            (1297,'Clueless',1995,'');
 insert into writer values  
-            ('00001306','Shadowlands',1993,'');
+            (1306,'Shadowlands',1993,'');
 insert into writer values  
-            ('00001104','Amateur',1994,'Trust');
+            (1104,'Amateur',1994,'Trust');
 insert into writer values  
-            ('00001317','GoodFellas',1990,'');
+            (1317,'GoodFellas',1990,'');
 insert into writer values  
-            ('00001325','Little Women',1994,'');
+            (1325,'Little Women',1994,'');
 insert into writer values  
-            ('00001332','While You Were Sleeping',1995,'');
+            (1332,'While You Were Sleeping',1995,'');
 -- Table CREW
 
 
 insert into crew values  
-            ('00000027','Shakespeare in Love',1998,'Costume Design');
+            (27,'Shakespeare in Love',1998,'Costume Design');
 insert into crew values  
-            ('00000209','The Matrix',1999,'Sound Effects Editing');
+            (209,'The Matrix',1999,'Sound Effects Editing');
 insert into crew values  
-            ('00000205','The Matrix',1999,'Visual Effects');
+            (205,'The Matrix',1999,'Visual Effects');
 insert into crew values  
-            ('00000206','The Matrix',1999,'Visual Effects');
+            (206,'The Matrix',1999,'Visual Effects');
 insert into crew values  
-            ('00000207','The Matrix',1999,'Visual Effects');
+            (207,'The Matrix',1999,'Visual Effects');
 insert into crew values  
-            ('00000208','The Matrix',1999,'Visual Effects');
+            (208,'The Matrix',1999,'Visual Effects');
 insert into crew values  
-            ('00001140','The Piano',1993,'Cinematography');
+            (1140,'The Piano',1993,'Cinematography');
 insert into crew values  
-            ('00000306','The Piano',1993,'Costume Design');
+            (306,'The Piano',1993,'Costume Design');
 insert into crew values  
-            ('00000307','The Piano',1993,'Production Design');
+            (307,'The Piano',1993,'Production Design');
 insert into crew values  
-            ('00000325','Mad Max',1979,'Music');
+            (325,'Mad Max',1979,'Music');
 insert into crew values  
-            ('00000349','Strictly Ballroom',1992,'Costume Design');
+            (349,'Strictly Ballroom',1992,'Costume Design');
 insert into crew values  
-            ('00000348','Strictly Ballroom',1992,'Production Design');
+            (348,'Strictly Ballroom',1992,'Production Design');
 insert into crew values  
-            ('00000347','Strictly Ballroom',1992,'Editing');
+            (347,'Strictly Ballroom',1992,'Editing');
 insert into crew values  
-            ('00000545','Alien',1979,'Music');
+            (545,'Alien',1979,'Music');
 insert into crew values  
-            ('00000546','Alien',1979,'Production Design');
+            (546,'Alien',1979,'Production Design');
 insert into crew values  
-            ('00000547','Alien',1979,'Special Effects');
+            (547,'Alien',1979,'Special Effects');
 insert into crew values  
-            ('00000562','Aliens',1986,'Sound Editor');
+            (562,'Aliens',1986,'Sound Editor');
 insert into crew values  
-            ('00000563','Aliens',1986,'Visual Effects');
+            (563,'Aliens',1986,'Visual Effects');
 insert into crew values  
-            ('00000564','Aliens',1986,'Visual Effects');
+            (564,'Aliens',1986,'Visual Effects');
 insert into crew values  
-            ('00000006','Titanic',1997,'Set Decorator');
+            (6,'Titanic',1997,'Set Decorator');
 insert into crew values  
-            ('00000007','Titanic',1997,'Cinematography');
+            (7,'Titanic',1997,'Cinematography');
 insert into crew values  
-            ('00000008','Titanic',1997,'Costume Design');
+            (8,'Titanic',1997,'Costume Design');
 insert into crew values  
-            ('00000009','Titanic',1997,'Visual Effects');
+            (9,'Titanic',1997,'Visual Effects');
 insert into crew values  
-            ('00000010','Titanic',1997,'Sound Effects');
+            (10,'Titanic',1997,'Sound Effects');
 insert into crew values  
-            ('00000011','Titanic',1997,'Editing');
+            (11,'Titanic',1997,'Editing');
 insert into crew values  
-            ('00000012','Titanic',1997,'Music');
+            (12,'Titanic',1997,'Music');
 insert into crew values  
-            ('00000013','Titanic',1997,'Song Lyric');
+            (13,'Titanic',1997,'Song Lyric');
 insert into crew values  
-            ('00001009','Bullets Over Broadway',1994,'producer');
+            (1009,'Bullets Over Broadway',1994,'producer');
 insert into crew values  
-            ('00001010','Bullets Over Broadway',1994,'cinematography');
+            (1010,'Bullets Over Broadway',1994,'cinematography');
 insert into crew values  
-            ('00001011','Bullets Over Broadway',1994,'film editing');
+            (1011,'Bullets Over Broadway',1994,'film editing');
 insert into crew values  
-            ('00001012','Bullets Over Broadway',1994,'casting');
+            (1012,'Bullets Over Broadway',1994,'casting');
 insert into crew values  
-            ('00001013','Bullets Over Broadway',1994,'costume design');
+            (1013,'Bullets Over Broadway',1994,'costume design');
 insert into crew values  
-            ('00001019','Tombstone',1993,'producer');
+            (1019,'Tombstone',1993,'producer');
 insert into crew values  
-            ('00001020','Tombstone',1993,'cinematography');
+            (1020,'Tombstone',1993,'cinematography');
 insert into crew values  
-            ('00001021','Tombstone',1993,'film editing');
+            (1021,'Tombstone',1993,'film editing');
 insert into crew values  
-            ('00001022','Tombstone',1993,'casting');
+            (1022,'Tombstone',1993,'casting');
 insert into crew values  
-            ('00001023','Tombstone',1993,'costume design');
+            (1023,'Tombstone',1993,'costume design');
 insert into crew values  
-            ('00001009','Alice',1990,'producer');
+            (1009,'Alice',1990,'producer');
 insert into crew values  
-            ('00001010','Alice',1990,'cinematography');
+            (1010,'Alice',1990,'cinematography');
 insert into crew values  
-            ('00001011','Alice',1990,'film editing');
+            (1011,'Alice',1990,'film editing');
 insert into crew values  
-            ('00001012','Alice',1990,'casting');
+            (1012,'Alice',1990,'casting');
 insert into crew values  
-            ('00001013','Alice',1990,'costume design');
+            (1013,'Alice',1990,'costume design');
 insert into crew values  
-            ('00001032','Mermaids',1990,'producer');
+            (1032,'Mermaids',1990,'producer');
 insert into crew values  
-            ('00001033','Mermaids',1990,'cinematography');
+            (1033,'Mermaids',1990,'cinematography');
 insert into crew values  
-            ('00001034','Mermaids',1990,'film editing');
+            (1034,'Mermaids',1990,'film editing');
 insert into crew values  
-            ('00001035','Mermaids',1990,'casting');
+            (1035,'Mermaids',1990,'casting');
 insert into crew values  
-            ('00001036','Mermaids',1990,'costume design');
+            (1036,'Mermaids',1990,'costume design');
 insert into crew values  
-            ('00001041','Exotica',1994,'producer');
+            (1041,'Exotica',1994,'producer');
 insert into crew values  
-            ('00001042','Exotica',1994,'cinematography');
+            (1042,'Exotica',1994,'cinematography');
 insert into crew values  
-            ('00001043','Exotica',1994,'film editing');
+            (1043,'Exotica',1994,'film editing');
 insert into crew values  
-            ('00001047','Red Rock West',1992,'producer');
+            (1047,'Red Rock West',1992,'producer');
 insert into crew values  
-            ('00001048','Red Rock West',1992,'cinematography');
+            (1048,'Red Rock West',1992,'cinematography');
 insert into crew values  
-            ('00001049','Red Rock West',1992,'film editing');
+            (1049,'Red Rock West',1992,'film editing');
 insert into crew values  
-            ('00001050','Red Rock West',1992,'costume design');
+            (1050,'Red Rock West',1992,'costume design');
 insert into crew values  
-            ('00001056','Chaplin',1992,'cinematography');
+            (1056,'Chaplin',1992,'cinematography');
 insert into crew values  
-            ('00001057','Chaplin',1992,'film editing');
+            (1057,'Chaplin',1992,'film editing');
 insert into crew values  
-            ('00001058','Chaplin',1992,'casting');
+            (1058,'Chaplin',1992,'casting');
 insert into crew values  
-            ('00001059','Chaplin',1992,'costume design');
+            (1059,'Chaplin',1992,'costume design');
 insert into crew values  
-            ('00001065','Fearless',1993,'producer');
+            (1065,'Fearless',1993,'producer');
 insert into crew values  
-            ('00001066','Fearless',1993,'cinematography');
+            (1066,'Fearless',1993,'cinematography');
 insert into crew values  
-            ('00001067','Fearless',1993,'film editing');
+            (1067,'Fearless',1993,'film editing');
 insert into crew values  
-            ('00001068','Fearless',1993,'casting');
+            (1068,'Fearless',1993,'casting');
 insert into crew values  
-            ('00001069','Fearless',1993,'costume design');
+            (1069,'Fearless',1993,'costume design');
 insert into crew values  
-            ('00001074','Threesome',1994,'producer');
+            (1074,'Threesome',1994,'producer');
 insert into crew values  
-            ('00001075','Threesome',1994,'cinematography');
+            (1075,'Threesome',1994,'cinematography');
 insert into crew values  
-            ('00001076','Threesome',1994,'film editing');
+            (1076,'Threesome',1994,'film editing');
 insert into crew values  
-            ('00001077','Threesome',1994,'casting');
+            (1077,'Threesome',1994,'casting');
 insert into crew values  
-            ('00001078','Threesome',1994,'costume design');
+            (1078,'Threesome',1994,'costume design');
 insert into crew values  
-            ('00001079','Jungle Fever',1991,'producer');
+            (1079,'Jungle Fever',1991,'producer');
 insert into crew values  
-            ('00001082','Jungle Fever',1991,'cinematography');
+            (1082,'Jungle Fever',1991,'cinematography');
 insert into crew values  
-            ('00001083','Jungle Fever',1991,'film editing');
+            (1083,'Jungle Fever',1991,'film editing');
 insert into crew values  
-            ('00001084','Jungle Fever',1991,'casting');
+            (1084,'Jungle Fever',1991,'casting');
 insert into crew values  
-            ('00001085','Jungle Fever',1991,'costume design');
+            (1085,'Jungle Fever',1991,'costume design');
 insert into crew values  
-            ('00001091','Internal Affairs',1990,'producer');
+            (1091,'Internal Affairs',1990,'producer');
 insert into crew values  
-            ('00001092','Internal Affairs',1990,'cinematography');
+            (1092,'Internal Affairs',1990,'cinematography');
 insert into crew values  
-            ('00001093','Internal Affairs',1990,'film editing');
+            (1093,'Internal Affairs',1990,'film editing');
 insert into crew values  
-            ('00001094','Internal Affairs',1990,'casting');
+            (1094,'Internal Affairs',1990,'casting');
 insert into crew values  
-            ('00001095','Internal Affairs',1990,'costume design');
+            (1095,'Internal Affairs',1990,'costume design');
 insert into crew values  
-            ('00001096','Single White Female',1992,'producer');
+            (1096,'Single White Female',1992,'producer');
 insert into crew values  
-            ('00001101','Single White Female',1992,'cinematography');
+            (1101,'Single White Female',1992,'cinematography');
 insert into crew values  
-            ('00001102','Single White Female',1992,'film editing');
+            (1102,'Single White Female',1992,'film editing');
 insert into crew values  
-            ('00001103','Single White Female',1992,'costume design');
+            (1103,'Single White Female',1992,'costume design');
 insert into crew values  
-            ('00001104','Trust',1990,'producer');
+            (1104,'Trust',1990,'producer');
 insert into crew values  
-            ('00001107','Trust',1990,'cinematography');
+            (1107,'Trust',1990,'cinematography');
 insert into crew values  
-            ('00001108','Trust',1990,'film editing');
+            (1108,'Trust',1990,'film editing');
 insert into crew values  
-            ('00001109','Trust',1990,'costume design');
+            (1109,'Trust',1990,'costume design');
 insert into crew values  
-            ('00001114','Ju Dou',1990,'producer');
+            (1114,'Ju Dou',1990,'producer');
 insert into crew values  
-            ('00001115','Ju Dou',1990,'cinematography');
+            (1115,'Ju Dou',1990,'cinematography');
 insert into crew values  
-            ('00001116','Ju Dou',1990,'film editing');
+            (1116,'Ju Dou',1990,'film editing');
 insert into crew values  
-            ('00001117','Ju Dou',1990,'costume design');
+            (1117,'Ju Dou',1990,'costume design');
 insert into crew values  
-            ('00001121','Dahong Denglong Gaogao Gua',1991,'producer');
+            (1121,'Dahong Denglong Gaogao Gua',1991,'producer');
 insert into crew values  
-            ('00001122','Dahong Denglong Gaogao Gua',1991,'cinematography');
+            (1122,'Dahong Denglong Gaogao Gua',1991,'cinematography');
 insert into crew values  
-            ('00001123','Dahong Denglong Gaogao Gua',1991,'film editing');
+            (1123,'Dahong Denglong Gaogao Gua',1991,'film editing');
 insert into crew values  
-            ('00001127','Cyrano de Bergerac',1990,'producer');
+            (1127,'Cyrano de Bergerac',1990,'producer');
 insert into crew values  
-            ('00001128','Cyrano de Bergerac',1990,'cinematography');
+            (1128,'Cyrano de Bergerac',1990,'cinematography');
 insert into crew values  
-            ('00001129','Cyrano de Bergerac',1990,'film editing');
+            (1129,'Cyrano de Bergerac',1990,'film editing');
 insert into crew values  
-            ('00001130','Cyrano de Bergerac',1990,'costume design');
+            (1130,'Cyrano de Bergerac',1990,'costume design');
 insert into crew values  
-            ('00001010','Manhattan Murder Mystery',1993,'cinematography');
+            (1010,'Manhattan Murder Mystery',1993,'cinematography');
 insert into crew values  
-            ('00001011','Manhattan Murder Mystery',1993,'film editing');
+            (1011,'Manhattan Murder Mystery',1993,'film editing');
 insert into crew values  
-            ('00001012','Manhattan Murder Mystery',1993,'casting');
+            (1012,'Manhattan Murder Mystery',1993,'casting');
 insert into crew values  
-            ('00001013','Manhattan Murder Mystery',1993,'costume design');
+            (1013,'Manhattan Murder Mystery',1993,'costume design');
 insert into crew values  
-            ('00001132','El Mariachi',1992,'producer');
+            (1132,'El Mariachi',1992,'producer');
 insert into crew values  
-            ('00001139','Once Were Warriors',1994,'producer');
+            (1139,'Once Were Warriors',1994,'producer');
 insert into crew values  
-            ('00001140','Once Were Warriors',1994,'cinematography');
+            (1140,'Once Were Warriors',1994,'cinematography');
 insert into crew values  
-            ('00001141','Once Were Warriors',1994,'film editing');
+            (1141,'Once Were Warriors',1994,'film editing');
 insert into crew values  
-            ('00001142','Once Were Warriors',1994,'casting');
+            (1142,'Once Were Warriors',1994,'casting');
 insert into crew values  
-            ('00001147','Priest',1994,'producer');
+            (1147,'Priest',1994,'producer');
 insert into crew values  
-            ('00001148','Priest',1994,'cinematography');
+            (1148,'Priest',1994,'cinematography');
 insert into crew values  
-            ('00001149','Priest',1994,'film editing');
+            (1149,'Priest',1994,'film editing');
 insert into crew values  
-            ('00001150','Priest',1994,'casting');
+            (1150,'Priest',1994,'casting');
 insert into crew values  
-            ('00001154','Pump Up the Volum',1990,'producer');
+            (1154,'Pump Up the Volum',1990,'producer');
 insert into crew values  
-            ('00001155','Pump Up the Volum',1990,'cinematography');
+            (1155,'Pump Up the Volum',1990,'cinematography');
 insert into crew values  
-            ('00001156','Pump Up the Volum',1990,'film editing');
+            (1156,'Pump Up the Volum',1990,'film editing');
 insert into crew values  
-            ('00001157','Pump Up the Volum',1990,'casting');
+            (1157,'Pump Up the Volum',1990,'casting');
 insert into crew values  
-            ('00001162','Benny and Joon',1993,'cinematography');
+            (1162,'Benny and Joon',1993,'cinematography');
 insert into crew values  
-            ('00001163','Benny and Joon',1993,'film editing');
+            (1163,'Benny and Joon',1993,'film editing');
 insert into crew values  
-            ('00001164','Benny and Joon',1993,'casting');
+            (1164,'Benny and Joon',1993,'casting');
 insert into crew values  
-            ('00001165','Six Degrees of Separation',1993,'producer');
+            (1165,'Six Degrees of Separation',1993,'producer');
 insert into crew values  
-            ('00001170','Six Degrees of Separation',1993,'cinematography');
+            (1170,'Six Degrees of Separation',1993,'cinematography');
 insert into crew values  
-            ('00001171','Six Degrees of Separation',1993,'film editing');
+            (1171,'Six Degrees of Separation',1993,'film editing');
 insert into crew values  
-            ('00001172','Six Degrees of Separation',1993,'casting');
+            (1172,'Six Degrees of Separation',1993,'casting');
 insert into crew values  
-            ('00001177','Bawang Bie Ji',1993,'producer');
+            (1177,'Bawang Bie Ji',1993,'producer');
 insert into crew values  
-            ('00001178','Bawang Bie Ji',1993,'film editing');
+            (1178,'Bawang Bie Ji',1993,'film editing');
 insert into crew values  
-            ('00001179','In the Line of Fire',1993,'producer');
+            (1179,'In the Line of Fire',1993,'producer');
 insert into crew values  
-            ('00001184','In the Line of Fire',1993,'cinematography');
+            (1184,'In the Line of Fire',1993,'cinematography');
 insert into crew values  
-            ('00001185','In the Line of Fire',1993,'casting');
+            (1185,'In the Line of Fire',1993,'casting');
 insert into crew values  
-            ('00001186','Heavenly Creatures',1994,'producer');
+            (1186,'Heavenly Creatures',1994,'producer');
 insert into crew values  
-            ('00001189','Heavenly Creatures',1994,'cinematography');
+            (1189,'Heavenly Creatures',1994,'cinematography');
 insert into crew values  
-            ('00001190','Heavenly Creatures',1994,'film editing');
+            (1190,'Heavenly Creatures',1994,'film editing');
 insert into crew values  
-            ('00001194','Hoop Dreams',1994,'producer');
+            (1194,'Hoop Dreams',1994,'producer');
 insert into crew values  
-            ('00001199','Seven',1995,'cinematography');
+            (1199,'Seven',1995,'cinematography');
 insert into crew values  
-            ('00001200','Seven',1995,'film editing');
+            (1200,'Seven',1995,'film editing');
 insert into crew values  
-            ('00001201','Seven',1995,'casting');
+            (1201,'Seven',1995,'casting');
 insert into crew values  
-            ('00001207','Shallow Grave',1994,'producer');
+            (1207,'Shallow Grave',1994,'producer');
 insert into crew values  
-            ('00001208','Shallow Grave',1994,'cinematography');
+            (1208,'Shallow Grave',1994,'cinematography');
 insert into crew values  
-            ('00001209','Shallow Grave',1994,'film editing');
+            (1209,'Shallow Grave',1994,'film editing');
 insert into crew values  
-            ('00001212','French Kiss',1995,'producer');
+            (1212,'French Kiss',1995,'producer');
 insert into crew values  
-            ('00001215','French Kiss',1995,'cinematography');
+            (1215,'French Kiss',1995,'cinematography');
 insert into crew values  
-            ('00001216','French Kiss',1995,'film editing');
+            (1216,'French Kiss',1995,'film editing');
 insert into crew values  
-            ('00001190','Braindead',1992,'producer');
+            (1190,'Braindead',1992,'producer');
 insert into crew values  
-            ('00001220','Braindead',1992,'cinematography');
+            (1220,'Braindead',1992,'cinematography');
 insert into crew values  
-            ('00001221','Clerks',1994,'producer');
+            (1221,'Clerks',1994,'producer');
 insert into crew values  
-            ('00001224','Clerks',1994,'cinematography');
+            (1224,'Clerks',1994,'cinematography');
 insert into crew values  
-            ('00001185','Apollo 13',1995,'casting');
+            (1185,'Apollo 13',1995,'casting');
 insert into crew values  
-            ('00001230','Apollo 13',1995,'producer');
+            (1230,'Apollo 13',1995,'producer');
 insert into crew values  
-            ('00001231','Apollo 13',1995,'cinematography');
+            (1231,'Apollo 13',1995,'cinematography');
 insert into crew values  
-            ('00001232','Reservoir Dogs',1992,'producer');
+            (1232,'Reservoir Dogs',1992,'producer');
 insert into crew values  
-            ('00001236','Reservoir Dogs',1992,'film editing');
+            (1236,'Reservoir Dogs',1992,'film editing');
 insert into crew values  
-            ('00001237','Reservoir Dogs',1992,'casting');
+            (1237,'Reservoir Dogs',1992,'casting');
 insert into crew values  
-            ('00001240','Pulp Fiction',1994,'producer');
+            (1240,'Pulp Fiction',1994,'producer');
 insert into crew values  
-            ('00001236','Pulp Fiction',1994,'film editing');
+            (1236,'Pulp Fiction',1994,'film editing');
 insert into crew values  
-            ('00001245','Yinshi Nan Nu',1994,'producer');
+            (1245,'Yinshi Nan Nu',1994,'producer');
 insert into crew values  
-            ('00001246','Yinshi Nan Nu',1994,'cinematography');
+            (1246,'Yinshi Nan Nu',1994,'cinematography');
 insert into crew values  
-            ('00001247','Yinshi Nan Nu',1994,'film editing');
+            (1247,'Yinshi Nan Nu',1994,'film editing');
 insert into crew values  
-            ('00001252','Short Cuts',1993,'producer');
+            (1252,'Short Cuts',1993,'producer');
 insert into crew values  
-            ('00001255','Short Cuts',1993,'cinematography');
+            (1255,'Short Cuts',1993,'cinematography');
 insert into crew values  
-            ('00001253','Short Cuts',1993,'film editing');
+            (1253,'Short Cuts',1993,'film editing');
 insert into crew values  
-            ('00001258','Legends of the Fall',1994,'cinematography');
+            (1258,'Legends of the Fall',1994,'cinematography');
 insert into crew values  
-            ('00001259','Legends of the Fall',1994,'film editing');
+            (1259,'Legends of the Fall',1994,'film editing');
 insert into crew values  
-            ('00001260','Legends of the Fall',1994,'casting');
+            (1260,'Legends of the Fall',1994,'casting');
 insert into crew values  
-            ('00001265','Natural Born Killers',1994,'film editing');
+            (1265,'Natural Born Killers',1994,'film editing');
 insert into crew values  
-            ('00001266','Natural Born Killers',1994,'costume design');
+            (1266,'Natural Born Killers',1994,'costume design');
 insert into crew values  
-            ('00001268','In the Mouth of Madness',1995,'producer');
+            (1268,'In the Mouth of Madness',1995,'producer');
 insert into crew values  
-            ('00001272','In the Mouth of Madness',1995,'cinematography');
+            (1272,'In the Mouth of Madness',1995,'cinematography');
 insert into crew values  
-            ('00001273','In the Mouth of Madness',1995,'film editing');
+            (1273,'In the Mouth of Madness',1995,'film editing');
 insert into crew values  
-            ('00001278','Forrest Gump',1994,'producer');
+            (1278,'Forrest Gump',1994,'producer');
 insert into crew values  
-            ('00001279','Forrest Gump',1994,'cinematography');
+            (1279,'Forrest Gump',1994,'cinematography');
 insert into crew values  
-            ('00001280','Forrest Gump',1994,'casting');
+            (1280,'Forrest Gump',1994,'casting');
 insert into crew values  
-            ('00001082','Malcolm X',1992,'cinematography');
+            (1082,'Malcolm X',1992,'cinematography');
 insert into crew values  
-            ('00001084','Malcolm X',1992,'casting');
+            (1084,'Malcolm X',1992,'casting');
 insert into crew values  
-            ('00001283','Malcolm X',1992,'film editing');
+            (1283,'Malcolm X',1992,'film editing');
 insert into crew values  
-            ('00001287','Dead Again',1991,'producer');
+            (1287,'Dead Again',1991,'producer');
 insert into crew values  
-            ('00001288','Dead Again',1991,'cinematography');
+            (1288,'Dead Again',1991,'cinematography');
 insert into crew values  
-            ('00001289','Dead Again',1991,'film editing');
+            (1289,'Dead Again',1991,'film editing');
 insert into crew values  
-            ('00001290','Dead Again',1991,'casting');
+            (1290,'Dead Again',1991,'casting');
 insert into crew values  
-            ('00001295','Jurassic Park',1993,'producer');
+            (1295,'Jurassic Park',1993,'producer');
 insert into crew values  
-            ('00001296','Jurassic Park',1993,'film editing');
+            (1296,'Jurassic Park',1993,'film editing');
 insert into crew values  
-            ('00001185','Jurassic Park',1993,'casting');
+            (1185,'Jurassic Park',1993,'casting');
 insert into crew values  
-            ('00001301','Clueless',1995,'producer');
+            (1301,'Clueless',1995,'producer');
 insert into crew values  
-            ('00001302','Clueless',1995,'cinematography');
+            (1302,'Clueless',1995,'cinematography');
 insert into crew values  
-            ('00001303','Clueless',1995,'film editing');
+            (1303,'Clueless',1995,'film editing');
 insert into crew values  
-            ('00001304','Clueless',1995,'casting');
+            (1304,'Clueless',1995,'casting');
 insert into crew values  
-            ('00001305','Shadowlands',1993,'producer');
+            (1305,'Shadowlands',1993,'producer');
 insert into crew values  
-            ('00001309','Shadowlands',1993,'cinematography');
+            (1309,'Shadowlands',1993,'cinematography');
 insert into crew values  
-            ('00001310','Shadowlands',1993,'film editing');
+            (1310,'Shadowlands',1993,'film editing');
 insert into crew values  
-            ('00001311','Shadowlands',1993,'casting');
+            (1311,'Shadowlands',1993,'casting');
 insert into crew values  
-            ('00001104','Amateur',1994,'producer');
+            (1104,'Amateur',1994,'producer');
 insert into crew values  
-            ('00001314','Amateur',1994,'film editing');
+            (1314,'Amateur',1994,'film editing');
 insert into crew values  
-            ('00001315','Amateur',1994,'casting');
+            (1315,'Amateur',1994,'casting');
 insert into crew values  
-            ('00001316','Amateur',1994,'costume design');
+            (1316,'Amateur',1994,'costume design');
 insert into crew values  
-            ('00001321','GoodFellas',1990,'producer');
+            (1321,'GoodFellas',1990,'producer');
 insert into crew values  
-            ('00001322','GoodFellas',1990,'cinematography');
+            (1322,'GoodFellas',1990,'cinematography');
 insert into crew values  
-            ('00001323','GoodFellas',1990,'film editing');
+            (1323,'GoodFellas',1990,'film editing');
 insert into crew values  
-            ('00001328','Little Women',1994,'producer');
+            (1328,'Little Women',1994,'producer');
 insert into crew values  
-            ('00001329','Little Women',1994,'cinematography');
+            (1329,'Little Women',1994,'cinematography');
 insert into crew values  
-            ('00001330','Little Women',1994,'film editing');
+            (1330,'Little Women',1994,'film editing');
 insert into crew values  
-            ('00001335','While You Were Sleeping',1995,'producer');
+            (1335,'While You Were Sleeping',1995,'producer');
 insert into crew values  
-            ('00001336','While You Were Sleeping',1995,'film editing');
+            (1336,'While You Were Sleeping',1995,'film editing');
 insert into crew values  
-            ('00001337','While You Were Sleeping',1995,'casting');
+            (1337,'While You Were Sleeping',1995,'casting');
 
 
 -- Table ROLE
 
 
 insert into role values  
-            ('00000002','Titanic',1997,'Jack Dawson','');
+            (2,'Titanic',1997,'Jack Dawson','');
 insert into role values  
-            ('00001188','Titanic',1997,'Rose DeWitt Bukater','Heavenly Creatures');
+            (1188,'Titanic',1997,'Rose DeWitt Bukater','Heavenly Creatures');
 insert into role values  
-            ('00000004','Titanic',1997,'Cal Hockley','');
+            (4,'Titanic',1997,'Cal Hockley','');
 insert into role values  
-            ('00000005','Titanic',1997,'Molly Brown','');
+            (5,'Titanic',1997,'Molly Brown','');
 insert into role values  
-            ('00000023','Shakespeare in Love',1998,'Philip Henslowe','');
+            (23,'Shakespeare in Love',1998,'Philip Henslowe','');
 insert into role values  
-            ('00001146','Shakespeare in Love',1998,'Hugh Fennyman','Priest');
+            (1146,'Shakespeare in Love',1998,'Hugh Fennyman','Priest');
 insert into role values  
-            ('00000025','Shakespeare in Love',1998,'Lambert','');
+            (25,'Shakespeare in Love',1998,'Lambert','');
 insert into role values  
-            ('00000026','Shakespeare in Love',1998,'Queen Elizabeth','');
+            (26,'Shakespeare in Love',1998,'Queen Elizabeth','');
 insert into role values  
-            ('00000043','The Cider House Rules',1999,'Olive Worthington','');
+            (43,'The Cider House Rules',1999,'Olive Worthington','');
 insert into role values  
-            ('00000044','The Cider House Rules',1999,'Homer Wells','');
+            (44,'The Cider House Rules',1999,'Homer Wells','');
 insert into role values  
-            ('00000045','The Cider House Rules',1999,'Candy Kendall','');
+            (45,'The Cider House Rules',1999,'Candy Kendall','');
 insert into role values  
-            ('00000046','The Cider House Rules',1999,'Mr.Rose','');
+            (46,'The Cider House Rules',1999,'Mr.Rose','');
 insert into role values  
-            ('00000047','The Cider House Rules',1999,'Dr Wilbur Larch','');
+            (47,'The Cider House Rules',1999,'Dr Wilbur Larch','');
 insert into role values  
-            ('00000063','Gandhi',1982,'Mahatma Gandhi','');
+            (63,'Gandhi',1982,'Mahatma Gandhi','');
 insert into role values  
-            ('00000064','Gandhi',1982,'Margaret Bourke','');
+            (64,'Gandhi',1982,'Margaret Bourke','');
 insert into role values  
-            ('00000065','Gandhi',1982,'Pandit Nehru','');
+            (65,'Gandhi',1982,'Pandit Nehru','');
 insert into role values  
-            ('00000066','Gandhi',1982,'General Dyer','');
+            (66,'Gandhi',1982,'General Dyer','');
 insert into role values  
-            ('00000083','American Beauty',1999,'Lester Burnham','');
+            (83,'American Beauty',1999,'Lester Burnham','');
 insert into role values  
-            ('00000084','American Beauty',1999,'Carolyn Burnham','');
+            (84,'American Beauty',1999,'Carolyn Burnham','');
 insert into role values  
-            ('00000085','American Beauty',1999,'Jane Burnham','');
+            (85,'American Beauty',1999,'Jane Burnham','');
 insert into role values  
-            ('00000086','American Beauty',1999,'Ricky Fitts','');
+            (86,'American Beauty',1999,'Ricky Fitts','');
 insert into role values  
-            ('00000103','Affliction',1997,'Wade Whitehouse','');
+            (103,'Affliction',1997,'Wade Whitehouse','');
 insert into role values  
-            ('00000104','Affliction',1997,'Jill','');
+            (104,'Affliction',1997,'Jill','');
 insert into role values  
-            ('00000105','Affliction',1997,'Gordon LaRiviere','');
+            (105,'Affliction',1997,'Gordon LaRiviere','');
 insert into role values  
-            ('00000106','Affliction',1997,'Jack Hewitt','');
+            (106,'Affliction',1997,'Jack Hewitt','');
 insert into role values  
-            ('00000107','Affliction',1997,'Glen Whitehouse','');
+            (107,'Affliction',1997,'Glen Whitehouse','');
 insert into role values  
-            ('00000121','Life is Beautiful',1997,'Guido Orefice','');
+            (121,'Life is Beautiful',1997,'Guido Orefice','');
 insert into role values  
-            ('00000123','Life is Beautiful',1997,'Dora','');
+            (123,'Life is Beautiful',1997,'Dora','');
 insert into role values  
-            ('00000143','Boys Dont Cry',1999,'Brandon Teena','');
+            (143,'Boys Dont Cry',1999,'Brandon Teena','');
 insert into role values  
-            ('00000144','Boys Dont Cry',1999,'Lana Tisdel','');
+            (144,'Boys Dont Cry',1999,'Lana Tisdel','');
 insert into role values  
-            ('00000145','Boys Dont Cry',1999,'John Lotter','');
+            (145,'Boys Dont Cry',1999,'John Lotter','');
 insert into role values  
-            ('00000146','Boys Dont Cry',1999,'Marvin Thomas','');
+            (146,'Boys Dont Cry',1999,'Marvin Thomas','');
 insert into role values  
-            ('00001227','Saving Private Ryan',1998,'Captain John','Toy Story');
+            (1227,'Saving Private Ryan',1998,'Captain John','Toy Story');
 insert into role values  
-            ('00000164','Saving Private Ryan',1998,'Sergeant Michael','');
+            (164,'Saving Private Ryan',1998,'Sergeant Michael','');
 insert into role values  
-            ('00000165','Saving Private Ryan',1998,'Richard Reiben','');
+            (165,'Saving Private Ryan',1998,'Richard Reiben','');
 insert into role values  
-            ('00000166','Saving Private Ryan',1998,'Jackson','');
+            (166,'Saving Private Ryan',1998,'Jackson','');
 insert into role values  
-            ('00000181','The Birds',1963,'Man in pet shop','');
+            (181,'The Birds',1963,'Man in pet shop','');
 insert into role values  
-            ('00000184','The Birds',1963,'Mitch Brenner','');
+            (184,'The Birds',1963,'Mitch Brenner','');
 insert into role values  
-            ('00000185','The Birds',1963,'Lydia Brenner','');
+            (185,'The Birds',1963,'Lydia Brenner','');
 insert into role values  
-            ('00000186','The Birds',1963,'Annie Hayworth','');
+            (186,'The Birds',1963,'Annie Hayworth','');
 insert into role values
-            ('00000187','The Birds',1963,'Melanie Daniels','');
+            (187,'The Birds',1963,'Melanie Daniels','');
 insert into role values
-            ('00001001','Rear Window',1954,'L.B. Jeff Jefferies','');
+            (1001,'Rear Window',1954,'L.B. Jeff Jefferies','');
 insert into role values
-            ('00001002','Rear Window',1954,'Lisa Carol Fremont','');
+            (1002,'Rear Window',1954,'Lisa Carol Fremont','');
 insert into role values
-            ('00001003','Rear Window',1954,'Lars Thorwald','');
+            (1003,'Rear Window',1954,'Lars Thorwald','');
 insert into role values
-            ('00000181','Rear Window',1954,'Clock-Winding Man','Psycho, Birds');
+            (181,'Rear Window',1954,'Clock-Winding Man','Psycho, Birds');
 insert into role values  
-            ('00000203','The Matrix',1999,'Thomas','');
+            (203,'The Matrix',1999,'Thomas','');
 insert into role values  
-            ('00000204','The Matrix',1999,'Morpheus','');
+            (204,'The Matrix',1999,'Morpheus','');
 insert into role values  
-            ('00001227','Toy Story',1995,'Woody','Saving Private Ryan');
+            (1227,'Toy Story',1995,'Woody','Saving Private Ryan');
 insert into role values  
-            ('00000942','Toy Story',1995,'Buzz Lightyear','');
+            (942,'Toy Story',1995,'Buzz Lightyear','');
 insert into role values  
-            ('00000943','Toy Story',1995,'Bo Peep','');
+            (943,'Toy Story',1995,'Bo Peep','');
 insert into role values  
-            ('00001212','Proof of Life',2000,'Alice Bowman','Hanging Up');
+            (1212,'Proof of Life',2000,'Alice Bowman','Hanging Up');
 insert into role values  
-            ('00000622','Proof of Life',2000,'Terry Thorne','Gladiator');
+            (622,'Proof of Life',2000,'Terry Thorne','Gladiator');
 insert into role values  
-            ('00000963','Proof of Life',2000,'Peter Bowman','');
+            (963,'Proof of Life',2000,'Peter Bowman','');
 insert into role values  
-            ('00001212','Hanging Up',2000,'Eve','Proof of Life');
+            (1212,'Hanging Up',2000,'Eve','Proof of Life');
 insert into role values  
-            ('00001131','Hanging Up',2000,'Georgia','Manhattan Murder Mystery');
+            (1131,'Hanging Up',2000,'Georgia','Manhattan Murder Mystery');
 insert into role values  
-            ('00000983','Hanging Up',2000,'Maddy',''); 
+            (983,'Hanging Up',2000,'Maddy',''); 
 insert into role values  
-            ('00000223','You have Got Mail',1998,'Patricia Eden','');
+            (223,'You have Got Mail',1998,'Patricia Eden','');
 -- insert into role values  
---            ('00000163','You have Got Mail',1998,'Joe Fox III','Saving Private Ryan');
+--            (163,'You have Got Mail',1998,'Joe Fox III','Saving Private Ryan');
 insert into role values  
-            ('00001212','You have Got Mail',1998,'Kathleen Kelly','Hanging Up');
+            (1212,'You have Got Mail',1998,'Kathleen Kelly','Hanging Up');
 insert into role values  
-            ('00000242','The Price of Milk',2000,'Lucinda','Topless Women Talk About Their Lives'); 
+            (242,'The Price of Milk',2000,'Lucinda','Topless Women Talk About Their Lives'); 
 insert into role values  
-            ('00000243','The Price of Milk',2000,'Rob',''); 
+            (243,'The Price of Milk',2000,'Rob',''); 
 insert into role values  
-            ('00000244','The Price of Milk',2000,'Drosophila','Topless Women Talk About Their Lives');
+            (244,'The Price of Milk',2000,'Drosophila','Topless Women Talk About Their Lives');
 insert into role values  
-            ('00000262','The Footstep Man',1992,'Sam',''); 
+            (262,'The Footstep Man',1992,'Sam',''); 
 insert into role values  
-            ('00000263','The Footstep Man',1992,'Mirielle',''); 
+            (263,'The Footstep Man',1992,'Mirielle',''); 
 insert into role values  
-            ('00000264','The Footstep Man',1992,'Henri de Toulouse',''); 
+            (264,'The Footstep Man',1992,'Henri de Toulouse',''); 
 insert into role values  
-            ('00000242','Topless Women Talk About Their Lives',1997,'Liz','The Price of Milk'); 
+            (242,'Topless Women Talk About Their Lives',1997,'Liz','The Price of Milk'); 
 insert into role values  
-            ('00000281','Topless Women Talk About Their Lives',1997,'Neil','');
+            (281,'Topless Women Talk About Their Lives',1997,'Neil','');
 insert into role values  
-            ('00000282','Topless Women Talk About Their Lives',1997,'Ant','');  
+            (282,'Topless Women Talk About Their Lives',1997,'Ant','');  
 insert into role values  
-            ('00000244','Topless Women Talk About Their Lives',1997,'Prue','The Price of Milk');
+            (244,'Topless Women Talk About Their Lives',1997,'Prue','The Price of Milk');
 insert into role values  
-            ('00000302','The Piano',1993,'Ada McGrath','');
+            (302,'The Piano',1993,'Ada McGrath','');
 insert into role values  
-            ('00001233','The Piano',1993,'George Baines','Reservoir Dogs');
+            (1233,'The Piano',1993,'George Baines','Reservoir Dogs');
 insert into role values  
-            ('00000304','The Piano',1993,'Flora McGrath','');
+            (304,'The Piano',1993,'Flora McGrath','');
 insert into role values  
-            ('00000323','Mad Max',1979,'Max Rockatansky','Lethal Weapon 4');
+            (323,'Mad Max',1979,'Max Rockatansky','Lethal Weapon 4');
 insert into role values  
-            ('00000324','Mad Max',1979,'Jessie Rockatansky','');
+            (324,'Mad Max',1979,'Jessie Rockatansky','');
 insert into role values  
-            ('00000343','Strictly Ballroom',1992,'Scott Hastings','');
+            (343,'Strictly Ballroom',1992,'Scott Hastings','');
 insert into role values  
-            ('00000344','Strictly Ballroom',1992,'Fran','');
+            (344,'Strictly Ballroom',1992,'Fran','');
 insert into role values  
-            ('00000345','Strictly Ballroom',1992,'Shirley Hastings','');
+            (345,'Strictly Ballroom',1992,'Shirley Hastings','');
 insert into role values  
-            ('00000346','Strictly Ballroom',1992,'Doug Hastings','');
+            (346,'Strictly Ballroom',1992,'Doug Hastings','');
 insert into role values  
-            ('00000362','My Mother Frank',2000,'Mike','');
+            (362,'My Mother Frank',2000,'Mike','');
 insert into role values  
-            ('00000363','My Mother Frank',2000,'Jenny','');
+            (363,'My Mother Frank',2000,'Jenny','');
 insert into role values  
-            ('00000364','My Mother Frank',2000,'Frank','');
+            (364,'My Mother Frank',2000,'Frank','');
 insert into role values  
-            ('00000383','American Psycho',2000,'Patrick Bateman ','');
+            (383,'American Psycho',2000,'Patrick Bateman ','');
 insert into role values  
-            ('00000384','American Psycho',2000,'Donald Kimball','');
+            (384,'American Psycho',2000,'Donald Kimball','');
 insert into role values  
-            ('00000385','American Psycho',2000,'Paul Allen','');
+            (385,'American Psycho',2000,'Paul Allen','');
 insert into role values  
-            ('00001153','American Psycho',2000,'Courtney Rawlinson','Pump Up the Volume');
+            (1153,'American Psycho',2000,'Courtney Rawlinson','Pump Up the Volume');
 insert into role values  
-            ('00000403','Scream 2',1997,'Dwight Dewey Riley','');
+            (403,'Scream 2',1997,'Dwight Dewey Riley','');
 insert into role values  
-            ('00000404','Scream 2',1997,'Sidney Prescott','');
+            (404,'Scream 2',1997,'Sidney Prescott','');
 insert into role values  
-            ('00000405','Scream 2',1997,'Gale Weathers','');
+            (405,'Scream 2',1997,'Gale Weathers','');
 insert into role values  
-            ('00000485','Scream 2',1997,'Casey','I Know What You Did Last Summer');
+            (485,'Scream 2',1997,'Casey','I Know What You Did Last Summer');
 insert into role values  
-            ('00000421','Scream 3',2000,'Cotton Weary','');
+            (421,'Scream 3',2000,'Cotton Weary','');
 insert into role values  
-            ('00000422','Scream 3',2000,'Female Caller','');
+            (422,'Scream 3',2000,'Female Caller','');
 insert into role values  
-            ('00000423','Scream 3',2000,'The Voice','');
+            (423,'Scream 3',2000,'The Voice','');
 insert into role values  
-            ('00000424','Scream 3',2000,'Christine','');
+            (424,'Scream 3',2000,'Christine','');
 insert into role values  
-            ('00000404','Scream 3',2000,'Sidney Prescott','Scream 2');
+            (404,'Scream 3',2000,'Sidney Prescott','Scream 2');
 insert into role values  
-            ('00000405','Scream 3',2000,'Gale Weathers','Scream 2');
+            (405,'Scream 3',2000,'Gale Weathers','Scream 2');
 insert into role values  
-            ('00000443','Traffic',2000,'Robert Wakefield','');
+            (443,'Traffic',2000,'Robert Wakefield','');
 insert into role values  
-            ('00000444','Traffic',2000,'Javier Rodriguez','');
+            (444,'Traffic',2000,'Javier Rodriguez','');
 insert into role values  
-            ('00000445','Traffic',2000,'Helena Ayala','Entrapment');
+            (445,'Traffic',2000,'Helena Ayala','Entrapment');
 insert into role values  
-            ('00000446','Traffic',2000,'Carlos Ayala','');
+            (446,'Traffic',2000,'Carlos Ayala','');
 insert into role values  
-            ('00000447','Traffic',2000,'Ray Castro','');
+            (447,'Traffic',2000,'Ray Castro','');
 insert into role values  
-            ('00000448','Traffic',2000,'Barbara Wakefield','');
+            (448,'Traffic',2000,'Barbara Wakefield','');
 insert into role values  
-            ('00000449','Traffic',2000,'Caroline Wakefield','');
+            (449,'Traffic',2000,'Caroline Wakefield','');
 insert into role values  
-            ('00000450','Traffic',2000,'Montel Gordon','');
+            (450,'Traffic',2000,'Montel Gordon','');
 insert into role values  
-            ('00000451','Traffic',2000,'Manolo Sanchez','');
+            (451,'Traffic',2000,'Manolo Sanchez','');
 insert into role values  
-            ('00000452','Traffic',2000,'Francisco Flores','');
+            (452,'Traffic',2000,'Francisco Flores','');
 insert into role values  
-            ('00000462','Psycho',1960,'Norman Bates','');
+            (462,'Psycho',1960,'Norman Bates','');
 insert into role values  
-            ('00000463','Psycho',1960,'Lila Crane','');
+            (463,'Psycho',1960,'Lila Crane','');
 insert into role values  
-            ('00000464','Psycho',1960,'Marion Crane','');
+            (464,'Psycho',1960,'Marion Crane','');
 insert into role values  
-            ('00000181','Psycho',1960,'Man in hat','');
+            (181,'Psycho',1960,'Man in hat','');
 insert into role values
-            ('00000465','Psycho',1960,'Sam Loomis','');
+            (465,'Psycho',1960,'Sam Loomis','');
 insert into role values
-            ('00000466','Psycho',1960,'Mother','');
+            (466,'Psycho',1960,'Mother','');
 insert into role values  
-            ('00000483','I Know What You Did Last Summer',1997,'Julie James','');
+            (483,'I Know What You Did Last Summer',1997,'Julie James','');
 insert into role values  
-            ('00000485','I Know What You Did Last Summer',1997,'Helen Shivers','Scream 2');
+            (485,'I Know What You Did Last Summer',1997,'Helen Shivers','Scream 2');
 insert into role values  
-            ('00000484','I Know What You Did Last Summer',1997,'Barry Cox','Cruel Intentions');
+            (484,'I Know What You Did Last Summer',1997,'Barry Cox','Cruel Intentions');
 insert into role values  
-            ('00000484','Cruel Intentions',1999,'Sebastian Valmont','I Know What You Did Last Summer');
+            (484,'Cruel Intentions',1999,'Sebastian Valmont','I Know What You Did Last Summer');
 insert into role values  
-            ('00000485','Cruel Intentions',1999,'Kathryn Merteuil','Scream 2');
+            (485,'Cruel Intentions',1999,'Kathryn Merteuil','Scream 2');
 insert into role values  
-            ('00000503','Cruel Intentions',1999,'Annette Hargrove','');
+            (503,'Cruel Intentions',1999,'Annette Hargrove','');
 insert into role values  
-            ('00000504','Cruel Intentions',1999,'Cecile Caldwell','');
+            (504,'Cruel Intentions',1999,'Cecile Caldwell','');
 insert into role values  
-            ('00001229','Wild Things',1998,'Ray Duquette','Apollo 13');
+            (1229,'Wild Things',1998,'Ray Duquette','Apollo 13');
 insert into role values  
-            ('00000524','Wild Things',1998,'Sam Lombardo','');
+            (524,'Wild Things',1998,'Sam Lombardo','');
 insert into role values  
-            ('00000404','Wild Things',1998,'Suzie Toller','Scream 2');
+            (404,'Wild Things',1998,'Suzie Toller','Scream 2');
 insert into role values  
-            ('00000543','Alien',1979,'Captain','');
+            (543,'Alien',1979,'Captain','');
 insert into role values  
-            ('00000544','Alien',1979,'Warrent Officer','Aliens');
+            (544,'Alien',1979,'Warrent Officer','Aliens');
 insert into role values  
-            ('00000544','Aliens',1986,'Lieutenant','Alien');
+            (544,'Aliens',1986,'Lieutenant','Alien');
 insert into role values  
-            ('00000561','Aliens',1986,'Rebecca','');
+            (561,'Aliens',1986,'Rebecca','');
 insert into role values  
-            ('00000544','Alien 3',1992,'Ellen Ripley','Aliens');
+            (544,'Alien 3',1992,'Ellen Ripley','Aliens');
 insert into role values  
-            ('00000583','Alien 3',1992,'Dillon','');
+            (583,'Alien 3',1992,'Dillon','');
 insert into role values  
-            ('00000584','Alien 3',1992,'Clemens','');
+            (584,'Alien 3',1992,'Clemens','');
 insert into role values  
-            ('00000544','Alien: Resurrection',1997,'Lieutenant Ellen','Aliens');
+            (544,'Alien: Resurrection',1997,'Lieutenant Ellen','Aliens');
 insert into role values  
-            ('00001031','Alien: Resurrection',1997,'Betty Mechanic','Mermaids');
+            (1031,'Alien: Resurrection',1997,'Betty Mechanic','Mermaids');
 insert into role values  
-            ('00000604','Alien: Resurrection',1997,'Betty Chief Mechanic','');
+            (604,'Alien: Resurrection',1997,'Betty Chief Mechanic','');
 insert into role values  
-            ('00000622','Gladiator',2000,'Maximus','The Insider');
+            (622,'Gladiator',2000,'Maximus','The Insider');
 insert into role values  
-            ('00000623','Gladiator',2000,'Commodus','');
+            (623,'Gladiator',2000,'Commodus','');
 insert into role values  
-            ('00000624','Gladiator',2000,'Lucilla','');
+            (624,'Gladiator',2000,'Lucilla','');
 insert into role values  
-            ('00000643','The World Is Not Enough',1999,'James Bond','');
+            (643,'The World Is Not Enough',1999,'James Bond','');
 insert into role values  
-            ('00000644','The World Is Not Enough',1999,'CEO Elektra','');
+            (644,'The World Is Not Enough',1999,'CEO Elektra','');
 insert into role values  
-            ('00000645','The World Is Not Enough',1999,'Christmas','');
+            (645,'The World Is Not Enough',1999,'Christmas','');
 insert into role values  
-            ('00000662','Heat',1995,'Vincent Hanna','The Insider');
+            (662,'Heat',1995,'Vincent Hanna','The Insider');
 insert into role values  
-            ('00000663','Heat',1995,'Neil McCauley','');
+            (663,'Heat',1995,'Neil McCauley','');
 insert into role values  
-            ('00001017','Heat',1995,'Chris Shiherlis','Tombstone');
+            (1017,'Heat',1995,'Chris Shiherlis','Tombstone');
 insert into role values  
-            ('00000683','American History X',1998,'Derek Vinyard','');
+            (683,'American History X',1998,'Derek Vinyard','');
 insert into role values  
-            ('00000684','American History X',1998,'Daniel Vinyard','');
+            (684,'American History X',1998,'Daniel Vinyard','');
 insert into role values  
-            ('00000685','American History X',1998,'Doris Vinyard','');
+            (685,'American History X',1998,'Doris Vinyard','');
 insert into role values  
-            ('00000683','Fight Club',1999,'Narrator','');
+            (683,'Fight Club',1999,'Narrator','');
 insert into role values  
-            ('00001198','Fight Club',1999,'Tyler Durden','Twelve Monkeys');
+            (1198,'Fight Club',1999,'Tyler Durden','Twelve Monkeys');
 insert into role values  
-            ('00000703','Fight Club',1999,'Robert Paulsen','');
+            (703,'Fight Club',1999,'Robert Paulsen','');
 insert into role values  
-            ('00000722','Out of Sight',1998,'Jack Foley','');
+            (722,'Out of Sight',1998,'Jack Foley','');
 insert into role values  
-            ('00000723','Out of Sight',1998,'Bank Employee','');
+            (723,'Out of Sight',1998,'Bank Employee','');
 insert into role values  
-            ('00000724','Out of Sight',1998,'Karen Sisco','');
+            (724,'Out of Sight',1998,'Karen Sisco','');
 insert into role values  
-            ('00000445','Entrapment',1999,'Virginia Baker','Traffic');
+            (445,'Entrapment',1999,'Virginia Baker','Traffic');
 insert into role values  
-            ('00000743','Entrapment',1999,'Robert Mac','');
+            (743,'Entrapment',1999,'Robert Mac','');
 insert into role values  
-            ('00000744','Entrapment',1999,'Aaron Thibadeaux','');
+            (744,'Entrapment',1999,'Aaron Thibadeaux','');
 insert into role values  
-            ('00000762','The Insider',1999,'Liane Wigand','');
+            (762,'The Insider',1999,'Liane Wigand','');
 insert into role values  
-            ('00000622','The Insider',1999,'Jeffrey Wigand','Gladiator');
+            (622,'The Insider',1999,'Jeffrey Wigand','Gladiator');
 insert into role values  
-            ('00000662','The Insider',1999,'Lowell Bergman','Heat');
+            (662,'The Insider',1999,'Lowell Bergman','Heat');
 insert into role values  
-            ('00000782','The Blair Witch Project',1999,'Heather Donahue','');
+            (782,'The Blair Witch Project',1999,'Heather Donahue','');
 insert into role values  
-            ('00000783','The Blair Witch Project',1999,'Josh','');
+            (783,'The Blair Witch Project',1999,'Josh','');
 insert into role values  
-            ('00000784','The Blair Witch Project',1999,'Mike','');
+            (784,'The Blair Witch Project',1999,'Mike','');
 insert into role values  
-            ('00000803','Lethal Weapon 4',1998,'Roger Murtaugh','');
+            (803,'Lethal Weapon 4',1998,'Roger Murtaugh','');
 insert into role values  
-            ('00001183','Lethal Weapon 4',1998,'Lorna Cole','In the Line of Fire');
+            (1183,'Lethal Weapon 4',1998,'Lorna Cole','In the Line of Fire');
 insert into role values  
-            ('00000323','Lethal Weapon 4',1998,'Martin Riggs','Mad Max');
+            (323,'Lethal Weapon 4',1998,'Martin Riggs','Mad Max');
 insert into role values  
-            ('00000822','The Fifth Element',1997,'Korben Dallas','The Sixth Sense');
+            (822,'The Fifth Element',1997,'Korben Dallas','The Sixth Sense');
 insert into role values  
-            ('00000823','The Fifth Element',1997,'Zorg','');
+            (823,'The Fifth Element',1997,'Zorg','');
 insert into role values  
-            ('00000824','The Fifth Element',1997,'Leeloo','');
+            (824,'The Fifth Element',1997,'Leeloo','');
 insert into role values  
-            ('00000822','The Sixth Sense',1999,'Dr.Malcolm Crowe','The Fifth Element');
+            (822,'The Sixth Sense',1999,'Dr.Malcolm Crowe','The Fifth Element');
 insert into role values  
-            ('00000842','The Sixth Sense',1999,'Cole Sear','');
+            (842,'The Sixth Sense',1999,'Cole Sear','');
 insert into role values  
-            ('00000843','The Sixth Sense',1999,'Lynn Sear','');
+            (843,'The Sixth Sense',1999,'Lynn Sear','');
 insert into role values  
-            ('00000822','Unbreakable',2000,'David Dunn','The Sixth Sense');
+            (822,'Unbreakable',2000,'David Dunn','The Sixth Sense');
 insert into role values  
-            ('00001276','Unbreakable',2000,'Audrey Dunn','Forrest Gump');
+            (1276,'Unbreakable',2000,'Audrey Dunn','Forrest Gump');
 insert into role values  
-            ('00000862','Unbreakable',2000,'Joseph Dunn','');
+            (862,'Unbreakable',2000,'Joseph Dunn','');
 insert into role values  
-            ('00000822','Armageddon',1998,'Harry S.Stamper','The Fifth Element');
+            (822,'Armageddon',1998,'Harry S.Stamper','The Fifth Element');
 insert into role values  
-            ('00000883','Armageddon',1998,'Dan Truman','');
+            (883,'Armageddon',1998,'Dan Truman','');
 insert into role values  
-            ('00000884','Armageddon',1998,'Grace Stamper','');
+            (884,'Armageddon',1998,'Grace Stamper','');
 insert into role values  
-            ('00000822','The Kid',2000,'Russ Duritz','Armageddon');
+            (822,'The Kid',2000,'Russ Duritz','Armageddon');
 insert into role values  
-            ('00000903','The Kid',2000,'Rusty Duritz','');
+            (903,'The Kid',2000,'Rusty Duritz','');
 insert into role values  
-            ('00000904','The Kid',2000,'Amy','');
+            (904,'The Kid',2000,'Amy','');
 insert into role values  
-            ('00000822','Twelve Monkeys',1995,'James Cole','The Fifth Element');
+            (822,'Twelve Monkeys',1995,'James Cole','The Fifth Element');
 insert into role values  
-            ('00000923','Twelve Monkeys',1995,'Young Cole','');
+            (923,'Twelve Monkeys',1995,'Young Cole','');
 insert into role values  
-            ('00001198','Twelve Monkeys',1995,'Jeffrey Goines','Fight Club');
+            (1198,'Twelve Monkeys',1995,'Jeffrey Goines','Fight Club');
 insert into role values  
-            ('00001006','Bullets Over Broadway',1994,'David Shayne','');
+            (1006,'Bullets Over Broadway',1994,'David Shayne','');
 insert into role values  
-            ('00001007','Bullets Over Broadway',1994,'Julian Marx','While You Were Sleeping');
+            (1007,'Bullets Over Broadway',1994,'Julian Marx','While You Were Sleeping');
 insert into role values  
-            ('00001008','Bullets Over Broadway',1994,'Rocco','');
+            (1008,'Bullets Over Broadway',1994,'Rocco','');
 insert into role values  
-            ('00001016','Tombstone',1993,'Kurt Russell','');
+            (1016,'Tombstone',1993,'Kurt Russell','');
 insert into role values  
-            ('00001017','Tombstone',1993,'Val Kilmer','Heat');
+            (1017,'Tombstone',1993,'Val Kilmer','Heat');
 insert into role values  
-            ('00001018','Tombstone',1993,'Sam Elliott','');
+            (1018,'Tombstone',1993,'Sam Elliott','');
 insert into role values  
-            ('00001024','Alice',1990,'Joe','');
+            (1024,'Alice',1990,'Joe','');
 insert into role values  
-            ('00001025','Alice',1990,'Alice Tate','');
+            (1025,'Alice',1990,'Alice Tate','');
 insert into role values  
-            ('00001026','Alice',1990,'Doug Tate','');
+            (1026,'Alice',1990,'Doug Tate','');
 insert into role values  
-            ('00001029','Mermaids',1990,'Rachel Flax','');
+            (1029,'Mermaids',1990,'Rachel Flax','');
 insert into role values  
-            ('00001030','Mermaids',1990,'Lou Landsky','');
+            (1030,'Mermaids',1990,'Lou Landsky','');
 insert into role values  
-            ('00001031','Mermaids',1990,'Charlotte Flax','Little Women');
+            (1031,'Mermaids',1990,'Charlotte Flax','Little Women');
 insert into role values  
-            ('00001038','Exotica',1994,'Inspector','');
+            (1038,'Exotica',1994,'Inspector','');
 insert into role values  
-            ('00001039','Exotica',1994,'Thomas Pinto','');
+            (1039,'Exotica',1994,'Thomas Pinto','');
 insert into role values  
-            ('00001040','Exotica',1994,'Christina','');
+            (1040,'Exotica',1994,'Christina','');
 insert into role values  
-            ('00001045','Red Rock West',1992,'Michael Williams','');
+            (1045,'Red Rock West',1992,'Michael Williams','');
 insert into role values  
-            ('00001046','Red Rock West',1992,'Jim','');
+            (1046,'Red Rock West',1992,'Jim','');
 insert into role values  
-            ('00001053','Chaplin',1992,'Charlie Chaplin','');
+            (1053,'Chaplin',1992,'Charlie Chaplin','');
 insert into role values  
-            ('00001054','Chaplin',1992,'Hannah Chaplin','');
+            (1054,'Chaplin',1992,'Hannah Chaplin','');
 insert into role values  
-            ('00001055','Chaplin',1992,'Sydney Chaplin','');
+            (1055,'Chaplin',1992,'Sydney Chaplin','');
 insert into role values  
-            ('00001062','Fearless',1993,'Max Klein','');
+            (1062,'Fearless',1993,'Max Klein','');
 insert into role values  
-            ('00001063','Fearless',1993,'Laura Klein','');
+            (1063,'Fearless',1993,'Laura Klein','');
 insert into role values  
-            ('00001064','Fearless',1993,'Carla Rodrigo','');
+            (1064,'Fearless',1993,'Carla Rodrigo','');
 insert into role values  
-            ('00001071','Threesome',1994,'Alex','');
+            (1071,'Threesome',1994,'Alex','');
 insert into role values  
-            ('00001072','Threesome',1994,'Stuart','');
+            (1072,'Threesome',1994,'Stuart','');
 insert into role values  
-            ('00001073','Threesome',1994,'Eddy','');
+            (1073,'Threesome',1994,'Eddy','');
 insert into role values  
-            ('00001080','Jungle Fever',1991,'Flipper Purify','');
+            (1080,'Jungle Fever',1991,'Flipper Purify','');
 insert into role values  
-            ('00001081','Jungle Fever',1991,'Angie Tucci','');
+            (1081,'Jungle Fever',1991,'Angie Tucci','');
 insert into role values  
-            ('00001088','Internal Affairs',1990,'Dennis Peck','');
+            (1088,'Internal Affairs',1990,'Dennis Peck','');
 insert into role values  
-            ('00001089','Internal Affairs',1990,'Raymond Avila','Dead Again');
+            (1089,'Internal Affairs',1990,'Raymond Avila','Dead Again');
 insert into role values  
-            ('00001090','Internal Affairs',1990,'Kathleen Avila','');
+            (1090,'Internal Affairs',1990,'Kathleen Avila','');
 insert into role values  
-            ('00001098','Single White Female',1992,'Allison Jones','');
+            (1098,'Single White Female',1992,'Allison Jones','');
 insert into role values  
-            ('00001099','Single White Female',1992,'Hedra Carlson','');
+            (1099,'Single White Female',1992,'Hedra Carlson','');
 insert into role values  
-            ('00001100','Single White Female',1992,'Sam Rawson','');
+            (1100,'Single White Female',1992,'Sam Rawson','');
 insert into role values  
-            ('00001105','Trust',1990,'Maria Coughlin','');
+            (1105,'Trust',1990,'Maria Coughlin','');
 insert into role values  
-            ('00001106','Trust',1990,'Matthew Slaughter','Amateur');
+            (1106,'Trust',1990,'Matthew Slaughter','Amateur');
 insert into role values  
-            ('00001112','Ju Dou',1990,'Ju Dou','Daohong Denglong Gaogao Gua');
+            (1112,'Ju Dou',1990,'Ju Dou','Daohong Denglong Gaogao Gua');
 insert into role values  
-            ('00001113','Ju Dou',1990,'Yang Tian-qing','');
+            (1113,'Ju Dou',1990,'Yang Tian-qing','');
 insert into role values  
-            ('00001112','Dahong Denglong Gaogao Gua',1991,'Songlian','Ju Dou');
+            (1112,'Dahong Denglong Gaogao Gua',1991,'Songlian','Ju Dou');
 insert into role values  
-            ('00001120','Dahong Denglong Gaogao Gua',1991,'The Third Concubine','');
+            (1120,'Dahong Denglong Gaogao Gua',1991,'The Third Concubine','');
 insert into role values  
-            ('00001119','Dahong Denglong Gaogao Gua',1991,'The Master','');
+            (1119,'Dahong Denglong Gaogao Gua',1991,'The Master','');
 insert into role values  
-            ('00001125','Cyrano de Bergerac',1990,'Cyrano De Bergerac','');
+            (1125,'Cyrano de Bergerac',1990,'Cyrano De Bergerac','');
 insert into role values  
-            ('00001126','Cyrano de Bergerac',1990,'Roxane','');
+            (1126,'Cyrano de Bergerac',1990,'Roxane','');
 insert into role values  
-            ('00001005','Manhattan Murder Mystery',1993,'Larry Lipton','');
+            (1005,'Manhattan Murder Mystery',1993,'Larry Lipton','');
 insert into role values  
-            ('00001131','Manhattan Murder Mystery',1993,'Carol Lipton','Hanging Up');
+            (1131,'Manhattan Murder Mystery',1993,'Carol Lipton','Hanging Up');
 insert into role values  
-            ('00001133','El Mariachi',1992,'El Mariachi','');
+            (1133,'El Mariachi',1992,'El Mariachi','');
 insert into role values  
-            ('00001134','El Mariachi',1992,'Domino','');
+            (1134,'El Mariachi',1992,'Domino','');
 insert into role values  
-            ('00001137','Once Were Warriors',1994,'Beth Heke','');
+            (1137,'Once Were Warriors',1994,'Beth Heke','');
 insert into role values  
-            ('00001138','Once Were Warriors',1994,'Jake Heke','');
+            (1138,'Once Were Warriors',1994,'Jake Heke','');
 insert into role values  
-            ('00001145','Priest',1994,'Father Greg Pilkington','');
+            (1145,'Priest',1994,'Father Greg Pilkington','');
 insert into role values  
-            ('00001146','Priest',1994,'Father Matthew Thomas','Shakespeare in Love');
+            (1146,'Priest',1994,'Father Matthew Thomas','Shakespeare in Love');
 insert into role values  
-            ('00001152','Pump Up the Volum',1990,'Mark Hunter','');
+            (1152,'Pump Up the Volum',1990,'Mark Hunter','');
 insert into role values  
-            ('00001153','Pump Up the Volum',1990,'Nora Diniro','Little Women');
+            (1153,'Pump Up the Volum',1990,'Nora Diniro','Little Women');
 insert into role values  
-            ('00001160','Benny and Joon',1993,'Sam','');
+            (1160,'Benny and Joon',1993,'Sam','');
 insert into role values  
-            ('00001161','Benny and Joon',1993,'Juniper Pearl','');
+            (1161,'Benny and Joon',1993,'Juniper Pearl','');
 insert into role values  
-            ('00001167','Six Degrees of Separation',1993,'Ouisa Kittredge','');
+            (1167,'Six Degrees of Separation',1993,'Ouisa Kittredge','');
 insert into role values  
-            ('00001168','Six Degrees of Separation',1993,'Paul','');
+            (1168,'Six Degrees of Separation',1993,'Paul','');
 insert into role values  
-            ('00001169','Six Degrees of Separation',1993,'John Flanders','');
+            (1169,'Six Degrees of Separation',1993,'John Flanders','');
 insert into role values  
-            ('00001175','Bawang Bie Ji',1993,'Cheng Dieyi','');
+            (1175,'Bawang Bie Ji',1993,'Cheng Dieyi','');
 insert into role values  
-            ('00001176','Bawang Bie Ji',1993,'Duan Xiaolou','');
+            (1176,'Bawang Bie Ji',1993,'Duan Xiaolou','');
 insert into role values  
-            ('00001112','Bawang Bie Ji',1993,'Juxian','');
+            (1112,'Bawang Bie Ji',1993,'Juxian','');
 insert into role values  
-            ('00001181','In the Line of Fire',1993,'Secret Service Agent Frank Horrigan','');
+            (1181,'In the Line of Fire',1993,'Secret Service Agent Frank Horrigan','');
 insert into role values  
-            ('00001182','In the Line of Fire',1993,'Mitch Leary','');
+            (1182,'In the Line of Fire',1993,'Mitch Leary','');
 insert into role values  
-            ('00001183','In the Line of Fire',1993,'Secret Service Agent Lilly Raines','Lethal Weapon 4');
+            (1183,'In the Line of Fire',1993,'Secret Service Agent Lilly Raines','Lethal Weapon 4');
 insert into role values  
-            ('00001187','Heavenly Creatures',1994,'Pauline Yvonne Rieper','');
+            (1187,'Heavenly Creatures',1994,'Pauline Yvonne Rieper','');
 insert into role values  
-            ('00001188','Heavenly Creatures',1994,'Juliet Marion Hulme','Titanic');
+            (1188,'Heavenly Creatures',1994,'Juliet Marion Hulme','Titanic');
 insert into role values  
-            ('00001192','Hoop Dreams',1994,'Himself','');
+            (1192,'Hoop Dreams',1994,'Himself','');
 insert into role values  
-            ('00001193','Hoop Dreams',1994,'Arthur','');
+            (1193,'Hoop Dreams',1994,'Arthur','');
 insert into role values  
-            ('00001197','Seven',1995,'Detective William Somerset','');
+            (1197,'Seven',1995,'Detective William Somerset','');
 insert into role values  
-            ('00001198','Seven',1995,'Detective David Mills','Legends of the Fall');
+            (1198,'Seven',1995,'Detective David Mills','Legends of the Fall');
 insert into role values  
-            ('00001204','Shallow Grave',1994,'Juliet Miller','');
+            (1204,'Shallow Grave',1994,'Juliet Miller','');
 insert into role values  
-            ('00001205','Shallow Grave',1994,'David Stephens','');
+            (1205,'Shallow Grave',1994,'David Stephens','');
 insert into role values  
-            ('00001206','Shallow Grave',1994,'Alex Law','');
+            (1206,'Shallow Grave',1994,'Alex Law','');
 insert into role values  
-            ('00001212','French Kiss',1995,'Kate','You have Got Mail');
+            (1212,'French Kiss',1995,'Kate','You have Got Mail');
 insert into role values  
-            ('00001213','French Kiss',1995,'Luc Teyssier','');
+            (1213,'French Kiss',1995,'Luc Teyssier','');
 insert into role values  
-            ('00001214','French Kiss',1995,'Charlie','');
+            (1214,'French Kiss',1995,'Charlie','');
 insert into role values  
-            ('00001217','Braindead',1992,'Lionel Cosgrove','');
+            (1217,'Braindead',1992,'Lionel Cosgrove','');
 insert into role values  
-            ('00001218','Braindead',1992,'Paquita Maria Sanchez','');
+            (1218,'Braindead',1992,'Paquita Maria Sanchez','');
 insert into role values  
-            ('00001219','Braindead',1992,'Mum','');
+            (1219,'Braindead',1992,'Mum','');
 insert into role values  
-            ('00001186','Braindead',1992,'Undertaker Assistant','');
+            (1186,'Braindead',1992,'Undertaker Assistant','');
 insert into role values  
-            ('00001222','Clerks',1994,'Veronica Loughran','');
+            (1222,'Clerks',1994,'Veronica Loughran','');
 insert into role values  
-            ('00001223','Clerks',1994,'Caitlin Bree','');
+            (1223,'Clerks',1994,'Caitlin Bree','');
 insert into role values  
-            ('00001227','Apollo 13',1995,'Jim Lovell','Forrest Gump');
+            (1227,'Apollo 13',1995,'Jim Lovell','Forrest Gump');
 insert into role values  
-            ('00001228','Apollo 13',1995,'Fred Haise','');
+            (1228,'Apollo 13',1995,'Fred Haise','');
 insert into role values  
-            ('00001229','Apollo 13',1995,'Jack Swigert','Wild Things');
+            (1229,'Apollo 13',1995,'Jack Swigert','Wild Things');
 insert into role values  
-            ('00001233','Reservoir Dogs',1992,'Larry','Pulp Fiction');
+            (1233,'Reservoir Dogs',1992,'Larry','Pulp Fiction');
 insert into role values  
-            ('00001234','Reservoir Dogs',1992,'Freddy','');
+            (1234,'Reservoir Dogs',1992,'Freddy','');
 insert into role values  
-            ('00001235','Reservoir Dogs',1992,'Vic','');
+            (1235,'Reservoir Dogs',1992,'Vic','');
 insert into role values  
-            ('00001238','Pulp Fiction',1994,'Vincent Vega','');
+            (1238,'Pulp Fiction',1994,'Vincent Vega','');
 insert into role values  
-            ('00001239','Pulp Fiction',1994,'Jules Winnfield','');
+            (1239,'Pulp Fiction',1994,'Jules Winnfield','');
 insert into role values  
-            ('00001233','Pulp Fiction',1994,'Winston Wolf','Reservoir Dogs');
+            (1233,'Pulp Fiction',1994,'Winston Wolf','Reservoir Dogs');
 insert into role values  
-            ('00001242','Yinshi Nan Nu',1994,'Chu','');
+            (1242,'Yinshi Nan Nu',1994,'Chu','');
 insert into role values  
-            ('00001243','Yinshi Nan Nu',1994,'Jia-Ning','');
+            (1243,'Yinshi Nan Nu',1994,'Jia-Ning','');
 insert into role values  
-            ('00001244','Yinshi Nan Nu',1994,'Jia-Chien','');
+            (1244,'Yinshi Nan Nu',1994,'Jia-Chien','');
 insert into role values  
-            ('00001249','Short Cuts',1993,'Ann Finnigan','');
+            (1249,'Short Cuts',1993,'Ann Finnigan','');
 insert into role values  
-            ('00001250','Short Cuts',1993,'Howard Finnigan','');
+            (1250,'Short Cuts',1993,'Howard Finnigan','');
 insert into role values  
-            ('00001251','Short Cuts',1993,'Paul Finnigan','');
+            (1251,'Short Cuts',1993,'Paul Finnigan','');
 insert into role values  
-            ('00001198','Legends of the Fall',1994,'Tristan Ludlow','Seven');
+            (1198,'Legends of the Fall',1994,'Tristan Ludlow','Seven');
 insert into role values  
-            ('00001256','Legends of the Fall',1994,'Colonel William Ludlow','Shadowlands');
+            (1256,'Legends of the Fall',1994,'Colonel William Ludlow','Shadowlands');
 insert into role values  
-            ('00001257','Legends of the Fall',1994,'Alfred Ludlow','');
+            (1257,'Legends of the Fall',1994,'Alfred Ludlow','');
 insert into role values  
-            ('00001262','Natural Born Killers',1994,'Mickey Knox','');
+            (1262,'Natural Born Killers',1994,'Mickey Knox','');
 insert into role values  
-            ('00001263','Natural Born Killers',1994,'Mallory Wilson Knox','');
+            (1263,'Natural Born Killers',1994,'Mallory Wilson Knox','');
 insert into role values  
-            ('00001264','Natural Born Killers',1994,'Wayne Gale','');
+            (1264,'Natural Born Killers',1994,'Wayne Gale','');
 insert into role values  
-            ('00001269','In the Mouth of Madness',1995,'John Trent','Jurassic Park');
+            (1269,'In the Mouth of Madness',1995,'John Trent','Jurassic Park');
 insert into role values  
-            ('00001270','In the Mouth of Madness',1995,'Sutter Cane','');
+            (1270,'In the Mouth of Madness',1995,'Sutter Cane','');
 insert into role values  
-            ('00001271','In the Mouth of Madness',1995,'Linda Styles','');
+            (1271,'In the Mouth of Madness',1995,'Linda Styles','');
 insert into role values  
-            ('00001227','Forrest Gump',1994,'Forrest Gump','Apollo 13');
+            (1227,'Forrest Gump',1994,'Forrest Gump','Apollo 13');
 insert into role values  
-            ('00001276','Forrest Gump',1994,'Jenny Curran','Unbreakable');
+            (1276,'Forrest Gump',1994,'Jenny Curran','Unbreakable');
 insert into role values  
-            ('00001277','Forrest Gump',1994,'Lieutenant Daniel Taylor','');
+            (1277,'Forrest Gump',1994,'Lieutenant Daniel Taylor','');
 insert into role values  
-            ('00001281','Malcolm X',1992,'Malcolm X','');
+            (1281,'Malcolm X',1992,'Malcolm X','');
 insert into role values  
-            ('00001282','Malcolm X',1992,'Betty Shabazz','');
+            (1282,'Malcolm X',1992,'Betty Shabazz','');
 insert into role values  
-            ('00001079','Malcolm X',1992,'Shorty','');
+            (1079,'Malcolm X',1992,'Shorty','');
 insert into role values  
-            ('00001284','Dead Again',1991,'Mike Church','');
+            (1284,'Dead Again',1991,'Mike Church','');
 insert into role values  
-            ('00001089','Dead Again',1991,'Gray Baker','Internal Affaris');
+            (1089,'Dead Again',1991,'Gray Baker','Internal Affaris');
 insert into role values  
-            ('00001286','Dead Again',1991,'Margaret Strauss','');
+            (1286,'Dead Again',1991,'Margaret Strauss','');
 insert into role values  
-            ('00001269','Jurassic Park',1993,'Alan Grant','In the Mouth of Madness');
+            (1269,'Jurassic Park',1993,'Alan Grant','In the Mouth of Madness');
 insert into role values  
-            ('00001293','Jurassic Park',1993,'Ellie Sattler','');
+            (1293,'Jurassic Park',1993,'Ellie Sattler','');
 insert into role values  
-            ('00001294','Jurassic Park',1993,'Ian Malcolm','');
+            (1294,'Jurassic Park',1993,'Ian Malcolm','');
 insert into role values  
-            ('00001051','Jurassic Park',1993,'John Parker Hammond','');
+            (1051,'Jurassic Park',1993,'John Parker Hammond','');
 insert into role values  
-            ('00001298','Clueless',1995,'Cher Horowitz','');
+            (1298,'Clueless',1995,'Cher Horowitz','');
 insert into role values  
-            ('00001299','Clueless',1995,'Dionne','');
+            (1299,'Clueless',1995,'Dionne','');
 insert into role values  
-            ('00001300','Clueless',1995,'Tai Fraiser','');
+            (1300,'Clueless',1995,'Tai Fraiser','');
 insert into role values  
-            ('00001256','Shadowlands',1993,'Lewis','Legends of the Fall');
+            (1256,'Shadowlands',1993,'Lewis','Legends of the Fall');
 insert into role values  
-            ('00001307','Shadowlands',1993,'Joy Gresham','');
+            (1307,'Shadowlands',1993,'Joy Gresham','');
 insert into role values  
-            ('00001308','Shadowlands',1993,'Arnold Dopliss','');
+            (1308,'Shadowlands',1993,'Arnold Dopliss','');
 insert into role values  
-            ('00001312','Amateur',1994,'Isabelle','');
+            (1312,'Amateur',1994,'Isabelle','');
 insert into role values  
-            ('00001106','Amateur',1994,'Thomas Ludens','Trust');
+            (1106,'Amateur',1994,'Thomas Ludens','Trust');
 insert into role values  
-            ('00001313','Amateur',1994,'Sofia Ludens','');
+            (1313,'Amateur',1994,'Sofia Ludens','');
 insert into role values  
-            ('00001318','GoodFellas',1990,'James','');
+            (1318,'GoodFellas',1990,'James','');
 insert into role values  
-            ('00001319','GoodFellas',1990,'Henry Hill','');
+            (1319,'GoodFellas',1990,'Henry Hill','');
 insert into role values  
-            ('00001320','GoodFellas',1990,'Tommy DeVito','');
+            (1320,'GoodFellas',1990,'Tommy DeVito','');
 insert into role values  
-            ('00001031','Little Women',1994,'Josephine','Mermaids');
+            (1031,'Little Women',1994,'Josephine','Mermaids');
 insert into role values  
-            ('00001326','Little Women',1994,'Friedrich','');
+            (1326,'Little Women',1994,'Friedrich','');
 insert into role values  
-            ('00001327','Little Women',1994,'Margaret','');
+            (1327,'Little Women',1994,'Margaret','');
 insert into role values  
-            ('00001153','Little Women',1994,'Older Amy March','Pump Up the Volum');
+            (1153,'Little Women',1994,'Older Amy March','Pump Up the Volum');
 insert into role values  
-            ('00001333','While You Were Sleeping',1995,'Narrator','');
+            (1333,'While You Were Sleeping',1995,'Narrator','');
 insert into role values  
-            ('00001334','While You Were Sleeping',1995,'Jack Callaghan','');
+            (1334,'While You Were Sleeping',1995,'Jack Callaghan','');
 insert into role values  
-            ('00001007','While You Were Sleeping',1995,'Saul','Bullets Over Broadway');
+            (1007,'While You Were Sleeping',1995,'Saul','Bullets Over Broadway');
 

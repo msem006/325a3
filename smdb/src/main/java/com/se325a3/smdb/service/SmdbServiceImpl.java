@@ -2,6 +2,7 @@ package com.se325a3.smdb.service;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,13 @@ public class SmdbServiceImpl implements SmdbService {
 	}
 	
 	@Override
-	public Person getActorById(String id) {
+	public Person getPersonById(int id) {
+		Person person = _smdbDao.getPersonById(id);
+		return person;
+	}
+	
+	@Override
+	public Person getActorById(int id) {
 		Person actor = _smdbDao.getActorById(id);
 		return actor;
 	}
@@ -65,7 +72,7 @@ public class SmdbServiceImpl implements SmdbService {
 	}
 
 	@Override
-	public Collection<Movie> getMoviesByActorID(String id) {
+	public Collection<Movie> getMoviesByActorID(int id) {
 		List<Movie> movies = _smdbDao.getMoviesByActorID(id);
 		return movies;
 	}
@@ -76,12 +83,12 @@ public class SmdbServiceImpl implements SmdbService {
 	}
 
 	@Override
-	public int insertMovie(Movie movie) {
+	public Map<String, Object> insertMovie(Movie movie) {
 		return _smdbDao.insertMovie(movie);
 	}
 
 	@Override
-	public int insertRole(Role role) {
+	public Map<String, Object> insertRole(Role role) {
 		// TODO Auto-generated method stub
 		return _smdbDao.insertRole(role);
 	}
