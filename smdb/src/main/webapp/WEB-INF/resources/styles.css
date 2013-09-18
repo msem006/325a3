@@ -155,8 +155,7 @@ h3{
 	font-size: 1.7em;
 }
 
-#movie, #actor{
-	font-size: 1.4em;	
+#movie, #actor{	
 }
 
 a{
@@ -177,4 +176,4 @@ a:hover{
 
 a:active{
 	color:#006600;
-}
+}	

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<title>325 a1</title>
+
 	<link rel="icon" href="favicon.ico"> 
 	<link rel="stylesheet" type="text/css" href='<c:url value="/resources/styles.css" />' />
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>

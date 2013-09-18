@@ -14,7 +14,7 @@
 	<script src="/resources/jquery.js"></script>    
     <script src="/resources/modernizr.js"></script>
 	<script src="/resources/modern.js"></script>
-	<title>smdb - We have all 50 shades</title>
+
 </head>
 <body>
 	<!-- Top user login/info area -->
