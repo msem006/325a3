@@ -142,7 +142,12 @@ h3{
 	color: #95d788;
 }
 
-#name, #country, #genre, #runtime, #year, #sResult{
+#name, #country, #genre, #runtime, #year{
+	font-size: 2em;
+}
+
+#sResult{
+	color:#000;
 	font-size: 2em;
 }
 
@@ -154,3 +159,22 @@ h3{
 	font-size: 1.4em;	
 }
 
+a{
+	font-size: 1.4em;
+}
+
+a:link{
+	color:#666666;
+}
+
+a:visited{
+	color:#C4C4C4;
+}
+
+a:hover{
+	color:#95d788;
+}
+
+a:active{
+	color:#006600;
+}

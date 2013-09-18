@@ -10,37 +10,11 @@
 	<link rel="icon" href="favicon.ico"> 
 	<link rel="stylesheet" type="text/css" href='<c:url value="/resources/styles.css" />' />
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>    
-	<script src="http://www.red-team-design.com/wp-content/uploads/2011/02/modernizr-1.6.min_.js"></script>
-	<script>    
-	$(document).ready(function() {           
-		if (!Modernizr.input.placeholder)
-		{
-
-			var placeholderText = $('#search').attr('placeholder');
-
-			$('#search').attr('value',placeholderText);
-			$('#search').addClass('placeholder');
-
-			$('#search').focus(function() {				
-				if( ($('#search').val() == placeholderText) )
-				{
-					$('#search').attr('value','');
-					$('#search').removeClass('placeholder');
-				}
-			});
-
-			$('#search').blur(function() {				
-				if ( ($('#search').val() == placeholderText) || (($('#search').val() == '')) )                      
-				{	
-					$('#search').addClass('placeholder');					  
-					$('#search').attr('value',placeholderText);
-				}
-			});
-		}                
-	});         
-	</script>
-	<title>smdb - We have all 50 shades</title>
+	
+	<script src="/resources/jquery.js"></script>    
+    <script src="/resources/modernizr.js"></script>
+	<script src="/resources/modern.js"></script>
+	<title>SMDB - The comprehensive movie database</title>
 </head>
 <body>
 	<!-- Top user login/info area -->
