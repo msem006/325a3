@@ -13,6 +13,8 @@ import javax.persistence.Parameter;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -245,7 +247,7 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	public Map<String, Object> insertMovie(Movie movie) {
+	public void insertMovie(Movie movie) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("title", movie.getTitle());
 		params.addValue("year", movie.getProduction_year());
@@ -253,15 +255,10 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		params.addValue("run_time", movie.getRun_time());
 		params.addValue("major_genre", movie.getMajor_genre());
 		_namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_MOVIE, params);
-
-		Map<String, Object> key = new HashMap<String, Object>();
-		key.put("title", movie.getTitle());
-		key.put("production_year", movie.getProduction_year());
-		return key;
 	}
 
 	@Override
-	public Map<String, Object> insertRole(Role role) {
+	public void insertRole(Role role)  {
 		MapSqlParameterSource params = new MapSqlParameterSource();
 		params.addValue("id", role.getId());
 		params.addValue("title", role.getTitle());
@@ -269,12 +266,6 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 		params.addValue("description", role.getDescription());
 		params.addValue("credits", role.getCredits());
 		_namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_ROLE, params);
-
-		Map<String, Object> key = new HashMap<String, Object>();
-		key.put("title", role.getTitle());
-		key.put("production_year", role.getProduction_year());
-		key.put("description", role.getDescription());
-		return key;
 	}
 
 	private void getRolesForActor(Person actor) {

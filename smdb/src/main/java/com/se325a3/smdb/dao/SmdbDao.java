@@ -158,7 +158,7 @@ public interface SmdbDao {
 	 * @return A map containing the title and production year fields of the
 	 *         inserted Movie
 	 */
-	Map<String, Object> insertMovie(Movie movie);
+	void insertMovie(Movie movie);
 
 	/**
 	 * Insert a Role into the database. The Person and Movie that it references
@@ -169,5 +169,5 @@ public interface SmdbDao {
 	 * @return A map containing the title, producton year and description fields
 	 *         of the inserted Role
 	 */
-	Map<String, Object> insertRole(Role role);
+	void insertRole(Role role);
 }

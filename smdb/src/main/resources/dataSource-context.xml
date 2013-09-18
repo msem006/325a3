@@ -31,6 +31,8 @@
 	</beans>
 
 	<beans profile="hibernate">
+		<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+	
 		<bean id="mySessionFactory"
 			class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 			<property name="dataSource" ref="dataSource" />

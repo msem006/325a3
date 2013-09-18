@@ -9,6 +9,8 @@ import java.util.Set;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.se325a3.smdb.model.Movie;
@@ -129,11 +131,20 @@ public abstract class AbstractSmdbServiceTest {
 		movie.setCountry("USA");
 		movie.setRun_time(119);
 		movie.setMajor_genre("Action");
-		Map<String, Object> returnedKey = _smdbService.insertMovie(movie);
-		assertEquals(returnedKey.get("title"), "The Bourne Identity");
-		assertEquals(returnedKey.get("production_year"), 2002);
+		_smdbService.insertMovie(movie);
 	}
 
+	@Test(expected = DataIntegrityViolationException.class)
+	public void testInsertExistingMovie() {
+		Movie movie = new Movie();
+		movie.setTitle("Alien 3");
+		movie.setProduction_year(1992);
+		movie.setCountry("USA");
+		movie.setRun_time(115);
+		movie.setMajor_genre("Action");
+		_smdbService.insertMovie(movie);
+	}
+	
 	@Test
 	public void testInsertRole() {
 		
@@ -163,6 +174,28 @@ public abstract class AbstractSmdbServiceTest {
 		assertTrue(actor.getFirst_name().startsWith("Matt"));
 		assertTrue(actor.getLast_name().startsWith("Damon"));
 		assertEquals(1970, actor.getYear_born());
+	}
+	
+	@Test(expected = DataIntegrityViolationException.class)
+	public void testInsertExistingRole() {
+		
+		Person person = _smdbService.getActorById(544);
+		
+		int numRoles = person.getRoles().size();
+		
+		Movie movie = _smdbService.getMovieByTitleAndYear("Alien 3", "1992");
+	
+		Role role = new Role();
+		role.setId(544);
+		role.setPerson(person);
+		role.setMovie(movie);
+		role.setDescription("Ellen Ripley");
+		role.setCredits("");
+		_smdbService.insertRole(role);
+		
+		Person person1 = _smdbService.getActorById(544);
+		
+		assertEquals(numRoles + 1, person1.getRoles().size());
 	}
 	
 	@Test 

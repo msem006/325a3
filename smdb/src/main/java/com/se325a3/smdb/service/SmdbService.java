@@ -21,6 +21,6 @@ public interface SmdbService {
 	public Movie getMovieByTitleAndYear(String title, String year);
 	public Collection<Movie> getMoviesByActorID(int id);
 	int insertPerson(Person person);
-	Map<String, Object> insertMovie(Movie movie);
-	Map<String, Object> insertRole(Role role);
+	void insertMovie(Movie movie);
+	void insertRole(Role role);
 }

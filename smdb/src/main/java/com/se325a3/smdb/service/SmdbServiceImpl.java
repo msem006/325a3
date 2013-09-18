@@ -103,14 +103,13 @@ public class SmdbServiceImpl implements SmdbService {
 	}
 
 	@Override
-	public Map<String, Object> insertMovie(Movie movie) {
-		return _smdbDao.insertMovie(movie);
+	public void insertMovie(Movie movie) {
+		_smdbDao.insertMovie(movie);
 	}
 
 	@Override
-	public Map<String, Object> insertRole(Role role) {
-		// TODO Auto-generated method stub
-		return _smdbDao.insertRole(role);
+	public void insertRole(Role role) {
+		_smdbDao.insertRole(role);
 	}
 
 }

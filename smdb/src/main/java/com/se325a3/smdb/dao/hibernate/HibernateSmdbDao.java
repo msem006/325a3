@@ -8,6 +8,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -159,16 +160,13 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	public Map<String, Object> insertMovie(Movie movie) {
-		Movie updatedMovie = (Movie) getCurrentSession().merge(movie);
-		Map<String, Object> key = new HashMap<String, Object>();
-		key.put("title", updatedMovie.getTitle());
-		key.put("production_year", updatedMovie.getProduction_year());
-		return key;
+	public void insertMovie(Movie movie) {
+		getCurrentSession().save(movie);
+		getCurrentSession().flush();
 	}
 
 	@Override
-	public Map<String, Object> insertRole(Role role) {
+	public void insertRole(Role role) {
 		Person person = (Person) getCurrentSession().get(Person.class, role.getId());
 		
 		Query mQuery = getCurrentSession().createQuery(
@@ -179,14 +177,8 @@ public class HibernateSmdbDao implements SmdbDao {
 		
 		role.setPerson(person);
 		role.setMovie(movie);
-		Role updatedRole = (Role) getCurrentSession().merge(role);
-		
-		Map<String, Object> key = new HashMap<String, Object>();
-		key.put("title", updatedRole.getTitle());
-		key.put("production_year", updatedRole.getProduction_year());
-		key.put("description", updatedRole.getDescription());
-		
-		return key;
+		getCurrentSession().save(role);
+		getCurrentSession().flush();
 	}
 	
 	protected final Session getCurrentSession() {
