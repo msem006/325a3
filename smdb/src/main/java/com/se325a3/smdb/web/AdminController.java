@@ -215,29 +215,27 @@ public class AdminController {
 		    
 		    if (_smdbService.getActorById(id)!=null) {
 		    	modelAndView.addObject("actor", _smdbService.getActorById(id));
-			    if (role.getTitle().length() > 0 && role.getProduction_year() > 0 && role.getDescription().length() > 0 && role.getCredits().length() > 0 ) {
 				    if (role.getTitle()!=null) {
-				    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
-			    		if (movie!=null) {
-					    	// Add movie to database
-					    	role.setId(id);
-					    	try {
-					    		_smdbService.insertRole(role);
-					    	}
-					    	catch (DataIntegrityViolationException e) {
-					    		modelAndView.addObject("error", "Actor already appears in this movie");
-					    	}
-					    	//modelAndView.addObject("result", "The movie was successfully added.");
-					    	modelAndView.addObject("role", role);
-			    		} else {
-			    			modelAndView.addObject("error", "Movie does not exist");
-			    		}
+					    if (role.getTitle().length() > 0 && role.getProduction_year() > 0 && role.getDescription().length() > 0 && role.getCredits().length() > 0 ) {
+					    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
+				    		if (movie!=null) {
+						    	// Add movie to database
+						    	role.setId(id);
+						    	try {
+						    		_smdbService.insertRole(role);
+						    	}
+						    	catch (DataIntegrityViolationException e) {
+						    		modelAndView.addObject("error", "Actor already appears in this movie");
+						    	}
+						    	//modelAndView.addObject("result", "The movie was successfully added.");
+						    	modelAndView.addObject("role", role);
+				    		} else {
+				    			modelAndView.addObject("error", "Movie does not exist");
+				    		}
+					    }
+				    } else {
+				    	modelAndView.addObject("error", "Please fill out every field");
 				    }
-			    } else {
-			    	modelAndView.addObject("error", "Please fill out every field");
-			    }
-		    	
-		    	
 
 		    } else {
 		    	modelAndView.addObject("error", "Actor does not exist");
