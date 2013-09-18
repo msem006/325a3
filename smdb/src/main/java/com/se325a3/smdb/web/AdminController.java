@@ -232,10 +232,11 @@ public class AdminController {
 				    		} else {
 				    			modelAndView.addObject("error", "Movie does not exist");
 				    		}
+					    } else {
+					    	modelAndView.addObject("error", "Please fill out every field");
 					    }
-				    } else {
-				    	modelAndView.addObject("error", "Please fill out every field");
 				    }
+				    
 
 		    } else {
 		    	modelAndView.addObject("error", "Actor does not exist");
