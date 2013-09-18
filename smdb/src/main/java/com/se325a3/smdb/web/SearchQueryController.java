@@ -57,8 +57,21 @@ public class SearchQueryController {
 	    for (Movie movie : movieList) {
 	    	System.out.println(movie.getTitle() + " " + movie.getProduction_year());
 	    }
-	    Collection<Person> personList = 
-	    		_smdbService.getActorsByFirstName(query.getQuery());
+	    
+	    String[] splited = query.getQuery().split("\\s+");
+	    Collection<Person> personList;
+	    // Anything after the 2nd word is ignored
+	    if (splited.length > 1) {
+	    	personList = 
+	    			_smdbService.getActorsByFirstNameOrLastName(splited[0], splited[1]);
+	    } else {
+	    	personList = 
+	    			_smdbService.getActorsByFirstName(query.getQuery());
+	    	personList.addAll(_smdbService.getActorsByLastName(query.getQuery()));
+	    	
+	    }
+	    
+
 	    for (Person person : personList) {
 	    	System.out.println(person.getFirst_name() + " " + person.getLast_name());
 	    }

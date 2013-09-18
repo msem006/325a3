@@ -43,19 +43,19 @@
 	<div>
 		<form:form method="post" action="addMovie" commandname="addMovie" modelAttribute="addMovie">
 		<form:label path="title">Title</form:label>
-		<form:input path="title" type="text" />
+		<form:input path="title" type="text" /><br />
 
 		<form:label path="production_year">Production Year</form:label>
-		<form:input path="production_year" type="text" />
+		<form:input path="production_year" type="text" /><br />
 
 		<form:label path="country">Country</form:label>
-		<form:input path="country" type="text" />
+		<form:input path="country" type="text" /><br />
 
 		<form:label path="major_genre">Major Genre</form:label>
-		<form:input path="major_genre" type="text" />
+		<form:input path="major_genre" type="text" /><br />
 
 		<form:label path="run_time">Run Time</form:label>
-		<form:input path="run_time" type="text" />
+		<form:input path="run_time" type="text" /><br />
 
 		<input type="submit" value="Add"/>
 		</form:form>

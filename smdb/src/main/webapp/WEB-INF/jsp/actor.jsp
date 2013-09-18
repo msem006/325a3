@@ -46,8 +46,12 @@
 
 <div id="movie">
 	<c:forEach items="${movieList}" var="movie">
-	<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a><br />
-</c:forEach>
+		<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a><br />
+	</c:forEach>
+	<c:if test="${not empty user}" >
+		<br>
+		<a href='addRole?id=<c:out value="${actor.getId()}"/>'>Add another movie</a>
+	</c:if>
 </div>
 
 </body>

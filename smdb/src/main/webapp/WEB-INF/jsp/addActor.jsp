@@ -52,19 +52,19 @@
 		<form:input path="id" type="text" />-->
 
 		<form:label path="first_name">First Name</form:label>
-		<form:input path="first_name" type="text" />
+		<form:input path="first_name" type="text" /><br />
 
 		<form:label path="last_name">Last Name</form:label>
-		<form:input path="last_name" type="text" />
+		<form:input path="last_name" type="text" /><br />
 
 		<form:label path="year_born">Year Born</form:label>
-		<form:input path="year_born" type="text" />
+		<form:input path="year_born" type="text" /><br />
 
 		<form:label path="title">Movie Title</form:label>
-		<form:input path="title" type="text" />
+		<form:input path="title" type="text" /><br />
 
 		<form:label path="production_year">Production Year</form:label>
-		<form:input path="production_year" type="text" />
+		<form:input path="production_year" type="text" /><br />
 
 		<input type="submit" value="Add"/>
 		</form:form>

@@ -35,27 +35,35 @@
 			<input type="submit" id="submit" value="Search"/>
 		</form:form>
 	</div>
-	<c:if test="${not empty role.getTitle()}" >
-		<div class="result success">
-			The <a href='actor?id=<c:out value="${role.getId()}"/>'>actor</a> has been successfully added to the <a href='movie?title=<c:out value="${role.getTitle()}"/>&year=<c:out value="${role.getProduction_year()}"/>'>movie</a>
+	<c:if test="${not empty error}" >
+		<div class="result error">
+			<c:out value="${error}"/>
 		</div>
 	</c:if>
+	<c:if test="${not empty role.getTitle()}" >
+		<c:if test="${empty error}" >
+			<div class="result success">
+				<a href='movie?title=<c:out value="${role.getTitle()}"/>&year=<c:out value="${role.getProduction_year()}"/>'><c:out value="${role.getTitle()}"/></a> has been successfully added to <a href='actor?id=<c:out value="${actor.getId()}"/>'><c:out value="${actor.getFirst_name()}"/> <c:out value="${actor.getLast_name()}"/>'s</a> filmography
+			</div>
+		</c:if>
+	</c:if>
+	<h3>Adding a movie to <a href='actor?id=<c:out value="${actor.getId()}"/>'><c:out value="${actor.getFirst_name()}"/> <c:out value="${actor.getLast_name()}"/>'s</a> filmography</h3>
 	<div>
-		<form:form method="post" action="addRole" commandname="addRole" modelAttribute="addRole">
-		<form:label path="id">Person Id</form:label>
-		<form:input path="id" type="text" />
+		<form:form method="post" action='addRole?id=${actor.getId()}' commandname="addRole" modelAttribute="addRole">
+		<!--<form:label path="id">Person Id</form:label>
+		<form:input path="id" type="text" />-->
 
 		<form:label path="title">Movie Title</form:label>
-		<form:input path="title" type="text" />
+		<form:input path="title" type="text" /><br />
 
 		<form:label path="production_year">Movie Production Year</form:label>
-		<form:input path="production_year" type="text" />
+		<form:input path="production_year" type="text" /><br />
 
-		<form:label path="description">Description</form:label>
-		<form:input path="description" type="text" />
+		<form:label path="description">Role Description</form:label>
+		<form:input path="description" type="text" /><br />
 
-		<form:label path="credits">Credits</form:label>
-		<form:input path="credits" type="text" />
+		<form:label path="credits">Role Credits</form:label>
+		<form:input path="credits" type="text" /><br />
 
 		<input type="submit" value="Add"/>
 		</form:form>
