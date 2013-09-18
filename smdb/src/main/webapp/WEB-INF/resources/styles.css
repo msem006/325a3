@@ -159,3 +159,22 @@ h3{
 	font-size: 1.4em;	
 }
 
+a{
+	font-size: 1.4em;
+}
+
+a:link{
+	color:#666666;
+}
+
+a:visited{
+	color:#003300;
+}
+
+a:hover{
+	color:#006600;
+}
+
+a:active{
+	color:#006600;
+}
