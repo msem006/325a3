@@ -122,32 +122,35 @@ public class AdminController {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addActor");
 	    	if (actor.getFirst_name() != null) {
-	    		
-	    		Movie movie = _smdbService.getMovieByTitleAndYear(actor.getTitle(), String.valueOf(actor.getProduction_year()));
-	    		if (movie != null) {
-		    		// Add actor to database
-		    		
+    			if (actor.getFirst_name().length() > 0 && actor.getLast_name().length() > 0 && actor.getYear_born() > 0 && actor.getTitle().length() > 0 && actor.getProduction_year() > 0) {
+
+		    		Movie movie = _smdbService.getMovieByTitleAndYear(actor.getTitle(), String.valueOf(actor.getProduction_year()));
+		    		if (movie != null) {
+			    		// Add actor to database
+			    		Person person = new Person();
+			    		//person.setId(actor.getId());
+			    		person.setFirst_name(actor.getFirst_name());
+			    		person.setLast_name(actor.getLast_name());
+			    		person.setYear_born(actor.getYear_born());
+			    		int genId = _smdbService.insertPerson(person);
+			    		actor.setId(genId);
+			    		
+			    		Role role = new Role();
+			    		role.setId(actor.getId());
+			    		role.setTitle(actor.getTitle());
+			    		role.setProduction_year(actor.getProduction_year());
+			    		role.setDescription("");
+			    		role.setCredits("");
+			    		
+			    		_smdbService.insertRole(role);
+			    		modelAndView.addObject("person", actor);
 	
-		    		Person person = new Person();
-		    		//person.setId(actor.getId());
-		    		person.setFirst_name(actor.getFirst_name());
-		    		person.setLast_name(actor.getLast_name());
-		    		person.setYear_born(actor.getYear_born());
-		    		int genId = _smdbService.insertPerson(person);
-		    		actor.setId(genId);
-		    		
-		    		Role role = new Role();
-		    		role.setId(actor.getId());
-		    		role.setTitle(actor.getTitle());
-		    		role.setProduction_year(actor.getProduction_year());
-		    		role.setDescription("");
-		    		role.setCredits("");
-		    		
-		    		_smdbService.insertRole(role);
-		    		modelAndView.addObject("person", actor);
-	    		} else {
-	    			modelAndView.addObject("error", "Movie does not exist");
-	    		}
+		    		} else {
+		    			modelAndView.addObject("error", "Movie does not exist");
+		    		}
+    			} else {
+    				modelAndView.addObject("error", "Please fill out every field");
+    			}
 	    	}
 	    	
 		    modelAndView.addObject("addActor", new Actor());
@@ -173,13 +176,17 @@ public class AdminController {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addMovie");
 		    if (movie.getTitle()!=null) {
-		    	// Add movie to database
-		    	try {
-		    		_smdbService.insertMovie(movie);
-			    	//modelAndView.addObject("result", "The movie was successfully added.");
-			    	modelAndView.addObject("movie", movie);
-		    	} catch (DataIntegrityViolationException e) {
-		    		modelAndView.addObject("error", "Movie already exists");
+		    	if (movie.getTitle().length() > 0 && movie.getProduction_year() > 0 && movie.getCountry().length() > 0 && movie.getMajor_genre().length() > 0 && movie.getRun_time() > 0) {
+			    	// Add movie to database
+			    	try {
+			    		_smdbService.insertMovie(movie);
+				    	//modelAndView.addObject("result", "The movie was successfully added.");
+				    	modelAndView.addObject("movie", movie);
+			    	} catch (DataIntegrityViolationException e) {
+			    		modelAndView.addObject("error", "Movie already exists");
+			    	}
+		    	} else {
+		    		modelAndView.addObject("error", "Please fill out every field");
 		    	}
 		    }
 		    modelAndView.addObject("addMovie", new Movie());
@@ -207,24 +214,31 @@ public class AdminController {
 		    modelAndView.setViewName("addRole");
 		    
 		    if (_smdbService.getActorById(id)!=null) {
-			    modelAndView.addObject("actor", _smdbService.getActorById(id));
-			    if (role.getTitle()!=null) {
-			    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
-		    		if (movie!=null) {
-				    	// Add movie to database
-				    	role.setId(id);
-				    	try {
-				    		_smdbService.insertRole(role);
-				    	}
-				    	catch (DataIntegrityViolationException e) {
-				    		modelAndView.addObject("error", "Actor already appears in this movie");
-				    	}
-				    	//modelAndView.addObject("result", "The movie was successfully added.");
-				    	modelAndView.addObject("role", role);
-		    		} else {
-		    			modelAndView.addObject("error", "Movie does not exist");
-		    		}
+		    	modelAndView.addObject("actor", _smdbService.getActorById(id));
+			    if (role.getTitle().length() > 0 && role.getProduction_year() > 0 && role.getDescription().length() > 0 && role.getCredits().length() > 0 ) {
+				    if (role.getTitle()!=null) {
+				    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
+			    		if (movie!=null) {
+					    	// Add movie to database
+					    	role.setId(id);
+					    	try {
+					    		_smdbService.insertRole(role);
+					    	}
+					    	catch (DataIntegrityViolationException e) {
+					    		modelAndView.addObject("error", "Actor already appears in this movie");
+					    	}
+					    	//modelAndView.addObject("result", "The movie was successfully added.");
+					    	modelAndView.addObject("role", role);
+			    		} else {
+			    			modelAndView.addObject("error", "Movie does not exist");
+			    		}
+				    }
+			    } else {
+			    	modelAndView.addObject("error", "Please fill out every field");
 			    }
+		    	
+		    	
+
 		    } else {
 		    	modelAndView.addObject("error", "Actor does not exist");
 		    }

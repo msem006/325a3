@@ -41,9 +41,11 @@
 		</div>
 	</c:if>
 	<c:if test="${empty error}" >
-		<div class="result success">
-			<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a> has been added successfully
-		</div>
+		<c:if test="${not empty movie.getTitle()}">
+			<div class="result success">
+				<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a> has been added successfully
+			</div>
+		</c:if>
 	</c:if>
 	<div>
 		<form:form method="post" action="addMovie" commandname="addMovie" modelAttribute="addMovie">
