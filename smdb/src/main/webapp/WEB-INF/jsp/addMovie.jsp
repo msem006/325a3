@@ -35,9 +35,14 @@
 			<input type="submit" id="submit" value="Search"/>
 		</form:form>
 	</div>
-	<c:if test="${not empty movie.getTitle()}" >
+	<c:if test="${not empty error}" >
+		<div class="result error">
+			<c:out value="${error}"/>
+		</div>
+	</c:if>
+	<c:if test="${empty error}" >
 		<div class="result success">
-			The movie has been added successfully. View it <a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'>here</a>
+			<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a> has been added successfully
 		</div>
 	</c:if>
 	<div>

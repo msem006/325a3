@@ -6,6 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -173,9 +174,13 @@ public class AdminController {
 		    modelAndView.setViewName("addMovie");
 		    if (movie.getTitle()!=null) {
 		    	// Add movie to database
-		    	_smdbService.insertMovie(movie);
-		    	//modelAndView.addObject("result", "The movie was successfully added.");
-		    	modelAndView.addObject("movie", movie);
+		    	try {
+		    		_smdbService.insertMovie(movie);
+			    	//modelAndView.addObject("result", "The movie was successfully added.");
+			    	modelAndView.addObject("movie", movie);
+		    	} catch (DataIntegrityViolationException e) {
+		    		modelAndView.addObject("error", "Movie already exists");
+		    	}
 		    }
 		    modelAndView.addObject("addMovie", new Movie());
 		    
@@ -208,7 +213,12 @@ public class AdminController {
 		    		if (movie!=null) {
 				    	// Add movie to database
 				    	role.setId(id);
-				    	_smdbService.insertRole(role);
+				    	try {
+				    		_smdbService.insertRole(role);
+				    	}
+				    	catch (DataIntegrityViolationException e) {
+				    		modelAndView.addObject("error", "Actor already appears in this movie");
+				    	}
 				    	//modelAndView.addObject("result", "The movie was successfully added.");
 				    	modelAndView.addObject("role", role);
 		    		} else {
