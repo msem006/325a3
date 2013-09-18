@@ -30,7 +30,7 @@
 	</c:if>
 
 	<!-- Site Content -->
-	<h1> SMDB </h1>
+	<h1><a href="index">SMDB</h1>
 	<div>
 		<form:form method="post" action="searchResults" id="searchbox"commandname="searchQuery" modelAttribute="searchQuery">
 		<form:input path="query" id="search" type="text" placeholder="Type here" /> 
