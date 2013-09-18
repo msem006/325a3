@@ -17,11 +17,18 @@ import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.model.Role;
 
 @Repository
+@Transactional
 public class HibernateSmdbDao implements SmdbDao {
 	
 	private static final String HQL_SELECT_ACTOR_BY_ID = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND p.id = :id";
 
-	private static final String HQL_SELECT_ACTORS_BY_NAME = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND str(p.first_name) LIKE :name";
+	private static final String HQL_SELECT_ACTORS_BY_FIRST_NAME = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND str(p.first_name) LIKE :name";
+	
+	private static final String HQL_SELECT_ACTORS_BY_LAST_NAME = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND str(p.last_name) LIKE :name";
+	
+	private static final String HQL_SELECT_ACTORS_BY_FIRST_NAME_AND_LAST_NAME = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND str(p.first_name) LIKE :firstname AND str(p.last_name) LIKE :lastname";
+	
+	private static final String HQL_SELECT_ACTORS_BY_FIRST_NAME_OR_LAST_NAME = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND  str(p.first_name) LIKE :firstname OR str(p.last_name) LIKE :lastname AND p.id = r.id";
 
 	private static final String HQL_SELECT_ACTORS_BY_MOVIE_TITLE = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND str(r.title) LIKE :title";
 
@@ -47,13 +54,11 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public Person getPersonById(int id) {
 		return (Person) getCurrentSession().get(Person.class, id);
 	}
 	
 	@Override
-	@Transactional
 	public Person getActorById(int id) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_ACTOR_BY_ID);
@@ -62,16 +67,42 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
-	public List<Person> getActorsByName(String name) {
+	public List<Person> getActorsByFirstName(String name) {
 		Query query = getCurrentSession()
-				.createQuery(HQL_SELECT_ACTORS_BY_NAME);
+				.createQuery(HQL_SELECT_ACTORS_BY_FIRST_NAME);
 		query.setParameter("name", name + "%");
 		return (List<Person>) query.list();
 	}
 
 	@Override
-	@Transactional
+	public List<Person> getActorsByLastName(String name) {
+		Query query = getCurrentSession()
+				.createQuery(HQL_SELECT_ACTORS_BY_LAST_NAME);
+		query.setParameter("name", name + "%");
+		return (List<Person>) query.list();
+	}
+
+	@Override
+	public List<Person> getActorsByFirstNameAndLastName(String firstname,
+			String lastname) {
+		Query query = getCurrentSession()
+				.createQuery(HQL_SELECT_ACTORS_BY_FIRST_NAME_AND_LAST_NAME);
+		query.setParameter("firstname", firstname + "%");
+		query.setParameter("lastname", lastname + "%");
+		return (List<Person>) query.list();
+	}
+	
+	@Override
+	public List<Person> getActorsByFirstNameOrLastName(String firstname,
+			String lastname) {
+		Query query = getCurrentSession()
+				.createQuery(HQL_SELECT_ACTORS_BY_FIRST_NAME_OR_LAST_NAME);
+		query.setParameter("firstname", firstname + "%");
+		query.setParameter("lastname", lastname + "%");
+		return (List<Person>) query.list();
+	}
+	
+	@Override
 	public List<Person> getActorsByMovieTitle(String title) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_ACTORS_BY_MOVIE_TITLE);
@@ -80,7 +111,6 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public List<Person> getActorsByMovieTitleAndYear(String title, String year) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR);
@@ -90,7 +120,6 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public List<Movie> getMoviesByTitle(String title) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_MOVIES_BY_TITLE);
@@ -99,7 +128,6 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public List<Movie> getMoviesByActorName(String name) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_MOVIES_BY_ACTOR_NAME);
@@ -108,7 +136,6 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public Movie getMovieByTitleAndYear(String title, String year) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_MOVIE_BY_TITLE_AND_YEAR);
@@ -118,7 +145,6 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public List<Movie> getMoviesByActorID(int id) {
 		Query query = getCurrentSession().createQuery(
 				HQL_SELECT_MOVIES_BY_ACTOR_ID);
@@ -127,14 +153,12 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public int insertPerson(Person person) {
 		Person updatedPerson = (Person) getCurrentSession().merge(person);
 		return updatedPerson.getId();
 	}
 
 	@Override
-	@Transactional
 	public Map<String, Object> insertMovie(Movie movie) {
 		Movie updatedMovie = (Movie) getCurrentSession().merge(movie);
 		Map<String, Object> key = new HashMap<String, Object>();
@@ -144,7 +168,6 @@ public class HibernateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	@Transactional
 	public Map<String, Object> insertRole(Role role) {
 		Person person = (Person) getCurrentSession().get(Person.class, role.getId());
 		

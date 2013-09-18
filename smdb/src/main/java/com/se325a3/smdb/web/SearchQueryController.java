@@ -58,7 +58,7 @@ public class SearchQueryController {
 	    	System.out.println(movie.getTitle() + " " + movie.getProduction_year());
 	    }
 	    Collection<Person> personList = 
-	    		_smdbService.getActorsByName(query.getQuery());
+	    		_smdbService.getActorsByFirstName(query.getQuery());
 	    for (Person person : personList) {
 	    	System.out.println(person.getFirst_name() + " " + person.getLast_name());
 	    }

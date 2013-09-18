@@ -28,8 +28,26 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test
-	public void testGetActorsByName() {
-		Collection<Person> persons = _smdbService.getActorsByName("James");
+	public void testGetActorsByFirstName() {
+		Collection<Person> persons = _smdbService.getActorsByFirstName("James");
+		assertEquals(2, persons.size());
+	}
+	
+	@Test
+	public void testGetActorsByLastName() {
+		Collection<Person> persons = _smdbService.getActorsByLastName("Lee");
+		assertEquals(1, persons.size());
+	}
+	
+	@Test
+	public void testGetActorsByFirstNameAndLastName() {
+		Collection<Person> persons = _smdbService.getActorsByFirstNameAndLastName("T", "Mo");
+		assertEquals(2, persons.size());
+	}
+	
+	@Test
+	public void testGetActorsByFirstNameOrLastName() {
+		Collection<Person> persons = _smdbService.getActorsByFirstNameOrLastName("Bob", "Zhang");
 		assertEquals(2, persons.size());
 	}
 	
@@ -160,4 +178,5 @@ public abstract class AbstractSmdbServiceTest {
 		Set<Role> actors = movie.getActors();
 		assertEquals(6, actors.size());
 	}
+
 }

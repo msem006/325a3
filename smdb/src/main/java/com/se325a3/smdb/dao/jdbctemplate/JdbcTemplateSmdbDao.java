@@ -38,9 +38,21 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 	private static final String SQL_SELECT_ACTOR_BY_ID = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
 			+ "FROM person p, role r " + "WHERE p.id = r.id AND p.id LIKE :id";
 
-	private static final String SQL_SELECT_ACTORS_BY_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
+	private static final String SQL_SELECT_ACTORS_BY_FIRST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
 			+ "FROM person p, role r "
 			+ "WHERE p.id = r.id AND p.first_name LIKE :first_name";
+	
+	private static final String SQL_SELECT_ACTORS_BY_LAST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
+			+ "FROM person p, role r "
+			+ "WHERE p.id = r.id AND p.last_name LIKE :last_name";
+	
+	private static final String SQL_SELECT_ACTORS_BY_FIRST_NAME_AND_LAST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
+			+ "FROM person p, role r "
+			+ "WHERE p.id = r.id AND p.first_name LIKE :first_name AND p.last_name LIKE :last_name";
+	
+	private static final String SQL_SELECT_ACTORS_BY_FIRST_NAME_OR_LAST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
+			+ "FROM person p, role r "
+			+ "WHERE p.id = r.id AND p.first_name LIKE :first_name OR p.last_name LIKE :last_name AND p.id = r.id";
 
 	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE = "SELECT DISTINCT p.id, p.first_name, p.last_name, year_born "
 			+ "FROM person p, role r "
@@ -111,11 +123,45 @@ public class JdbcTemplateSmdbDao implements SmdbDao {
 	}
 
 	@Override
-	public List<Person> getActorsByName(String name) {
+	public List<Person> getActorsByFirstName(String name) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("first_name", name + "%");
 		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
-				SQL_SELECT_ACTORS_BY_NAME, params, new PersonRowMapper());
+				SQL_SELECT_ACTORS_BY_FIRST_NAME, params, new PersonRowMapper());
+		getRolesForActors(persons);
+		return persons;
+	}
+	
+	@Override
+	public List<Person> getActorsByLastName(String name) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("last_name", name + "%");
+		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
+				SQL_SELECT_ACTORS_BY_LAST_NAME, params, new PersonRowMapper());
+		getRolesForActors(persons);
+		return persons;
+	}
+
+	@Override
+	public List<Person> getActorsByFirstNameAndLastName(String firstname,
+			String lastname) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("first_name", firstname + "%");
+		params.put("last_name", lastname + "%");
+		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
+				SQL_SELECT_ACTORS_BY_FIRST_NAME_AND_LAST_NAME, params, new PersonRowMapper());
+		getRolesForActors(persons);
+		return persons;
+	}
+
+	@Override
+	public List<Person> getActorsByFirstNameOrLastName(String firstname,
+			String lastname) {
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("first_name", firstname + "%");
+		params.put("last_name", lastname + "%");
+		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
+				SQL_SELECT_ACTORS_BY_FIRST_NAME_OR_LAST_NAME, params, new PersonRowMapper());
 		getRolesForActors(persons);
 		return persons;
 	}

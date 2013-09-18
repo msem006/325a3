@@ -35,11 +35,31 @@ public class SmdbServiceImpl implements SmdbService {
 	}
 
 	@Override
-	public Collection<Person> getActorsByName(String name) {
-		List<Person> actors = _smdbDao.getActorsByName(name);
+	public Collection<Person> getActorsByFirstName(String name) {
+		List<Person> actors = _smdbDao.getActorsByFirstName(name);
 		return actors;
 	}
 
+	@Override
+	public Collection<Person> getActorsByLastName(String name) {
+		List<Person> actors = _smdbDao.getActorsByLastName(name);
+		return actors;
+	}
+
+	@Override
+	public Collection<Person> getActorsByFirstNameAndLastName(String firstname,
+			String lastname) {
+		List<Person> actors = _smdbDao.getActorsByFirstNameAndLastName(firstname, lastname);
+		return actors;
+	}
+
+	@Override
+	public Collection<Person> getActorsByFirstNameOrLastName(String firstname,
+			String lastname) {
+		List<Person> actors = _smdbDao.getActorsByFirstNameOrLastName(firstname, lastname);
+		return actors;
+	}
+	
 	@Override
 	public Collection<Person> getActorsByMovieTitle(String title) {
 		List<Person> actors = _smdbDao.getActorsByMovieTitle(title);
