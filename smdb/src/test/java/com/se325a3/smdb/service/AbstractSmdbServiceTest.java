@@ -202,7 +202,7 @@ public abstract class AbstractSmdbServiceTest {
 	@Test
 	public void testMovieRoles() {
 		Movie movie = _smdbService.getMovieByTitleAndYear("Scream 3", "2000");
-		Set<Role> actors = movie.getActors();
+		Set<Role> actors = movie.getRoles();
 		assertEquals(6, actors.size());
 	}
 	
@@ -222,7 +222,7 @@ public abstract class AbstractSmdbServiceTest {
 		assertEquals(5, roles.size());
 		
 		Movie movie = _smdbService.getMovieByTitleAndYear("Alien 3", "1992");
-		Set<Role> actors = movie.getActors();
+		Set<Role> actors = movie.getRoles();
 		assertEquals(4, actors.size());
 	}
 

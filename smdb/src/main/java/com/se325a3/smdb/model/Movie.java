@@ -23,7 +23,7 @@ public class Movie {
 
 	private int run_time;
 
-	private Set<Role> _actors = new HashSet<Role>();
+	private Set<Role> _roles = new HashSet<Role>();
 
 	public Movie() {
 		moviePk = new MoviePk();
@@ -57,12 +57,12 @@ public class Movie {
 	}
 
 	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL, mappedBy = "rolePk.movie")
-	public Set<Role> getActors() {
-		return _actors;
+	public Set<Role> getRoles() {
+		return _roles;
 	}
 
-	public void setActors(Set<Role> actors) {
-		_actors = actors;
+	public void setRoles(Set<Role> actors) {
+		_roles = actors;
 	}
 	
 	@Override

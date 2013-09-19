@@ -74,7 +74,7 @@ public class JdbcTemplateRoleSmdbDao implements RoleSmdbDao {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", movie.getTitle());
 		params.put("year", movie.getProduction_year());
-		movie.setActors(new HashSet<Role>(
+		movie.setRoles(new HashSet<Role>(
 				_namedParameterJdbcTemplatedbcTemplate.query(
 						SQL_SELECT_ROLES_BY_MOVIE_TITLE_AND_YEAR, params,
 						new RoleRowMapper())));
