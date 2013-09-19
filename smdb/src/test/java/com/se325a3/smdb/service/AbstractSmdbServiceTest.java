@@ -17,7 +17,6 @@ import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.model.Role;
 
-@Transactional
 public abstract class AbstractSmdbServiceTest {
 
 	@Autowired
@@ -91,6 +90,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test
+	@Transactional
 	public void testInsertPersonSetId() {
 		Person person = new Person();
 		person.setFirst_name("Matt");
@@ -103,6 +103,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test
+	@Transactional
 	public void testInsertTwoPersonSetId() {
 		Person person1 = new Person();
 		person1.setFirst_name("Matt");
@@ -124,6 +125,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test
+	@Transactional
 	public void testInsertMovie() {
 		Movie movie = new Movie();
 		movie.setTitle("The Bourne Identity");
@@ -135,6 +137,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 
 	@Test(expected = DataIntegrityViolationException.class)
+	@Transactional
 	public void testInsertExistingMovie() {
 		Movie movie = new Movie();
 		movie.setTitle("Alien 3");
@@ -146,6 +149,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test
+	@Transactional
 	public void testInsertRole() {
 		
 		Person person = new Person();
@@ -204,6 +208,25 @@ public abstract class AbstractSmdbServiceTest {
 		Movie movie = _smdbService.getMovieByTitleAndYear("Scream 3", "2000");
 		Set<Role> actors = movie.getRoles();
 		assertEquals(6, actors.size());
+	}
+	
+	@Test
+	public void testGetRolesAfterInsert() {
+		Role role = new Role();
+		role.setId(544);
+		role.setTitle("Alien 3");
+		role.setProduction_year(1992);
+		role.setDescription("Bob");
+		role.setCredits("");
+		_smdbService.insertRole(role);
+		
+		Person actor = _smdbService.getActorById(544);
+		Set<Role> roles = actor.getRoles();
+		assertEquals(5, roles.size());
+		
+		Movie movie = _smdbService.getMovieByTitleAndYear("Alien 3", "1992");
+		Set<Role> actors = movie.getRoles();
+		assertEquals(4, actors.size());
 	}
 
 }

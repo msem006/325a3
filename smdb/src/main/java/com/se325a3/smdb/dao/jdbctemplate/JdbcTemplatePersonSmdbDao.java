@@ -8,7 +8,9 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
+import org.mockito.asm.tree.TryCatchBlockNode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -33,15 +35,15 @@ public class JdbcTemplatePersonSmdbDao implements PersonSmdbDao {
 	private static final String SQL_SELECT_ACTORS_BY_FIRST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
 			+ "FROM person p, role r "
 			+ "WHERE p.id = r.id AND p.first_name LIKE :first_name";
-	
+
 	private static final String SQL_SELECT_ACTORS_BY_LAST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
 			+ "FROM person p, role r "
 			+ "WHERE p.id = r.id AND p.last_name LIKE :last_name";
-	
+
 	private static final String SQL_SELECT_ACTORS_BY_FIRST_NAME_AND_LAST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
 			+ "FROM person p, role r "
 			+ "WHERE p.id = r.id AND p.first_name LIKE :first_name AND p.last_name LIKE :last_name";
-	
+
 	private static final String SQL_SELECT_ACTORS_BY_FIRST_NAME_OR_LAST_NAME = "SELECT DISTINCT p.id, p.first_name, p.last_name, p.year_born "
 			+ "FROM person p, role r "
 			+ "WHERE p.id = r.id AND p.first_name LIKE :first_name OR p.last_name LIKE :last_name AND p.id = r.id";
@@ -53,15 +55,16 @@ public class JdbcTemplatePersonSmdbDao implements PersonSmdbDao {
 	private static final String SQL_SELECT_ACTORS_BY_MOVIE_TITLE_AND_YEAR = "SELECT DISTINCT p.id, p.first_name, p.last_name, year_born "
 			+ "FROM person p, role r "
 			+ "WHERE p.id = r.id AND r.title LIKE :title AND r.production_year = :year";
-	
+
 	private static final String SQL_INSERT_ACTOR = "INSERT INTO PERSON (first_name, last_name, year_born) VALUES (:first_name, :last_name, :year_born)";
-	
+
 	private NamedParameterJdbcTemplate _namedParameterJdbcTemplatedbcTemplate;
-	
+
 	private JdbcTemplateRoleSmdbDao _roleSmdbDao;
-	
+
 	@Autowired
-	public JdbcTemplatePersonSmdbDao(DataSource dataSource, JdbcTemplateRoleSmdbDao roleSmdbDao) {
+	public JdbcTemplatePersonSmdbDao(DataSource dataSource,
+			JdbcTemplateRoleSmdbDao roleSmdbDao) {
 		_namedParameterJdbcTemplatedbcTemplate = new NamedParameterJdbcTemplate(
 				dataSource);
 		_roleSmdbDao = roleSmdbDao;
@@ -71,19 +74,29 @@ public class JdbcTemplatePersonSmdbDao implements PersonSmdbDao {
 	public Person getPersonById(int id) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("id", id);
-		Person person = _namedParameterJdbcTemplatedbcTemplate.queryForObject(
-				SQL_SELECT_PERSON_BY_ID, params, new PersonRowMapper());
-		return person;
+		try {
+			Person person = _namedParameterJdbcTemplatedbcTemplate
+					.queryForObject(SQL_SELECT_PERSON_BY_ID, params,
+							new PersonRowMapper());
+			return person;
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 
 	@Override
 	public Person getActorById(int id) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("id", id);
-		Person person = _namedParameterJdbcTemplatedbcTemplate.queryForObject(
-				SQL_SELECT_ACTOR_BY_ID, params, new PersonRowMapper());
-		_roleSmdbDao.getRolesForActor(person);
-		return person;
+		try {
+			Person person = _namedParameterJdbcTemplatedbcTemplate
+					.queryForObject(SQL_SELECT_ACTOR_BY_ID, params,
+							new PersonRowMapper());
+			_roleSmdbDao.getRolesForActor(person);
+			return person;
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 
 	@Override
@@ -95,7 +108,7 @@ public class JdbcTemplatePersonSmdbDao implements PersonSmdbDao {
 		_roleSmdbDao.getRolesForActors(persons);
 		return persons;
 	}
-	
+
 	@Override
 	public List<Person> getActorsByLastName(String name) {
 		Map<String, Object> params = new HashMap<String, Object>();
@@ -113,7 +126,8 @@ public class JdbcTemplatePersonSmdbDao implements PersonSmdbDao {
 		params.put("first_name", firstname + "%");
 		params.put("last_name", lastname + "%");
 		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
-				SQL_SELECT_ACTORS_BY_FIRST_NAME_AND_LAST_NAME, params, new PersonRowMapper());
+				SQL_SELECT_ACTORS_BY_FIRST_NAME_AND_LAST_NAME, params,
+				new PersonRowMapper());
 		_roleSmdbDao.getRolesForActors(persons);
 		return persons;
 	}
@@ -125,7 +139,8 @@ public class JdbcTemplatePersonSmdbDao implements PersonSmdbDao {
 		params.put("first_name", firstname + "%");
 		params.put("last_name", lastname + "%");
 		List<Person> persons = _namedParameterJdbcTemplatedbcTemplate.query(
-				SQL_SELECT_ACTORS_BY_FIRST_NAME_OR_LAST_NAME, params, new PersonRowMapper());
+				SQL_SELECT_ACTORS_BY_FIRST_NAME_OR_LAST_NAME, params,
+				new PersonRowMapper());
 		_roleSmdbDao.getRolesForActors(persons);
 		return persons;
 	}
@@ -164,7 +179,7 @@ public class JdbcTemplatePersonSmdbDao implements PersonSmdbDao {
 				keyHolder);
 		return keyHolder.getKey().intValue();
 	}
-	
+
 	private class PersonRowMapper implements RowMapper<Person> {
 
 		@Override

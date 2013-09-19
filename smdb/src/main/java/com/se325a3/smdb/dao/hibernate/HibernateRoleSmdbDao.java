@@ -5,7 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.se325a3.smdb.dao.RoleSmdbDao;
 import com.se325a3.smdb.model.Movie;
@@ -13,7 +12,6 @@ import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.model.Role;
 
 @Repository
-@Transactional
 public class HibernateRoleSmdbDao implements RoleSmdbDao {
 
 	private static final String HQL_SELECT_MOVIE_BY_TITLE_AND_YEAR = "SELECT DISTINCT m FROM Movie m WHERE m.moviePk.title = :title AND m.moviePk.productionYear = :production_year";

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.se325a3.smdb.dao.MovieSmdbDao;
 import com.se325a3.smdb.dao.PersonSmdbDao;
@@ -14,6 +15,7 @@ import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.model.Role;
 
 @Service
+@Transactional
 public class SmdbServiceImpl implements SmdbService {
 
 	private PersonSmdbDao _personSmdbDao;

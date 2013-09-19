@@ -7,13 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.se325a3.smdb.dao.PersonSmdbDao;
 import com.se325a3.smdb.model.Person;
 
 @Repository
-@Transactional
 public class HibernatePersonSmdbDao implements PersonSmdbDao {
 
 	private static final String HQL_SELECT_ACTOR_BY_ID = "SELECT DISTINCT p FROM Person p, Role r WHERE p.id = r.id AND p.id = :id";

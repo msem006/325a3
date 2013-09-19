@@ -9,6 +9,7 @@ import java.util.Map;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -38,20 +39,21 @@ public class JdbcTemplateMovieSmdbDao implements MovieSmdbDao {
 	private static final String SQL_SELECT_MOVIES_BY_ACTOR_ID = "SELECT DISTINCT m.title, m.production_year, m.country, m.run_time, m.major_genre "
 			+ "FROM movie m, role r, person p "
 			+ "WHERE m.title = r.title AND r.id = p.id " + "AND p.id LIKE :id";
-	
+
 	private static final String SQL_INSERT_MOVIE = "INSERT INTO MOVIE VALUES (:title, :year, :country, :run_time, :major_genre)";
-	
+
 	private NamedParameterJdbcTemplate _namedParameterJdbcTemplatedbcTemplate;
 
 	private JdbcTemplateRoleSmdbDao _roleSmdbDao;
-	
+
 	@Autowired
-	public JdbcTemplateMovieSmdbDao(DataSource dataSource, JdbcTemplateRoleSmdbDao roleSmdbDao) {
+	public JdbcTemplateMovieSmdbDao(DataSource dataSource,
+			JdbcTemplateRoleSmdbDao roleSmdbDao) {
 		_namedParameterJdbcTemplatedbcTemplate = new NamedParameterJdbcTemplate(
 				dataSource);
 		_roleSmdbDao = roleSmdbDao;
 	}
-	
+
 	@Override
 	public List<Movie> getMoviesByTitle(String title) {
 		Map<String, Object> params = new HashMap<String, Object>();
@@ -77,11 +79,15 @@ public class JdbcTemplateMovieSmdbDao implements MovieSmdbDao {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", title);
 		params.put("year", year);
-		Movie movie = _namedParameterJdbcTemplatedbcTemplate.queryForObject(
-				SQL_SELECT_MOVIE_BY_TITLE_AND_YEAR, params,
-				new MovieRowMapper());
-		_roleSmdbDao.getRolesForMovie(movie);
-		return movie;
+		try {
+			Movie movie = _namedParameterJdbcTemplatedbcTemplate
+					.queryForObject(SQL_SELECT_MOVIE_BY_TITLE_AND_YEAR, params,
+							new MovieRowMapper());
+			_roleSmdbDao.getRolesForMovie(movie);
+			return movie;
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
 	}
 
 	@Override
@@ -93,7 +99,7 @@ public class JdbcTemplateMovieSmdbDao implements MovieSmdbDao {
 		_roleSmdbDao.getRolesForMovies(movies);
 		return movies;
 	}
-	
+
 	@Override
 	public void insertMovie(Movie movie) {
 		MapSqlParameterSource params = new MapSqlParameterSource();
@@ -104,7 +110,7 @@ public class JdbcTemplateMovieSmdbDao implements MovieSmdbDao {
 		params.addValue("major_genre", movie.getMajor_genre());
 		_namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_MOVIE, params);
 	}
-	
+
 	private class MovieRowMapper implements RowMapper<Movie> {
 
 		@Override

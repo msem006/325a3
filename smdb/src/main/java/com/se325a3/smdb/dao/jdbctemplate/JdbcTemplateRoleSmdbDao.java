@@ -25,14 +25,14 @@ import com.se325a3.smdb.model.Role;
 @Transactional
 public class JdbcTemplateRoleSmdbDao implements RoleSmdbDao {
 
-	private static final String SQL_SELECT_ROLES_BY_ACTOR_ID = "SELECT DISTINCT r.id, r.title, r.production_year, r.description, r.credits "
-			+ "FROM role r, person p "
-			+ "WHERE r.id = p.id "
+	private static final String SQL_SELECT_ROLES_BY_ACTOR_ID = "SELECT DISTINCT r.id, r.title, r.production_year, r.description, r.credits, p.first_name, p.last_name, p.year_born, m.country, m.run_time, m.major_genre "
+			+ "FROM role r, person p, movie m "
+			+ "WHERE r.id = p.id AND r.title = m.title AND r.production_year = m.production_year "
 			+ "AND p.id = :id";
 
-	private static final String SQL_SELECT_ROLES_BY_MOVIE_TITLE_AND_YEAR = "SELECT DISTINCT r.id, r.title, r.production_year, r.description, r.credits "
-			+ "FROM role r, movie m "
-			+ "WHERE r.title = m.title AND r.production_year = m.production_year "
+	private static final String SQL_SELECT_ROLES_BY_MOVIE_TITLE_AND_YEAR = "SELECT DISTINCT r.id, r.title, r.production_year, r.description, r.credits, p.first_name, p.last_name, p.year_born, m.country, m.run_time, m.major_genre "
+			+ "FROM role r, person p, movie m "
+			+ "WHERE r.id = p.id AND r.title = m.title AND r.production_year = m.production_year "
 			+ "AND r.title = :title AND r.production_year = :year";
 
 	private static final String SQL_INSERT_ROLE = "INSERT INTO ROLE VALUES (:id, :title, :year, :description, :credits)";
@@ -97,6 +97,15 @@ public class JdbcTemplateRoleSmdbDao implements RoleSmdbDao {
 			role.setProduction_year(resultSet.getInt(3));
 			role.setDescription(resultSet.getString(4));
 			role.setCredits(resultSet.getString(5));
+			role.getPerson().setId(role.getId());
+			role.getPerson().setFirst_name(resultSet.getString(6));
+			role.getPerson().setLast_name(resultSet.getString(7));
+			role.getPerson().setYear_born(resultSet.getInt(8));
+			role.getMovie().setTitle(role.getTitle());
+			role.getMovie().setProduction_year(role.getProduction_year());
+			role.getMovie().setCountry(resultSet.getString(9));
+			role.getMovie().setRun_time(resultSet.getInt(10));
+			role.getMovie().setMajor_genre(resultSet.getString(11));
 
 			return role;
 		}

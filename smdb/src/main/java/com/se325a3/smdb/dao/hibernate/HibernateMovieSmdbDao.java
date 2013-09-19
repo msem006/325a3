@@ -7,13 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.se325a3.smdb.dao.MovieSmdbDao;
 import com.se325a3.smdb.model.Movie;
 
 @Repository
-@Transactional
 public class HibernateMovieSmdbDao implements MovieSmdbDao {
 	
 	private static final String HQL_SELECT_MOVIES_BY_TITLE = "SELECT DISTINCT m FROM Movie m WHERE str(m.title) LIKE :title";
