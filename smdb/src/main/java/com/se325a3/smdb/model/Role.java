@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "ROLE")
@@ -56,6 +60,7 @@ public class Role {
 	}
 
 	@Column(name = "title", insertable = false, updatable = false)
+	@NotEmpty
 	public String getTitle() {
 		return rolePk.getMovie().getTitle();
 	}
@@ -65,6 +70,7 @@ public class Role {
 	}
 
 	@Column(name = "production_year", insertable = false, updatable = false)
+	@NotNull @Min(value = 0)
 	public int getProduction_year() {
 		return rolePk.getMovie().getProduction_year();
 	}
@@ -74,6 +80,7 @@ public class Role {
 	}
 
 	@Column(name = "description", insertable = false, updatable = false)
+	@NotEmpty
 	public String getDescription() {
 		return rolePk.getDescription();
 	}

@@ -10,6 +10,10 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "MOVIE")
@@ -39,6 +43,7 @@ public class Movie {
 	}
 
 	@Column(name = "title", insertable = false, updatable = false)
+	@NotEmpty
 	public String getTitle() {
 		return moviePk.getTitle();
 	}
@@ -48,6 +53,7 @@ public class Movie {
 	}
 
 	@Column(name = "country")
+	@NotEmpty
 	public String getCountry() {
 		return country;
 	}
@@ -92,6 +98,7 @@ public class Movie {
 	
 	// Getters and setters for form and controller
 	@Column(name = "production_year", insertable = false, updatable = false)
+	@NotNull @Min(value = 0)
 	public int getProduction_year() {
 		return moviePk.getProductionYear();
 	}
@@ -101,6 +108,7 @@ public class Movie {
 	}
 	
 	@Column(name = "major_genre")
+	@NotEmpty
 	public String getMajor_genre() {
 		return major_genre;
 	}
@@ -110,6 +118,7 @@ public class Movie {
 	}
 	
 	@Column(name = "run_time")
+	@NotNull @Min(value = 0)
 	public int getRun_time() {
 		return run_time;
 	}

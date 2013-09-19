@@ -54,13 +54,16 @@
 		<form:input path="id" type="text" />-->
 
 		<form:label path="title">Movie Title</form:label>
-		<form:input path="title" type="text" /><br />
+		<form:input path="title" type="text" />
+		<form:errors path="title"/><br />
 
 		<form:label path="production_year">Movie Production Year</form:label>
-		<form:input path="production_year" type="text" /><br />
+		<form:input path="production_year" type="text" />
+		<form:errors path="production_year"/><br />
 
 		<form:label path="description">Role Description</form:label>
-		<form:input path="description" type="text" /><br />
+		<form:input path="description" type="text" />
+		<form:errors path="description"/><br />
 
 		<input type="submit" value="Add"/>
 		</form:form>

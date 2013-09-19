@@ -1,12 +1,18 @@
 package com.se325a3.smdb.web;
 
 import java.security.Principal;
+import java.sql.ResultSet;
+
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
+import org.springframework.test.annotation.IfProfileValue;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -89,7 +95,7 @@ public class AdminController {
 	
 	
 	@RequestMapping(value={"/addActor"})  
-	public ModelAndView addActor(@ModelAttribute Actor actor, Principal principal, HttpServletResponse response) {
+	public ModelAndView addActor(@ModelAttribute("addActor") @Valid Actor actor, BindingResult result, Principal principal, HttpServletResponse response) {
 	    
 		// Check for login
 	    if (!((principal != null) && (principal.getName().equals(adminUser)))) {
@@ -98,7 +104,7 @@ public class AdminController {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addActor");
 	    	if (actor.getFirst_name() != null) {
-    			if (actor.getFirst_name().length() > 0 && actor.getLast_name().length() > 0 && actor.getYear_born() > 0 && actor.getTitle().length() > 0 && actor.getProduction_year() > 0 && actor.getDescription().length() > 0) {
+    			if (!result.hasErrors()) {
 
 		    		Movie movie = _smdbService.getMovieByTitleAndYear(actor.getTitle(), String.valueOf(actor.getProduction_year()));
 		    		if (movie != null) {
@@ -125,6 +131,7 @@ public class AdminController {
 		    			modelAndView.addObject("error", "Movie does not exist");
 		    		}
     			} else {
+    				modelAndView.addAllObjects(result.getModel());
     				modelAndView.addObject("error", "Please fill out every field");
     			}
 	    	}
@@ -139,7 +146,7 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value={"/addMovie"})  
-	public ModelAndView addMovie(@ModelAttribute Movie movie, Principal principal, HttpServletResponse response) {
+	public ModelAndView addMovie(@ModelAttribute("addMovie") @Valid Movie movie, BindingResult result, Principal principal, HttpServletResponse response) {
 		// Check for login
 		if (!((principal != null) && (principal.getName().equals(adminUser)))) {
 	    	return new ModelAndView("redirect:/login");
@@ -147,7 +154,7 @@ public class AdminController {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addMovie");
 		    if (movie.getTitle()!=null) {
-		    	if (movie.getTitle().length() > 0 && movie.getProduction_year() > 0 && movie.getCountry().length() > 0 && movie.getMajor_genre().length() > 0 && movie.getRun_time() > 0) {
+		    	if (!result.hasErrors()) {
 			    	// Add movie to database
 			    	try {
 			    		_smdbService.insertMovie(movie);
@@ -155,8 +162,9 @@ public class AdminController {
 				    	modelAndView.addObject("movie", movie);
 			    	} catch (DataIntegrityViolationException e) {
 			    		modelAndView.addObject("error", "Movie already exists");
-			    	}
+			    	} 
 		    	} else {
+		    		modelAndView.addAllObjects(result.getModel());
 		    		modelAndView.addObject("error", "Please fill out every field");
 		    	}
 		    }
@@ -170,7 +178,7 @@ public class AdminController {
 	
 	
 	@RequestMapping(value={"/addRole"})  
-	public ModelAndView addRole(@ModelAttribute SearchQuery query, @RequestParam int id, @ModelAttribute Role role, Principal principal, HttpServletResponse response) {
+	public ModelAndView addRole(@ModelAttribute SearchQuery query, @RequestParam int id, @ModelAttribute("addRole") @Valid Role role, BindingResult result, Principal principal, HttpServletResponse response) {
 		// Check for login
 		if (!((principal != null) && (principal.getName().equals(adminUser)))) {
 	    	return new ModelAndView("redirect:/login");
@@ -181,7 +189,7 @@ public class AdminController {
 		    if (_smdbService.getActorById(id)!=null) {
 		    	modelAndView.addObject("actor", _smdbService.getActorById(id));
 				    if (role.getTitle()!=null) {
-					    if (role.getTitle().length() > 0 && role.getProduction_year() > 0 && role.getDescription().length() > 0) {
+					    if (!result.hasErrors()) {
 					    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
 				    		if (movie!=null) {
 						    	// Add movie to database
@@ -199,6 +207,7 @@ public class AdminController {
 				    			modelAndView.addObject("error", "Movie does not exist");
 				    		}
 					    } else {
+					    	modelAndView.addAllObjects(result.getModel());
 					    	modelAndView.addObject("error", "Please fill out every field");
 					    }
 				    }

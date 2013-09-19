@@ -31,7 +31,7 @@
 	<h1><a href="index">SMDB</a></h1>
 	<div>
 		<form:form method="post" action="searchResults" id="searchbox" commandname="searchQuery" modelAttribute="searchQuery">
-			<form:input path="query" id="search" type="text" placeholder="Type here" />
+			<form:input path="query" id="search" type="text" placeHolder="Type here" />
 			<input type="submit" id="submit" value="Search"/>
 		</form:form>
 	</div>
@@ -50,19 +50,24 @@
 	<div>
 		<form:form method="post" action="addMovie" commandname="addMovie" modelAttribute="addMovie">
 		<form:label path="title">Title</form:label>
-		<form:input path="title" type="text" /><br />
+		<form:input path="title" type="text" />
+		<form:errors path="title"/><br />
 
 		<form:label path="production_year">Production Year</form:label>
-		<form:input path="production_year" type="text" /><br />
+		<form:input path="production_year" type="text" />
+		<form:errors path="production_year"/><br />
 
 		<form:label path="country">Country</form:label>
-		<form:input path="country" type="text" /><br />
+		<form:input path="country" type="text" />
+		<form:errors path="country"/><br />
 
 		<form:label path="major_genre">Major Genre</form:label>
-		<form:input path="major_genre" type="text" /><br />
+		<form:input path="major_genre" type="text" />
+		<form:errors path="major_genre"/><br />
 
 		<form:label path="run_time">Run Time</form:label>
-		<form:input path="run_time" type="text" /><br />
+		<form:input path="run_time" type="text" />
+		<form:errors path="run_time"/><br />
 
 		<input type="submit" value="Add"/>
 		</form:form>

@@ -18,7 +18,7 @@
 	<!-- Top user login/info area -->
 	<c:if test="${not empty user}" >
 		<div>
-			Welcome <c:out value="${user}"/> | <a href='admin'>Admin Area</a> | <a href='logout'>Logout</a> Logout</a
+			Welcome <c:out value="${user}"/> | <a href='admin'>Admin Area</a> | <a href='logout'>Logout</a>
 		</div>
 	</c:if>
 	<c:if test="${empty user}" >
@@ -49,22 +49,28 @@
 		<form:form method="post" action="addActor" commandname="addActor" modelAttribute="addActor">
 
 		<form:label path="first_name">First Name</form:label>
-		<form:input path="first_name" type="text" /><br />
+		<form:input path="first_name" type="text" />
+		<form:errors path="first_name"/><br />
 
 		<form:label path="last_name">Last Name</form:label>
-		<form:input path="last_name" type="text" /><br />
+		<form:input path="last_name" type="text" />
+		<form:errors path="last_name"/><br />
 
 		<form:label path="year_born">Year Born</form:label>
-		<form:input path="year_born" type="text" /><br />
+		<form:input path="year_born" type="text" />
+		<form:errors path="year_born"/><br />
 
 		<form:label path="title">Movie Title</form:label>
-		<form:input path="title" type="text" /><br />
+		<form:input path="title" type="text" />
+		<form:errors path="title"/><br />
 
 		<form:label path="production_year">Production Year</form:label>
-		<form:input path="production_year" type="text" /><br />
+		<form:input path="production_year" type="text" />
+		<form:errors path="production_year"/><br />
 
 		<form:label path="description">Role Description</form:label>
-		<form:input path="description" type="text" /><br />
+		<form:input path="description" type="text" />
+		<form:errors path="description"/><br />
 
 		<input type="submit" value="Add"/>
 		</form:form>
