@@ -58,7 +58,7 @@ public class DataController {
 	    if (movie != null) {
 	    	
 		    // Get actors from movie
-	    	Set<Role> roles = movie.getActors();
+	    	Set<Role> roles = movie.getRoles();
 		    
 	    	modelAndView.addObject("movie", movie);
 	    	modelAndView.addObject("roleList", roles);
