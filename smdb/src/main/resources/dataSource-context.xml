@@ -31,7 +31,6 @@
 	</beans>
 
 	<beans profile="hibernate">
-		<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 	
 		<bean id="mySessionFactory"
 			class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -48,6 +47,8 @@
 			class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 			<property name="sessionFactory" ref="mySessionFactory" />
 		</bean>
+		
+		<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
 		<tx:annotation-driven />
 

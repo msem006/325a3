@@ -11,11 +11,13 @@
     
 	<properties>
 		<spring.group>org.springframework</spring.group>
-		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring.version>3.2.4.RELEASE</spring.version>
+		<springsec.group>org.springframework.security</springsec.group>
+		<springsec.version>3.1.4.RELEASE</springsec.version>
 	</properties>
 
 	<dependencies>
-
+	
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -65,23 +67,29 @@
 			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${springsec.version}</version>
+		</dependency>
+
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${springsec.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>4.2.5.Final</version>
 		</dependency>
-
+		
 		<dependency>
 			<groupId>${spring.group}</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>3.4.0.GA</version>
 		</dependency>
 
 		<dependency>
@@ -121,18 +129,6 @@
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.2.143</version>
-		</dependency>
-
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-config</artifactId>
-		    <version>3.0.3.RELEASE</version>
-		</dependency>
-
-		<dependency>
-		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-web</artifactId>
-		    <version>3.0.3.RELEASE</version>
 		</dependency>
 
 	</dependencies>

@@ -32,15 +32,10 @@ public class SearchQueryController {
 	public ModelAndView searchResults(@ModelAttribute SearchQuery query, Principal principal) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("searchResults");
-
-	    System.out.println("Query:" + query.getQuery());
 	    
 	    Collection<Movie> movieList = 
 	    		_smdbService.getMoviesByTitle(query.getQuery());
-	    for (Movie movie : movieList) {
-	    	System.out.println(movie.getTitle() + " " + movie.getProduction_year());
-	    }
-	    
+
 	    String[] splited = query.getQuery().split("\\s+");
 	    Collection<Person> personList;
 	    // Anything after the 2nd word is ignored
@@ -53,12 +48,6 @@ public class SearchQueryController {
 	    	personList.addAll(_smdbService.getActorsByLastName(query.getQuery()));
 	    	
 	    }
-	    
-
-	    for (Person person : personList) {
-	    	System.out.println(person.getFirst_name() + " " + person.getLast_name());
-	    }
-	    System.out.println(movieList.size() + personList.size());
 
 	    modelAndView.addObject("query", query.getQuery());
 	    modelAndView.addObject("movieList", movieList);  
