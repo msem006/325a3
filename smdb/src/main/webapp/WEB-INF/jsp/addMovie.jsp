@@ -18,12 +18,12 @@
 	<!-- Top user login/info area -->
 	<c:if test="${not empty user}" >
 		<div>
-			Welcome <c:out value="${user}"/> | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
+			Welcome <c:out value="${user}"/> | <a href='admin'>Admin Area</a> | <a href='logout'>Logout</a>
 		</div>
 	</c:if>
 	<c:if test="${empty user}" >
 		<div>
-			<a href='/login'>Login</a>
+			<a href='login'>Login</a>
 		</div>
 	</c:if>
 
