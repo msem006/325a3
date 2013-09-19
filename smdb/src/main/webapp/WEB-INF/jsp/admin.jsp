@@ -38,14 +38,6 @@
 		</form:form>
 	</div>
 
-	<!--<div>
-		<form:form method="post" action="addData" commandname="addData" modelAttribute="addData">
-			<form:input path="" type="text" />
-
-			<input type="submit" value="Add" />
-		</form:form>
-	</div>-->
-
 	<a href="addActor">Add Actor</a><br />
 	<a href="addMovie">Add Movie</a><br />
 

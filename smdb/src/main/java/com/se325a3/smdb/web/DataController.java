@@ -1,10 +1,10 @@
 package com.se325a3.smdb.web;
 
+import java.security.Principal;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,23 +23,6 @@ public class DataController {
 
 	private SmdbService _smdbService;
 	private static final String adminUser = "admin";
-	private static final String adminPass = "admin";
-	private static final String cookiedata = MD5(adminUser + adminPass + adminUser);
-	
-	// Encrypts String
-	public static String MD5(String md5) {
-	   try {
-	        java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
-	        byte[] array = md.digest(md5.getBytes());
-	        StringBuffer sb = new StringBuffer();
-	        for (int i = 0; i < array.length; ++i) {
-	          sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
-	       }
-	        return sb.toString();
-	    } catch (java.security.NoSuchAlgorithmException e) {
-	    }
-	    return null;
-	}
 	
 	@Autowired
 	public DataController(SmdbService smdbService) {
@@ -47,14 +30,14 @@ public class DataController {
 	}
 	
 	@RequestMapping(value={"", "/index", "/search"})  
-	public ModelAndView index(@CookieValue(value="SMDB-COOKIE", required = false) String cookie) {
+	public ModelAndView index(Principal principal) {
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("index");
 	    
 	    modelAndView.addObject("searchQuery", new SearchQuery());
 	    
-	    // Check cookies for login
-	    if ((cookie != null) && (cookie.equals(cookiedata))) {
+	    // Check for login
+	    if ((principal != null) && (principal.getName().equals(adminUser))) {
 	    	modelAndView.addObject("user", adminUser);
 	    }
          
@@ -62,7 +45,7 @@ public class DataController {
 	}
 	
 	@RequestMapping(value="/movie", method = RequestMethod.GET)  
-	public ModelAndView movie(@RequestParam String title, @RequestParam String year, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
+	public ModelAndView movie(@RequestParam String title, @RequestParam String year, Principal principal) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("movie");
 
@@ -85,8 +68,8 @@ public class DataController {
 		    modelAndView.addObject("searchQuery", new SearchQuery());
 
 	    }
-	    // Check cookies for login
-	    if ((cookie != null) && (cookie.equals(cookiedata))) {
+	    // Check for login
+	    if ((principal != null) && (principal.getName().equals(adminUser))) {
 	    	modelAndView.addObject("user", adminUser);
 	    }
          
@@ -94,7 +77,7 @@ public class DataController {
 	}
 	
 	@RequestMapping(value="/actor", method = RequestMethod.GET)  
-	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam int id, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
+	public ModelAndView movie(@ModelAttribute SearchQuery query, @RequestParam int id, Principal principal) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("actor");
 
@@ -114,8 +97,8 @@ public class DataController {
 		    modelAndView.addObject("searchQuery", new SearchQuery());
 
 	    }
-	    // Check cookies for login
-	    if ((cookie != null) && (cookie.equals(cookiedata))) {
+	    // Check for login
+	    if ((principal != null) && (principal.getName().equals(adminUser))) {
 	    	modelAndView.addObject("user", adminUser);
 	    }
 	    return modelAndView;  

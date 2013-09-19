@@ -46,7 +46,7 @@
 	<!-- Top user login/info area -->
 	<c:if test="${not empty user}" >
 		<div>
-			Welcome <c:out value="${user}"/> | <a href='/admin'>Admin Area</a> | <a href='/logout'>Logout</a>
+			Welcome <c:out value="${user}"/> | <a href='/admin'>Admin Area</a> | <!--<a href='/logout'>Logout</a>--><a href='<c:url value="/j_spring_security_logout" />' > Logout</a>
 		</div>
 	</c:if>
 	<c:if test="${empty user}" >
@@ -63,17 +63,45 @@
 			<input type="submit" id="submit" value="Search"/>
 		</form:form>
 	</div>
+
+
+
 	<c:if test="${not empty error}" >
 		<div>
-			<c:out value="${error}"/>
+			<!--<c:out value="${error}"/>-->
+			Your login attempt was not successful, try again.<br /> Caused :
+						${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
 		</div>
 	</c:if>
 	<div>
-		<form:form method="post" action="login" commandname="login" modelAttribute="login">
-		<form:input path="username" type="text" />
-		<form:input path="password" type="text" />
-		<input type="submit" value="Login"/>
-		</form:form>
+
+		<form name='f' action="<c:url value='j_spring_security_check' />"
+				method='POST'>
+		 
+				<table>
+					<tr>
+						<td>User:</td>
+						<td><input type='text' name='j_username' value=''>
+						</td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type='password' name='j_password' />
+						</td>
+					</tr>
+					<tr>
+						<td colspan='2'><input name="submit" type="submit"
+							value="submit" />
+						</td>
+					</tr>
+					<tr>
+						<td colspan='2'><input name="reset" type="reset" />
+						</td>
+					</tr>
+				</table>
+		 
+			</form>
+
 	</div>
 </body>
 </html>

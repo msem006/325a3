@@ -1,10 +1,10 @@
 package com.se325a3.smdb.web;
 
+import java.security.Principal;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -21,23 +21,6 @@ public class SearchQueryController {
 
 	private SmdbService _smdbService;
 	private static final String adminUser = "admin";
-	private static final String adminPass = "admin";
-	private static final String cookiedata = MD5(adminUser + adminPass + adminUser);
-	
-	// Encrypts String
-	public static String MD5(String md5) {
-	   try {
-	        java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
-	        byte[] array = md.digest(md5.getBytes());
-	        StringBuffer sb = new StringBuffer();
-	        for (int i = 0; i < array.length; ++i) {
-	          sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
-	       }
-	        return sb.toString();
-	    } catch (java.security.NoSuchAlgorithmException e) {
-	    }
-	    return null;
-	}
 	
 	@Autowired
 	public SearchQueryController(SmdbService smdbService) {
@@ -46,7 +29,7 @@ public class SearchQueryController {
 
 	  
 	@RequestMapping(value="/searchResults")  
-	public ModelAndView searchResults(@ModelAttribute SearchQuery query, @CookieValue(value="SMDB-COOKIE", required = false) String cookie) {  
+	public ModelAndView searchResults(@ModelAttribute SearchQuery query, Principal principal) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("searchResults");
 
@@ -81,8 +64,8 @@ public class SearchQueryController {
 	    modelAndView.addObject("movieList", movieList);  
 	    modelAndView.addObject("personList", personList);
 	    modelAndView.addObject("searchQuery", new SearchQuery());
-	    // Check cookies for login
-	    if ((cookie != null) && (cookie.equals(cookiedata))) {
+	    // Check for login
+	    if ((principal != null) && (principal.getName().equals(adminUser))) {
 	    	modelAndView.addObject("user", adminUser);
 	    }
          
