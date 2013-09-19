@@ -47,11 +47,9 @@
 </div>
 <h3>Actors</h3>
 <div id="actor">
-	<c:forEach items="${personList}" var="person">
-
-	<a href='actor?id=<c:out value="${person.getId()}"/>'><c:out value="${person.getFirst_name()}"/> <c:out value="${person.getLast_name()}"/></a><br />
-
-</c:forEach>
+	<c:forEach items="${roleList}" var="role">
+		<a href='actor?id=<c:out value="${role.getId()}"/>'><c:out value="${role.getPerson().getFirst_name()}"/> <c:out value="${role.getPerson().getLast_name()}"/></a> as <c:out value="${role.getDescription()}"/><br />
+	</c:forEach>
 </div>
 
 </body>

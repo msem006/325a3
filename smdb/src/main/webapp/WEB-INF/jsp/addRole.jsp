@@ -47,7 +47,7 @@
 			</div>
 		</c:if>
 	</c:if>
-	<h3>Adding a movie to <a href='actor?id=<c:out value="${actor.getId()}"/>'><c:out value="${actor.getFirst_name()}"/> <c:out value="${actor.getLast_name()}"/>'s</a> filmography</h3>
+	<h3>Adding a role to <a href='actor?id=<c:out value="${actor.getId()}"/>'><c:out value="${actor.getFirst_name()}"/> <c:out value="${actor.getLast_name()}"/>'s</a> filmography</h3>
 	<div>
 		<form:form method="post" action='addRole?id=${actor.getId()}' commandname="addRole" modelAttribute="addRole">
 		<!--<form:label path="id">Person Id</form:label>

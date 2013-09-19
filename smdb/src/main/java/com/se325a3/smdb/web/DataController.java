@@ -58,15 +58,10 @@ public class DataController {
 	    if (movie != null) {
 	    	
 		    // Get actors from movie
-		    Collection<Person> personList = 
-		    		_smdbService.getActorsByMovieTitleAndYear(title, year);
-		    
-		    for (Person person : personList) {
-		    	System.out.println(person.getFirst_name() + " " + person.getFirst_name());
-		    }
+	    	Set<Role> roles = movie.getActors();
 		    
 	    	modelAndView.addObject("movie", movie);
-	    	modelAndView.addObject("personList", personList);
+	    	modelAndView.addObject("roleList", roles);
 		    modelAndView.addObject("searchQuery", new SearchQuery());
 
 	    }
@@ -90,13 +85,9 @@ public class DataController {
 	    if (actor != null) {
 	    	Set<Role> roles = actor.getRoles();
 	    	
-		    // Get actors from movie
-		    Collection<Movie> movieList = 
-		    		_smdbService.getMoviesByActorID(actor.getId());
 		    
 		    
 	    	modelAndView.addObject("actor", actor);
-	    	modelAndView.addObject("movieList", movieList);
 	    	modelAndView.addObject("roleList", roles);
 		    modelAndView.addObject("searchQuery", new SearchQuery());
 

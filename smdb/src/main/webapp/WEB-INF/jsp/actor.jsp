@@ -50,7 +50,7 @@
 	</c:forEach>
 	<c:if test="${not empty user}" >
 		<br>
-		<a href='addRole?id=<c:out value="${actor.getId()}"/>'>Add another movie</a>
+		<a href='addRole?id=<c:out value="${actor.getId()}"/>'>Add another role</a>
 	</c:if>
 </div>
 
