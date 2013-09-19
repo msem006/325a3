@@ -62,9 +62,6 @@
 		<form:label path="description">Role Description</form:label>
 		<form:input path="description" type="text" /><br />
 
-		<form:label path="credits">Role Credits</form:label>
-		<form:input path="credits" type="text" /><br />
-
 		<input type="submit" value="Add"/>
 		</form:form>
 	</div>

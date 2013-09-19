@@ -98,7 +98,7 @@ public class AdminController {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addActor");
 	    	if (actor.getFirst_name() != null) {
-    			if (actor.getFirst_name().length() > 0 && actor.getLast_name().length() > 0 && actor.getYear_born() > 0 && actor.getTitle().length() > 0 && actor.getProduction_year() > 0) {
+    			if (actor.getFirst_name().length() > 0 && actor.getLast_name().length() > 0 && actor.getYear_born() > 0 && actor.getTitle().length() > 0 && actor.getProduction_year() > 0 && actor.getDescription().length() > 0) {
 
 		    		Movie movie = _smdbService.getMovieByTitleAndYear(actor.getTitle(), String.valueOf(actor.getProduction_year()));
 		    		if (movie != null) {
@@ -115,7 +115,7 @@ public class AdminController {
 			    		role.setId(actor.getId());
 			    		role.setTitle(actor.getTitle());
 			    		role.setProduction_year(actor.getProduction_year());
-			    		role.setDescription("");
+			    		role.setDescription(actor.getDescription());
 			    		role.setCredits("");
 			    		
 			    		_smdbService.insertRole(role);
@@ -181,11 +181,12 @@ public class AdminController {
 		    if (_smdbService.getActorById(id)!=null) {
 		    	modelAndView.addObject("actor", _smdbService.getActorById(id));
 				    if (role.getTitle()!=null) {
-					    if (role.getTitle().length() > 0 && role.getProduction_year() > 0 && role.getDescription().length() > 0 && role.getCredits().length() > 0 ) {
+					    if (role.getTitle().length() > 0 && role.getProduction_year() > 0 && role.getDescription().length() > 0) {
 					    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
 				    		if (movie!=null) {
 						    	// Add movie to database
 						    	role.setId(id);
+						    	role.setCredits("");
 						    	try {
 						    		_smdbService.insertRole(role);
 						    	}

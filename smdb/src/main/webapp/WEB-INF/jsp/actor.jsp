@@ -45,8 +45,8 @@
 <h3>Filmography</h3>
 
 <div id="movie">
-	<c:forEach items="${movieList}" var="movie">
-		<a href='movie?title=<c:out value="${movie.getTitle()}"/>&year=<c:out value="${movie.getProduction_year()}"/>'><c:out value="${movie.getTitle()}"/></a><br />
+	<c:forEach items="${roleList}" var="role">
+		<a href='movie?title=<c:out value="${role.getTitle()}"/>&year=<c:out value="${role.getProduction_year()}"/>'><c:out value="${role.getTitle()}"/></a> as <c:out value="${role.getDescription()}"/><br />
 	</c:forEach>
 	<c:if test="${not empty user}" >
 		<br>

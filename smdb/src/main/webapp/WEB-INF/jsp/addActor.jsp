@@ -48,9 +48,6 @@
 	<div>
 		<form:form method="post" action="addActor" commandname="addActor" modelAttribute="addActor">
 
-		<!--<form:label path="id">Id</form:label>
-		<form:input path="id" type="text" />-->
-
 		<form:label path="first_name">First Name</form:label>
 		<form:input path="first_name" type="text" /><br />
 
@@ -65,6 +62,9 @@
 
 		<form:label path="production_year">Production Year</form:label>
 		<form:input path="production_year" type="text" /><br />
+
+		<form:label path="description">Role Description</form:label>
+		<form:input path="description" type="text" /><br />
 
 		<input type="submit" value="Add"/>
 		</form:form>

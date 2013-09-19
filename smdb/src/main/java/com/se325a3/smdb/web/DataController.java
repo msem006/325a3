@@ -2,6 +2,7 @@ package com.se325a3.smdb.web;
 
 import java.security.Principal;
 import java.util.Collection;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
+import com.se325a3.smdb.model.Role;
 import com.se325a3.smdb.service.SmdbService;
 
 
@@ -86,6 +88,7 @@ public class DataController {
 	    		_smdbService.getActorById(id);
 
 	    if (actor != null) {
+	    	Set<Role> roles = actor.getRoles();
 	    	
 		    // Get actors from movie
 		    Collection<Movie> movieList = 
@@ -94,6 +97,7 @@ public class DataController {
 		    
 	    	modelAndView.addObject("actor", actor);
 	    	modelAndView.addObject("movieList", movieList);
+	    	modelAndView.addObject("roleList", roles);
 		    modelAndView.addObject("searchQuery", new SearchQuery());
 
 	    }

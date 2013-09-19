@@ -7,6 +7,8 @@ public class Actor {
 	private int year_born;
 	private String title;
 	private int production_year;
+	private String description;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -42,6 +44,12 @@ public class Actor {
 	}
 	public void setProduction_year(int production_year) {
 		this.production_year = production_year;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	
