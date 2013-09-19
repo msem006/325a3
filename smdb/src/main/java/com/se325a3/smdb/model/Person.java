@@ -32,7 +32,7 @@ public class Person {
 	@Column(name = "year_born")
 	private int year_born;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "rolePk.person", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "rolePk.person", cascade = CascadeType.ALL)
 	private Set<Role> _roles;
 
 	public Person() {

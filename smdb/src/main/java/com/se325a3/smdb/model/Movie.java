@@ -56,7 +56,7 @@ public class Movie {
 		this.country = country;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL, mappedBy = "rolePk.movie")
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL, mappedBy = "rolePk.movie")
 	public Set<Role> getActors() {
 		return _actors;
 	}
