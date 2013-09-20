@@ -10,11 +10,12 @@
 	<link rel="icon" href="favicon.ico"> 
 	<link rel="stylesheet" type="text/css" href='<c:url value="/resources/styles.css" />' />
 	<link href='http://fonts.googleapis.com/css?family=Average+Sans' rel='stylesheet' type='text/css'>
-	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>    
+	<script src="http://www.red-team-design.com/wp-content/uploads/2011/02/modernizr-1.6.min_.js"></script>
+
 	<script src="/resources/jquery.js"></script>    
     <script src="/resources/modernizr.js"></script>
 	<script src="/resources/modern.js"></script>
-
 	<script type="text/javascript">
 		$(document).ready(function(){
 		    $("#login-link").click(function(){
