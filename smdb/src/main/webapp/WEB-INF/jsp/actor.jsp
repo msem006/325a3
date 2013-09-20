@@ -14,6 +14,19 @@
 	<script src="/resources/jquery.js"></script>    
     <script src="/resources/modernizr.js"></script>
 	<script src="/resources/modern.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $("#login-link").click(function(){
+		        $("#login-panel").slideToggle(200);
+		    })
+		})
+		$(document).keydown(function(e) {
+		    if (e.keyCode == 27) {
+		        $("#login-panel").hide(0);
+		    }
+		});
+	</script>
+	
 	<title>SMDB - The comprehensive movie database</title>
 </head>
 <body>
@@ -24,8 +37,15 @@
 		</div>
 	</c:if>
 	<c:if test="${empty user}" >
-		<div>
-			<a href='login'>Login</a>
+		<div id="demo-header">
+			<a id="login-link" title="Login" href="#login">Login</a>
+			<div id="login-panel">
+				<form name='f' action="<c:url value='j_spring_security_check' />"
+						method='POST'>
+				<label>Username: <input type="text" name="j_username" value=""> </label>
+				<label>Password: <input type="password" name="j_password" value=""> </label>
+				<input type="submit" name="submit" value="Sign In"> <small>Press ESC to close</small></form>
+				</div>
 		</div>
 	</c:if>
 
