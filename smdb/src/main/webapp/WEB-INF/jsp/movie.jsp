@@ -15,18 +15,7 @@
     <script src="/resources/modernizr.js"></script>
 	<script src="/resources/modern.js"></script>
 
-	<script type="text/javascript">
-		$(document).ready(function(){
-		    $("#login-link").click(function(){
-		        $("#login-panel").slideToggle(200);
-		    })
-		})
-		$(document).keydown(function(e) {
-		    if (e.keyCode == 27) {
-		        $("#login-panel").slideToggle(200);
-		    }
-		});
-	</script>
+	<script src="/resources/logbox.js"></script>
 
 	<title>SMDB - The comprehensive movie database</title>
 </head>
