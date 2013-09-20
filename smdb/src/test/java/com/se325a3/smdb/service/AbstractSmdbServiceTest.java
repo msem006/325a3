@@ -21,60 +21,70 @@ public abstract class AbstractSmdbServiceTest {
 	protected SmdbService _smdbService;
 	
 	@Test 
+	@Transactional
 	public void testGetActorByID() {
 		Person actor = _smdbService.getActorById(1001);
 		assertTrue(actor.getFirst_name().startsWith("James"));
 	}
 	
 	@Test
+	@Transactional
 	public void testGetActorsByFirstName() {
 		Collection<Person> persons = _smdbService.getActorsByFirstName("James");
 		assertEquals(2, persons.size());
 	}
 	
 	@Test
+	@Transactional
 	public void testGetActorsByLastName() {
 		Collection<Person> persons = _smdbService.getActorsByLastName("Lee");
 		assertEquals(1, persons.size());
 	}
 	
 	@Test
+	@Transactional
 	public void testGetActorsByFirstNameAndLastName() {
 		Collection<Person> persons = _smdbService.getActorsByFirstNameAndLastName("T", "Mo");
 		assertEquals(2, persons.size());
 	}
 	
 	@Test
+	@Transactional
 	public void testGetActorsByFirstNameOrLastName() {
 		Collection<Person> persons = _smdbService.getActorsByFirstNameOrLastName("Bob", "Zhang");
 		assertEquals(2, persons.size());
 	}
 	
 	@Test
+	@Transactional
 	public void testGetActorsByMovieTitle() {
 		Collection<Person> persons = _smdbService.getActorsByMovieTitle("Apollo");
 		assertEquals(3, persons.size());
 	}
 	
 	@Test
+	@Transactional
 	public void testGetActorsByMovieTitleAndYear() {
 		Collection<Person> persons = _smdbService.getActorsByMovieTitleAndYear("American Psycho", "2000");
 		assertEquals(4, persons.size());
 	}
 	
 	@Test
+	@Transactional
 	public void testGetMoviesByTitle() {
 		Collection<Movie> movies = _smdbService.getMoviesByTitle("a");
 		assertEquals(12, movies.size());
 	}
 	
 	@Test
+	@Transactional
 	public void testGetMoviesByActorName() {
 		Collection<Movie> movies = _smdbService.getMoviesByActorName("Christian");
 		assertEquals(2, movies.size());
 	}
 	
-	@Test 
+	@Test
+	@Transactional
 	public void testGetMovieByTitleAndYear() {
 		Movie movie = _smdbService.getMovieByTitleAndYear("Titanic", "1997");
 		assertTrue(movie.getTitle().startsWith("Titanic"));
@@ -82,6 +92,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test
+	@Transactional
 	public void testGetMoviesByActorID() {
 		Collection<Movie> movies = _smdbService.getMoviesByActorID(544);
 		assertEquals(4, movies.size());
@@ -198,6 +209,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test
+	@Transactional
 	public void testMovieRoles() {
 		Movie movie = _smdbService.getMovieByTitleAndYear("Scream 3", "2000");
 		Set<Role> actors = movie.getRoles();
