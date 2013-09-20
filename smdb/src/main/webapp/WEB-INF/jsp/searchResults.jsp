@@ -23,7 +23,7 @@
 		})
 		$(document).keydown(function(e) {
 		    if (e.keyCode == 27) {
-		        $("#login-panel").hide(0);
+		        $("#login-panel").slideToggle(200);
 		    }
 		});
 	</script>
