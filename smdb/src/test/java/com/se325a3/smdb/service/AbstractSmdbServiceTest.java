@@ -181,15 +181,10 @@ public abstract class AbstractSmdbServiceTest {
 	@Test(expected = DataIntegrityViolationException.class)
 	@Transactional
 	public void testInsertExistingRole() {
-		
-		Person person = _smdbService.getActorById(544);
-		
-		Movie movie = _smdbService.getMovieByTitleAndYear("Alien 3", "1992");
-	
 		Role role = new Role();
 		role.setId(544);
-		role.setPerson(person);
-		role.setMovie(movie);
+		role.setTitle("Alien 3");
+		role.setProduction_year(1992);
 		role.setDescription("Ellen Ripley");
 		role.setCredits("Bob");
 		_smdbService.insertRole(role);
@@ -213,8 +208,8 @@ public abstract class AbstractSmdbServiceTest {
 	public void testGetRolesAfterInsert() {
 		Role role = new Role();
 		role.setId(544);
-		role.setTitle("Alien 3");
-		role.setProduction_year(1992);
+		role.setTitle("Titanic");
+		role.setProduction_year(1997);
 		role.setDescription("Bob");
 		role.setCredits("");
 		_smdbService.insertRole(role);
@@ -223,9 +218,9 @@ public abstract class AbstractSmdbServiceTest {
 		Set<Role> roles = actor.getRoles();
 		assertEquals(5, roles.size());
 		
-		Movie movie = _smdbService.getMovieByTitleAndYear("Alien 3", "1992");
+		Movie movie = _smdbService.getMovieByTitleAndYear("Titanic", "1997");
 		Set<Role> actors = movie.getRoles();
-		assertEquals(4, actors.size());
+		assertEquals(5, actors.size());
 	}
 
 }
