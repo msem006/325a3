@@ -1,7 +1,6 @@
 package com.se325a3.smdb.web;
 
 import java.security.Principal;
-import java.util.Collection;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;

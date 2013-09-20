@@ -1,16 +1,13 @@
 package com.se325a3.smdb.web;
 
 import java.security.Principal;
-import java.sql.ResultSet;
 
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
-import org.springframework.test.annotation.IfProfileValue;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;

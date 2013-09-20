@@ -1,7 +1,6 @@
 package com.se325a3.smdb.service;
 
 import java.util.Collection;
-import java.util.Map;
 
 import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;

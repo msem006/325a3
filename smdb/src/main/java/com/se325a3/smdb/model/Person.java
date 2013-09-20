@@ -3,7 +3,6 @@ package com.se325a3.smdb.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.management.relation.RoleStatus;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
