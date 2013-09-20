@@ -212,6 +212,8 @@ h1 a:active{
     background: #2a2a2a;
     padding: 5px 15px 5px 15px;
     color: #FFF;
+    text-decoration: none;
+    font-family: 'Average Sans', Calibri, sans-serif;
 }
 #login-panel{
     position: absolute;
@@ -227,4 +229,6 @@ h1 a:active{
 }
 label{
     line-height: 1.8;
+    text-decoration: none;
+    font-family: 'Average Sans', Calibri, sans-serif;
 }
