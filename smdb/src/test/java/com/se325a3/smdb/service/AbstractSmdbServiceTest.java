@@ -179,6 +179,7 @@ public abstract class AbstractSmdbServiceTest {
 	}
 	
 	@Test(expected = DataIntegrityViolationException.class)
+	@Transactional
 	public void testInsertExistingRole() {
 		
 		Person person = _smdbService.getActorById(544);
