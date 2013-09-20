@@ -215,24 +215,5 @@ public abstract class AbstractSmdbServiceTest {
 		Set<Role> actors = movie.getRoles();
 		assertEquals(6, actors.size());
 	}
-	
-	@Test
-	public void testGetRolesAfterInsert() {
-		Role role = new Role();
-		role.setId(544);
-		role.setTitle("Titanic");
-		role.setProduction_year(1997);
-		role.setDescription("Bob");
-		role.setCredits("");
-		_smdbService.insertRole(role);
-		
-		Person actor = _smdbService.getActorById(544);
-		Set<Role> roles = actor.getRoles();
-		assertEquals(5, roles.size());
-		
-		Movie movie = _smdbService.getMovieByTitleAndYear("Titanic", "1997");
-		Set<Role> actors = movie.getRoles();
-		assertEquals(5, actors.size());
-	}
 
 }
