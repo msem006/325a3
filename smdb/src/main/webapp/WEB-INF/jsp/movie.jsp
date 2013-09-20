@@ -59,7 +59,7 @@
 	</form:form>
 </div>
 <h2> Movie Info </h2>
-<div id="country">
+<div id="genre">
 	Title: <c:out value="${movie.getTitle()}"/><br />
 	Country: <c:out value="${movie.getCountry()}"/><br />
 	Genre: <c:out value="${movie.getMajor_genre()}"/><br />
