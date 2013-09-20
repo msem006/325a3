@@ -5,6 +5,10 @@ import java.util.List;
 import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.model.Role;
 
+/**
+ * Queries that retrieve and insert Persons from and to the Database
+ *
+ */
 public interface PersonSmdbDao {
 	
 	/**

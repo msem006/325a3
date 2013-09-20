@@ -6,20 +6,174 @@ import com.se325a3.smdb.model.Movie;
 import com.se325a3.smdb.model.Person;
 import com.se325a3.smdb.model.Role;
 
+/**
+ * Provide access to the DAO layer
+ *
+ */
 public interface SmdbService {
+
+	/**
+	 * Retrieve a Person with the given id
+	 * 
+	 * @param id
+	 *            ID of the person to retreive
+	 * @return The Person with the specified id
+	 */
 	Person getPersonById(int id);
+
+	/**
+	 * Retrieve an actor (that is, a Person with an entry in the ROLE table)
+	 * given their id (Primary key)
+	 * 
+	 * @param id
+	 *            The id of the actor to retrieve
+	 * @return The actor with the id specified
+	 */
 	public Person getActorById(int id);
+
+	/**
+	 * Retrieve actors (that is, Persons with entries in the ROLE table) given
+	 * their first names/the start of their first names
+	 * 
+	 * @param name
+	 *            String to match the first name of the actor against
+	 * @return A list of the actors with matching first names to the name
+	 *         parameter
+	 */
 	public Collection<Person> getActorsByFirstName(String name);
+
+	/**
+	 * Retrieve actors (that is, Persons with entries in the ROLE table) given
+	 * their first names/the start of their last names
+	 * 
+	 * @param name
+	 *            String to match the last name of the actor against
+	 * @return A list of the actors with matching last names to the name
+	 *         parameter
+	 */
 	public Collection<Person> getActorsByLastName(String name);
-	public Collection<Person> getActorsByFirstNameAndLastName(String firstname, String lastname);
-	public Collection<Person> getActorsByFirstNameOrLastName(String firstname, String lastname);
-	public Collection<Person> getActorsByMovieTitle(String title); 
-	public Collection<Person> getActorsByMovieTitleAndYear(String title, String year);
+
+	/**
+	 * Retrieve actors (that is, Persons with entries in the ROLE table) given
+	 * their first and last names/the start of their first and last names
+	 * 
+	 * @param firstname
+	 *            String to match the first name of the actor against
+	 * @param lastname
+	 *            String to match the last name of the actor against
+	 * @return A list of the actors with matching first and last names to the
+	 *         name parameters
+	 */
+	public Collection<Person> getActorsByFirstNameAndLastName(String firstname,
+			String lastname);
+
+	/**
+	 * Retrieve actors (that is, Persons with entries in the ROLE table) given
+	 * their first or last names/the start of their first and last names
+	 * 
+	 * @param firstname
+	 *            String to match the first name of the actor against
+	 * @param lastname
+	 *            String to match the last name of the actor against
+	 * @return A list of the actors with matching first or last names to the
+	 *         name parameters
+	 */
+	public Collection<Person> getActorsByFirstNameOrLastName(String firstname,
+			String lastname);
+
+	/**
+	 * Retrieve actors (that is, Persons with entries in the ROLE table) given
+	 * the title of the movies they have appeared in
+	 * 
+	 * @param title
+	 *            String with to match the first name of the actor against
+	 * @return A list of the actors with matching entries in the ROLE table to a
+	 *         Movie with a title starting with the title parameter
+	 */
+	public Collection<Person> getActorsByMovieTitle(String title);
+
+	/**
+	 * Retrieve actors (that is, Persons with entries in the ROLE table) given
+	 * the title and production year (primary key) of a specific Movie if they
+	 * have appeared in it
+	 * 
+	 * @param title
+	 *            The title of the Movie
+	 * @param year
+	 *            The production year of the Movie
+	 * @return A list of the actors with matching entries in the ROLE table to
+	 *         the specified Movie
+	 */
+	public Collection<Person> getActorsByMovieTitleAndYear(String title,
+			String year);
+
+	/**
+	 * Retrieve Movies with titles matching the given title
+	 * 
+	 * @param title
+	 *            Title to match against
+	 * @return A list of movies with titles starting with the title parameter
+	 */
 	public Collection<Movie> getMoviesByTitle(String title);
+
+	/**
+	 * Retrieve Movies that have an actor (a Person with an entry in the ROLE
+	 * table) that matches the given name
+	 * 
+	 * @param name
+	 *            Name to match against
+	 * @return A list of movies with an actor matching the given name parameter
+	 */
 	public Collection<Movie> getMoviesByActorName(String name);
+
+	/**
+	 * Retrieve the Movie with the given title and production year (primary key)
+	 * 
+	 * @param title
+	 *            Title of the Movie
+	 * @param year
+	 *            Production year of the Movie
+	 * @return Movie with the given title and production year
+	 */
 	public Movie getMovieByTitleAndYear(String title, String year);
+
+	/**
+	 * Retrieve Movies that have an actor (a Person with an entry in the ROLE
+	 * table) with the given id (primary key on PERSON)
+	 * 
+	 * @param id
+	 *            Id of actor to match against
+	 * @return A list of movies with an actor matching the given id parameter
+	 */
 	public Collection<Movie> getMoviesByActorID(int id);
+
+	/**
+	 * Insert a Person into the database
+	 * 
+	 * @param person
+	 *            Person object to be saved in database
+	 * @return The id automatically generated by the database for the entry
+	 */
 	int insertPerson(Person person);
+
+	/**
+	 * Insert a Movie into the database
+	 * 
+	 * @param movie
+	 *            Movie object to be saved in database
+	 * @return A map containing the title and production year fields of the
+	 *         inserted Movie
+	 */
 	void insertMovie(Movie movie);
+
+	/**
+	 * Insert a Role into the database. The Person and Movie that it references
+	 * must already exist in the database.
+	 * 
+	 * @param role
+	 *            Role object to be saved in database
+	 * @return A map containing the title, producton year and description fields
+	 *         of the inserted Role
+	 */
 	void insertRole(Role role);
 }

@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.se325a3.smdb.model.Movie;
 
+/**
+ * Queries that return or insert movies from and to the Database
+ *
+ */
 public interface MovieSmdbDao {
 	
 	/**

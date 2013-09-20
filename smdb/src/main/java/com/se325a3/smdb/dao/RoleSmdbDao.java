@@ -2,6 +2,10 @@ package com.se325a3.smdb.dao;
 
 import com.se325a3.smdb.model.Role;
 
+/**
+ * Queries that insert roles into the Database
+ *
+ */
 public interface RoleSmdbDao {
 
 	/**

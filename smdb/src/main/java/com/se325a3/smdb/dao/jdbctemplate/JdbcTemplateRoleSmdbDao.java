@@ -56,6 +56,10 @@ public class JdbcTemplateRoleSmdbDao implements RoleSmdbDao {
 		_namedParameterJdbcTemplatedbcTemplate.update(SQL_INSERT_ROLE, params);
 	}
 
+	/**
+	 * Query the database for the roles for a particular actor
+	 * @param actor
+	 */
 	void getRolesForActor(Person actor) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("id", actor.getId());
@@ -64,12 +68,20 @@ public class JdbcTemplateRoleSmdbDao implements RoleSmdbDao {
 						new RoleRowMapper())));
 	}
 
+	/**
+	 * Get the roles for a list of actors
+	 * @param actors Actors to retrieve roles
+	 */
 	void getRolesForActors(List<Person> actors) {
 		for (Person actor : actors) {
 			getRolesForActor(actor);
 		}
 	}
 
+	/**
+	 * Query the database for the roles from a particular movie
+	 * @param movie Movie to retrieve roles for
+	 */
 	void getRolesForMovie(Movie movie) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		params.put("title", movie.getTitle());
@@ -80,12 +92,20 @@ public class JdbcTemplateRoleSmdbDao implements RoleSmdbDao {
 						new RoleRowMapper())));
 	}
 
+	/**
+	 * Get the roles for a list of movies
+	 * @param movies Movies to retrieve roles for
+	 */
 	void getRolesForMovies(List<Movie> movies) {
 		for (Movie movie : movies) {
 			getRolesForMovie(movie);
 		}
 	}
 
+	/**
+	 * Custom RowMapper for Roles
+	 *
+	 */
 	private class RoleRowMapper implements RowMapper<Role> {
 
 		@Override
