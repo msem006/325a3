@@ -34,55 +34,50 @@ public class AdminController {
 		_smdbService = smdbService;
 	}
 	
-	// Encrypts String
-	public static String MD5(String md5) {
-	   try {
-	        java.security.MessageDigest md = java.security.MessageDigest.getInstance("MD5");
-	        byte[] array = md.digest(md5.getBytes());
-	        StringBuffer sb = new StringBuffer();
-	        for (int i = 0; i < array.length; ++i) {
-	          sb.append(Integer.toHexString((array[i] & 0xFF) | 0x100).substring(1,3));
-	       }
-	        return sb.toString();
-	    } catch (java.security.NoSuchAlgorithmException e) {
-	    }
-	    return null;
-	}
-	
+	// Login page
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
+		// Lets the search form work
 		model.addAttribute("searchQuery", new SearchQuery());
 		return "login";
 	}
 	
+	// Login failed page
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(ModelMap model) {
- 
+		// Returns the error
 		model.addAttribute("error", "true");
+		// Lets the search form work
 		model.addAttribute("searchQuery", new SearchQuery());
 		return "login";
  
 	}
- 
+	
+	// Logout page
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logout(ModelMap model) {
 		model.addAttribute("searchQuery", new SearchQuery());
+		// Redirects logout page to spring security logout
 		return "redirect:/j_spring_security_logout";
 	}
 	
+	// Succesfully logout
 	@RequestMapping(value="/logoutsuccess", method = RequestMethod.GET)
 	public String logoutsuccess(ModelMap model) {
+		// Lets the search form work
 		model.addAttribute("searchQuery", new SearchQuery());
 		return "redirect:/";
 	}
 	
+	// Admin page
 	@RequestMapping(value="/admin", method = RequestMethod.GET)
 	public String admin(ModelMap model, Principal principal ) {
+		// If logged in
 		if (principal!=null) {
 			String name = principal.getName();
 			model.addAttribute("user", name);
+			// Lets the search form work
 			model.addAttribute("searchQuery", new SearchQuery());
-			//model.addAttribute("message", "Spring Security Custom Form example");
 			return "admin";
 		} else {
 			return "redirect:login";
@@ -90,7 +85,7 @@ public class AdminController {
  
 	}
 	
-	
+	// Add actor page
 	@RequestMapping(value={"/addActor"})  
 	public ModelAndView addActor(@ModelAttribute("addActor") @Valid Actor actor, BindingResult result, Principal principal, HttpServletResponse response) {
 	    
@@ -102,46 +97,51 @@ public class AdminController {
 		    modelAndView.setViewName("addActor");
 	    	if (actor.getFirst_name() != null) {
     			if (!result.hasErrors()) {
-
 		    		Movie movie = _smdbService.getMovieByTitleAndYear(actor.getTitle(), String.valueOf(actor.getProduction_year()));
+		    		// Check if movie exists
 		    		if (movie != null) {
 			    		// Add actor to database
 			    		Person person = new Person();
-			    		//person.setId(actor.getId());
 			    		person.setFirst_name(actor.getFirst_name());
 			    		person.setLast_name(actor.getLast_name());
 			    		person.setYear_born(actor.getYear_born());
 			    		int genId = _smdbService.insertPerson(person);
 			    		actor.setId(genId);
 			    		
+			    		// Add the role to the database
 			    		Role role = new Role();
 			    		role.setId(actor.getId());
 			    		role.setTitle(actor.getTitle());
 			    		role.setProduction_year(actor.getProduction_year());
 			    		role.setDescription(actor.getDescription());
 			    		role.setCredits("");
-			    		
 			    		_smdbService.insertRole(role);
+			    		
+			    		// Add the actor to the view
 			    		modelAndView.addObject("person", actor);
 	
 		    		} else {
+		    			// Movie does not exist error
 		    			modelAndView.addObject("error", "Movie does not exist");
 		    		}
     			} else {
+    				// Form validation
     				modelAndView.addAllObjects(result.getModel());
     				modelAndView.addObject("error", "Please fill out every field");
     			}
 	    	}
-	    	
+	    	// Lets the add actor form work
 		    modelAndView.addObject("addActor", new Actor());
 		    
-
+			// Lets the search form work
 		    modelAndView.addObject("searchQuery", new SearchQuery());
+		    // Gives the username to the view
 		    modelAndView.addObject("user", adminUser);
 	    	return modelAndView;
 	    }
 	}
 	
+	// Add Movie page
 	@RequestMapping(value={"/addMovie"})  
 	public ModelAndView addMovie(@ModelAttribute("addMovie") @Valid Movie movie, BindingResult result, Principal principal, HttpServletResponse response) {
 		// Check for login
@@ -150,30 +150,36 @@ public class AdminController {
 	    } else {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addMovie");
+		    // Check if form sent
 		    if (movie.getTitle()!=null) {
+		    	// Check for form errors with spring validation
 		    	if (!result.hasErrors()) {
 			    	// Add movie to database
 			    	try {
 			    		_smdbService.insertMovie(movie);
-				    	//modelAndView.addObject("result", "The movie was successfully added.");
 				    	modelAndView.addObject("movie", movie);
 			    	} catch (DataIntegrityViolationException e) {
+			    		// Movie already exists
 			    		modelAndView.addObject("error", "Movie already exists");
 			    	} 
 		    	} else {
+		    		// Form validation
 		    		modelAndView.addAllObjects(result.getModel());
 		    		modelAndView.addObject("error", "Please fill out every field");
 		    	}
 		    }
+		    // Lets the add movie form work
 		    modelAndView.addObject("addMovie", new Movie());
 		    
+			// Lets the search form work
 		    modelAndView.addObject("searchQuery", new SearchQuery());
+		    // Gives the username to the view
 		    modelAndView.addObject("user", adminUser);
 	    	return modelAndView;
 	    }
 	}
 	
-	
+	// Add role page
 	@RequestMapping(value={"/addRole"})  
 	public ModelAndView addRole(@ModelAttribute SearchQuery query, @RequestParam int id, @ModelAttribute("addRole") @Valid Role role, BindingResult result, Principal principal, HttpServletResponse response) {
 		// Check for login
@@ -183,40 +189,43 @@ public class AdminController {
 		    ModelAndView modelAndView = new ModelAndView();  
 		    modelAndView.setViewName("addRole");
 		    
+		    // Check if actor exists
 		    if (_smdbService.getActorById(id)!=null) {
 		    	modelAndView.addObject("actor", _smdbService.getActorById(id));
-				    if (role.getTitle()!=null) {
-					    if (!result.hasErrors()) {
-					    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
-				    		if (movie!=null) {
-						    	// Add movie to database
-						    	role.setId(id);
-						    	role.setCredits("");
-						    	try {
-						    		_smdbService.insertRole(role);
-						    	}
-						    	catch (DataIntegrityViolationException e) {
-						    		modelAndView.addObject("error", "Actor already appears in this movie");
-						    	}
-						    	//modelAndView.addObject("result", "The movie was successfully added.");
-						    	modelAndView.addObject("role", role);
-				    		} else {
-				    			modelAndView.addObject("error", "Movie does not exist");
-				    		}
-					    } else {
-					    	modelAndView.addAllObjects(result.getModel());
-					    	modelAndView.addObject("error", "Please fill out every field");
-					    }
+			    // Check if form has been entered
+		    	if (role.getTitle()!=null) {
+			    	// Form validation
+				    if (!result.hasErrors()) {
+				    	Movie movie = _smdbService.getMovieByTitleAndYear(role.getTitle(), String.valueOf(role.getProduction_year()));
+			    		if (movie!=null) {
+					    	// Add movie to database
+					    	role.setId(id);
+					    	role.setCredits("");
+					    	try {
+					    		_smdbService.insertRole(role);
+					    	}
+					    	catch (DataIntegrityViolationException e) {
+					    		modelAndView.addObject("error", "Actor already appears in this movie");
+					    	}
+					    	//modelAndView.addObject("result", "The movie was successfully added.");
+					    	modelAndView.addObject("role", role);
+			    		} else {
+			    			modelAndView.addObject("error", "Movie does not exist");
+			    		}
+				    } else {
+				    	modelAndView.addAllObjects(result.getModel());
+				    	modelAndView.addObject("error", "Please fill out every field");
 				    }
-				    
-
+			    }
 		    } else {
 		    	modelAndView.addObject("error", "Actor does not exist");
 		    }
-
+		    // Lets the add role form work
 		    modelAndView.addObject("addRole", new Role());
 		    
+			// Lets the search form work
 		    modelAndView.addObject("searchQuery", new SearchQuery());
+		    // Gives the username to the view
 		    modelAndView.addObject("user", adminUser);
 	    	return modelAndView;
 	    }

@@ -27,28 +27,34 @@ public class SearchQueryController {
 		_smdbService = smdbService;
 	}
 
-	  
+	// Search results page
 	@RequestMapping(value="/searchResults")  
 	public ModelAndView searchResults(@ModelAttribute SearchQuery query, Principal principal) {  
 	    ModelAndView modelAndView = new ModelAndView();  
 	    modelAndView.setViewName("searchResults");
-	    
+	    // Get movies
 	    Collection<Movie> movieList = 
 	    		_smdbService.getMoviesByTitle(query.getQuery());
-
+	    
+	    // Check if search query has  space in it
 	    String[] splited = query.getQuery().split("\\s+");
 	    Collection<Person> personList;
-	    // Anything after the 2nd word is ignored
+	    
+	    // If the word contains a space
 	    if (splited.length > 1) {
+		    // Anything after the 2nd word is ignored
+	    	// Get actors with getActorsByFirstNameOrLastName
 	    	personList = 
 	    			_smdbService.getActorsByFirstNameOrLastName(splited[0], splited[1]);
 	    } else {
+	    	// Get actors by getActorsByFirstName and getActorsByLastName
 	    	personList = 
 	    			_smdbService.getActorsByFirstName(query.getQuery());
 	    	personList.addAll(_smdbService.getActorsByLastName(query.getQuery()));
 	    	
 	    }
-
+	    
+	    // Returns objects to the view
 	    modelAndView.addObject("query", query.getQuery());
 	    modelAndView.addObject("movieList", movieList);  
 	    modelAndView.addObject("personList", personList);
